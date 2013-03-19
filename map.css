@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#title{
+    text-align:center;
+    float:top
+}
+
+#page_background{
+    background-image:url('images/paper-body-back.png');
+    background-position:center;
+    height:100%;
+    width:100%;
+}
+
+#map_picture{
+    float:top;
+    width:100%;
+}
+
+/**body{
+    background-image:url('images/paper-body-back.png');
+}
