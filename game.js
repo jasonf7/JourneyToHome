@@ -11,6 +11,13 @@ var EMPTY = 0, HERO = 1, FLAG = 2, PREDATOR = 3, BUSH = 4, FOOD = 5;
 var hero = {x:0,y:0,health:10};
 
 /**
+ * Create the table to store the images
+ */
+function createTable(){
+//    $("#map").
+}
+
+/**
  * Creates the grid from the height*width long code.
  */
 function createGridFromCode(code){
