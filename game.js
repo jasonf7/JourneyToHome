@@ -19,13 +19,10 @@ function createTable(){
         tableHtml+="<tr>";
         for(var j=0;j<width;j++){
             //Creates an table data cell with an img inside
-<<<<<<< HEAD
             //They are all in the game-tiles class and have the id x-y
             tableHtml+="<td class='game-tiles-container'><img class='game-tiles' id='"+i+"-"+j+"' src='images/paper-body-back.png'";
-=======
             //They are all in the game-tiles class and have the id xy
-            tableHtml+="<td class='game-tiles-container'><img class='game-tiles' id='"+i+"-"+j+"' src='images/paper-ody-back.png' alt=''"
->>>>>>> 666745078fb239ec8cec15d33f38bca3260b9043
+            tableHtml+="<td class='game-tiles-container'><img class='game-tiles' id='"+i+"-"+j+"' src='images/paper-ody-back.png' alt=''";
             //Give it the right height/width
             tableHtml+="height='"+($(window).height()/height)+"' width='"+($("#map").width()/width)+"'></td>";
         }
