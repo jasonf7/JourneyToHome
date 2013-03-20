@@ -9,12 +9,25 @@ var EMPTY = 0, HERO = 1, FLAG = 2, PREDATOR = 3, BUSH = 4, FOOD = 5;
 
 //hero at 0,0 with default health of 10
 var hero = {x:0,y:0,health:10};
-
+createTable();
 /**
- * Create the table to store the images
+ * Create the table to display the map
  */
 function createTable(){
-//    $("#map").
+    var tableHtml = "";
+    for(var i=0;i<height;i++){
+        tableHtml+="<tr>";
+        for(var j=0;j<width;j++){
+            //Creates an table data cell with an img inside
+            //They are all in the game-tiles class and have the id xy
+            tableHtml+="<td class='game-tiles-container'><img class='game-tiles' id='"+i+"-"+j+"' src='images/paper-body-back.png'"
+            //Give it the right height/width
+            tableHtml+="height='"+($(window).height()/height)+"' width='"+($("#map").width()/width)+"'></td>";
+        }
+        tableHtml+="</tr>";
+    }    
+    $("#map").append(tableHtml);
+    $("#0-1").attr("src","images/canada-map.png");
 }
 
 /**
