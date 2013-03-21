@@ -20,9 +20,7 @@ function createTable(){
         for(var j=0;j<width;j++){
             //Creates an table data cell with an img inside
             //They are all in the game-tiles class and have the id x-y
-            tableHtml+="<td class='game-tiles-container'><img class='game-tiles' id='"+i+"-"+j+"' src='images/paper-body-back.png'";
-            //They are all in the game-tiles class and have the id xy
-            tableHtml+="<td class='game-tiles-container'><img class='game-tiles' id='"+i+"-"+j+"' src='images/paper-ody-back.png' alt=''";
+            tableHtml+="<td class='game-tiles-container'><img class='game-tiles' id='"+i+"-"+j+"' src='--'";
             //Give it the right height/width
             tableHtml+="height='"+($(window).height()/height)+"' width='"+($("#map").width()/width)+"'></td>";
         }
@@ -33,7 +31,7 @@ function createTable(){
 }
 
 $("img").error(function () { 
-	$(this).css({visibility:"hidden"}); 
+	$(this).css({display:"none"}); 
 });
 
 /**

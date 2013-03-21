@@ -6,20 +6,14 @@
     width:80%;
     box-shadow: 4px 1px 8px #bc9b04right;
 }
-
-#sidebar{ 
+/** ARROW KEYS SIDEBAR */
+#sidebar-move{
     height:100%;
     float:left;
     width:19%;
     position:relative;
+    display:none; /** TEMPORARY */
 }
-
-body{
-    background-image:url('images/paper-body-back.png');    
-       margin: 0;
-       padding: 0;
-}
-
 #keys{
     width:80%;
     height:35%;
@@ -27,6 +21,65 @@ body{
     position:absolute; 
     top:33%;
     left:10%;
+}
+
+/** MATH SIDEBAR */
+#sidebar-math{
+    height:100%;
+    float:left;
+    width:19%;
+    position:relative; 
+}
+#math{
+    width:80%;
+    height:35%;
+    text-align:center;  
+}
+* {
+    padding: 0;
+}
+.math-button,#question{
+    margin:10px;
+    width:96%;
+    background:#aedb70;
+    background: -webkit-radial-gradient(circle, #97cc4e, #65ad49);
+    color: white;
+    font-weight: bold;
+    font-size:150%;
+    text-decoration: none;
+    opacity: 0.4;
+    border: 1px solid #325403;
+    border-radius: 4px;   
+    text-shadow: 1px 1px 7px #293311;
+        filter: dropshadow(color=#293311, offx=1, offy=1);
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+#enter-button{
+    width:98%;
+}
+.math-button:active{
+    background:#98d147;
+    background: -webkit-radial-gradient(circle, #82c425, #29700c);
+}
+#equation,#answer{  
+    color: #ffffff;
+    font-weight: bold;
+    font-size:100%;
+    text-decoration: none;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;  
+    text-shadow: 2px 2px 1px #528012;
+        filter: dropshadow(color=#528012, offx=1, offy=1);
+}
+#question{
+    height:10%;
+    width:80%;
+    border-radius: 4px;  
+}
+/** END SIDEBARS */
+body{
+    background-image:url('images/paper-body-back.png');    
+    margin: 0;
+    padding: 0;
 }
 
 button{
