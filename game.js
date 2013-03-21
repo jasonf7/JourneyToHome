@@ -20,7 +20,7 @@ function createTable(){
         for(var j=0;j<width;j++){
             //Creates an table data cell with an img inside
             //They are all in the game-tiles class and have the id x-y
-            tableHtml+="<td class='game-tiles-container'><img class='game-tiles' id='"+i+"-"+j+"' src='--'";
+            tableHtml+="<td class='game-tiles-container'><img class='game-tiles' id='"+i+"-"+j+"' src='images/canada-map.png'";
             //Give it the right height/width
             tableHtml+="height='"+($(window).height()/height)+"' width='"+($("#map").width()/width)+"'></td>";
         }
@@ -77,4 +77,41 @@ function moveHero(direction){
     hero.y = newy;
     grid[hero.x][hero.y]=HERO;
     //Update pictures here
+}
+var firstNum = 0, secondNum = 0, answer=0;
+var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
+var operation = ADD;
+sessionStorage.difficulty=1;
+/**
+ * Generate random math questoin
+ */
+function generateNewQuestion(){    
+    var randomOperation = Math.floor(Math.random()*4);
+    operation = randomOperation;
+    if(randomOperation==DIVIDE){
+        answer = Math.ceil(Math.random()*Math.pow(3,sessionStorage.difficulty));
+        secondNum = Math.ceil(Math.random()*Math.pow(3,sessionStorage.difficulty));
+        firstNum = answer * secondNum;
+    }else{        
+        //random number from 1 to 10^difficulty
+        firstNum = Math.ceil(Math.random()*(Math.pow(10,sessionStorage.difficulty)-1));
+        if(sessionStorage.difficulty ==  1){
+            secondNum = Math.ceil(Math.random()*10);        
+        }else if(sessionStorage.difficulty == 2){            
+            secondNum = Math.ceil(Math.random()*90)+9;       
+        }else{            
+            secondNum = Math.ceil(Math.random()*900)+99;         
+        }  
+        
+        if(randomOperation == ADD){
+            answer = firstNum + secondNum;
+        }else if(randomOperation == SUBTRACT){
+            var temp = firstNum;
+            firstNum = Math.max(firstNum,secondNum);
+            secondNum = Math.min(secondNum,temp);
+            answer = firstNum - secondNum;
+        }else{
+            answer = firstNum * secondNum;
+        }
+    }
 }
