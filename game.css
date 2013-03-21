@@ -25,7 +25,7 @@
 
 /** MATH SIDEBAR */
 #sidebar-math{
-    height:100%;
+    vertical-align:middle;
     float:left;
     width:19%;
     position:relative; 
@@ -39,6 +39,7 @@
     padding: 0;
 }
 .math-button,#question{
+
     margin:10px;
     width:96%;
     background:#aedb70;
