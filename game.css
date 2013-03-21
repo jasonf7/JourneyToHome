@@ -25,15 +25,10 @@
 
 /** MATH SIDEBAR */
 #sidebar-math{
-<<<<<<< HEAD
     height:60%;
     position:absolute;
     right:0;
     top:20%;
-=======
-    vertical-align:middle;
-    float:left;
->>>>>>> cc005fbe02b85b723ae68dd366e777f2e5a57205
     width:19%;
 }
 #math{
