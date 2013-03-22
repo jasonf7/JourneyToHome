@@ -36,6 +36,7 @@
     height:40%;
     text-align:center; 
     position:relative;
+    table-layout:fixed;
 }
 
 * {
@@ -57,9 +58,6 @@
     text-shadow: 1px 1px 7px #293311;
         filter: dropshadow(color=#293311, offx=1, offy=1);
     font-family:"Trebuchet MS", Helvetica, sans-serif;
-}
-#enter-button{
-    width:98%;
 }
 .math-button:active{
     background:#98d147;

@@ -22,12 +22,13 @@ function createTable(){
             //They are all in the game-tiles class and have the id x-y
             tableHtml+="<td class='game-tiles-container'><img class='game-tiles' id='"+i+"-"+j+"' src='images/canada-map.png'";
             //Give it the right height/width
-            tableHtml+="height='"+($(window).height()/height)+"' width='"+($("#map").width()/width)+"'></td>";
+            tableHtml+="height='"+($(window).height()/height)+"' width='"+($("#page-main").width()/width)*0.92+"'></td>";
         }
         tableHtml+="</tr>";
     }    
+    $("#map").empty();
     $("#map").append(tableHtml);
-    $("#0-1").attr("src","images/canada-map.png"); //Just for testing
+//    $("#0-1").attr("src","images/canada-map.png"); //Just for testing
 }
 
 $("img").error(function () { 
@@ -55,6 +56,8 @@ function createGridFromCode(code){
         }
     }    
 }
+//RESIZE!
+window.addEventListener('resize', createTable, false);
 
 function moveHero(direction){
     //Check if direction is legal first
@@ -78,10 +81,13 @@ function moveHero(direction){
     grid[hero.x][hero.y]=HERO;
     //Update pictures here
 }
-var firstNum = 0, secondNum = 0, answer=0;
+var firstNum = 0, secondNum = 0, answer=0, userAnswer = "";
 var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
 var operation = ADD;
 sessionStorage.difficulty=1;
+//temp
+generateNewQuestion();
+displayMath();
 /**
  * Generate random math questoin
  */
@@ -114,4 +120,63 @@ function generateNewQuestion(){
             answer = firstNum * secondNum;
         }
     }
+}
+var wrong = false;
+/**
+ * Take button number input
+ */
+function takeInput(num){
+    if(wrong){
+        $("#question").css('background','-webkit-radial-gradient(circle, #97cc4e, #65ad49)');
+        wrong = false;
+    }
+    
+    if(num>=0 && userAnswer.length < 6){
+        userAnswer += num+"";
+    }else if(num == -1){
+        if(userAnswer.trim() == answer){
+            $("#sidebar-math").animate({
+              height:'toggle'
+            });            
+            $("#sidebar-math").animate({
+              height:'toggle'
+            });            
+            $("#sidebar-math").promise().done(function(){
+                generateNewQuestion();  
+                displayMath();
+            });
+            $("#input").html("");
+            userAnswer = "";
+            return;
+        }else{
+            $("#question").css('background','-webkit-radial-gradient(circle, #FF9966, #CC3300)');
+            wrong = true;
+        }
+    }else if(num == -2){
+        userAnswer = userAnswer.slice(0,userAnswer.length-1);
+    }
+    
+    displayMath();
+}
+
+/**
+ * Set paragraph to question+answer
+ */
+function displayMath(){
+    var display = firstNum + "";
+    if (operation == ADD) {
+        display+= " + ";        
+    }else if(operation == SUBTRACT){
+        display+= " - ";
+    }else if(operation == MULTIPLY){
+        display+= " &#10005; ";
+    }else{
+        display+= " &divide; ";
+    }
+    if(userAnswer.length === 0){
+        display+=secondNum+"<br>&nbsp;";
+    }else{
+        display+=secondNum+"<br>"+userAnswer;
+    }
+    $("#input").html(display);
 }
