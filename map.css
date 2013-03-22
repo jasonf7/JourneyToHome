@@ -21,7 +21,8 @@ body{
 }
 
 #yukon_button{
-
+    height: 30px;
+    width: 30px;
     opacity: 1;
     border: 1px solid #000;
     border-radius: 30px;
