@@ -25,28 +25,28 @@
         </div>   
         <div id="sidebar-math">
             <button id="question">
-                <p id = "equation"> 50 &#10005; 50</p>
-                <p id = "answer"></p>
+                <p id = "input"> 50 &#10005; 50 =<br>2500</p>
             </button>
             <table id="math" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td><button class="math-button">1</button></td>
-                    <td><button class="math-button">2</button></td>
-                    <td><button class="math-button">3</button></td>
+                    <td><button onclick="takeInput(1)" class="math-button">1</button></td>
+                    <td><button onclick="takeInput(2)" class="math-button">2</button></td>
+                    <td><button onclick="takeInput(3)" class="math-button">3</button></td>
                 </tr>
                 <tr>
-                    <td><button class="math-button">4</button></td>
-                    <td><button class="math-button">5</button></td>
-                    <td><button class="math-button">6</button></td>
+                    <td><button onclick="takeInput(4)" class="math-button">4</button></td>
+                    <td><button onclick="takeInput(5)" class="math-button">5</button></td>
+                    <td><button onclick="takeInput(6)" class="math-button">6</button></td>
                 </tr>
                 <tr>
-                    <td><button class="math-button">7</button></td>
-                    <td><button class="math-button">8</button></td>
-                    <td><button class="math-button">9</button></td>
+                    <td><button onclick="takeInput(7)" class="math-button">7</button></td>
+                    <td><button onclick="takeInput(8)" class="math-button">8</button></td>
+                    <td><button onclick="takeInput(9)" class="math-button">9</button></td>
                 </tr>
                 <tr>
-                    <td colspan='2'><button class="math-button" id="enter-button">&#10003;</button></td>
-                    <td><button class="math-button">&#10007;</button></td>
+                    <td><button onclick="takeInput(0)" class="math-button">0</button></td>
+                    <td><button class="math-button" onclick="takeInput(-1)" id="enter-button">&#10003;</button></td>
+                    <td><button onclick="takeInput(-2)" class="math-button">&#10007;</button></td>
                 </tr>
             </table>
         </div>  
