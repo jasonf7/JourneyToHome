@@ -84,7 +84,7 @@ function moveHero(direction){
 var firstNum = 0, secondNum = 0, answer=0, userAnswer = "";
 var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
 var operation = ADD;
-sessionStorage.difficulty=3;
+sessionStorage.difficulty=1;
 //temp
 generateNewQuestion();
 displayMath();

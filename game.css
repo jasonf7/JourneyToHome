@@ -8,23 +8,26 @@
 }
 /** ARROW KEYS SIDEBAR */
 #sidebar-move{
-    height:100%;
-    float:left;
+    height:50%;
+    position:absolute;
+    right:0;
+    top:50%;
     width:19%;
-    position:relative;
-    display:none; /** TEMPORARY */
 }
 #keys{
     width:80%;
-    height:35%;
-    text-align:center;
-    position:absolute; 
-    top:33%;
-    left:10%;
+    height:40%;
+    text-align:center; 
+    position:relative;
+    table-layout:fixed;
+}
+#arrow-key{
+    width:100%;
 }
 
 /** MATH SIDEBAR */
-#sidebar-math{
+#sidebar-math{    
+    display:none; /** TEMPORARY */
     height:60%;
     position:absolute;
     right:0;
@@ -42,7 +45,7 @@
 * {
     padding: 0;
 }
-.math-button,#question{
+.math-button,#question,#arrow-key{
     margin:10px;
     width:96%;
     background:#aedb70;
@@ -58,7 +61,7 @@
         filter: dropshadow(color=#293311, offx=1, offy=1);
     font-family:"Trebuchet MS", Helvetica, sans-serif;
 }
-.math-button:active{
+.math-button:active,#arrow-key:active{
     background:#98d147;
     background: -webkit-radial-gradient(circle, #82c425, #29700c);
 }
