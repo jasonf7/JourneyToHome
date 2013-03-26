@@ -1,0 +1,13 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+body{
+    background:pink;
+    text-align:center
+}
+
+#logo_pic{
+    width:100%;
+}

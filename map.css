@@ -20,14 +20,25 @@ body{
     width:100%;
 }
 
-#yukon_button{
-    top:100px;
-    width: 30px;
+.map_buttons{
+    width:7%;
     opacity: 1;
     border: 1px solid #000;
     box-shadow: 0px 0px 20px #fff inset, 0px -0px 20px #000 inset;
     -webkit-box-shadow: 0px 0px 20px #fff inset, 0px -0px 20px #000 inset;
     -moz-box-shadow: 0px 0px 20px #fff inset, 0px -0px 20px #000 inset;
-    -ms-box-shadow: 0px 0px 20px #fff inset, 0px -0px 20px #000 inset;
-    -o-box-shadow: 0px 0px 20px #fff inset, 0px -0px 20px #000 inset;
+}
+
+#YK_button{
+    position:absolute;
+    top:18%;
+    left:5%;
+}
+
+#NWT_button{
+    position:absolute;
+    top:20%;
+    left:18%;
+}
+
 }
