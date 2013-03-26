@@ -8,22 +8,23 @@
         <div id="page-main">
             <table id="map" cellspacing="0" cellpadding="0">
             </table>
+            <div id="hero"><img src="images/hero.png"></img></div>
         </div>
         <div id="sidebar-move">
             <table id="keys">
                 <tr>
                     <td></td>
-                    <td><button id="arrow-key">&#8226;</button></td>
+                    <td><button id="up" onclick="moveHero('up')" class="arrow-key">&#8226;</button></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td><button id="arrow-key">&#8226;</button></td>
+                    <td><button id="left" onclick="moveHero('left')" class="arrow-key">&#8226;</button></td>
                     <td></td>
-                    <td><button id="arrow-key">&#8226;</button></td>
+                    <td><button id="right" onclick="moveHero('right')" class="arrow-key">&#8226;</button></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><button id="arrow-key">&#8226;</button></td>
+                    <td><button id="down" onclick="moveHero('down')" class="arrow-key">&#8226;</button></td>
                     <td></td>
                 </tr>
             </table>

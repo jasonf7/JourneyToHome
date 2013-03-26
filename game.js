@@ -1,7 +1,8 @@
 var height = 7, width= 7;
 
-//var code = "0000000000000000000000000000000000000000000000000000000000000";
+var code = "1000000000000000000000000000000000000000000000000";
 var grid = new Array(height);
+var cellH = 0, cellW=0;
 
 //Add items here as necessary
 var items = 6;
@@ -9,26 +10,58 @@ var EMPTY = 0, HERO = 1, FLAG = 2, PREDATOR = 3, BUSH = 4, FOOD = 5;
 
 //hero at 0,0 with default health of 10
 var hero = {x:0,y:0,health:10};
-createTable();
+
+$(document).ready(function(){
+    createGridFromCode(code);
+    createTable();
+    $("#hero").css("width",cellW);
+    $("#hero").css("height",cellH);
+    
+    
+//    $('#down').click(function(){
+//        if(hero.y<(height-1)){
+//            $("#hero").promise().done(function(){
+//                $("#hero:not(:animated)").animate({top: '+='+cellH},300);
+//                hero.y+=1;
+//            });
+//        }
+//        console.log(hero.y);
+//    });
+//    $('#up').click(function(){
+//        if(hero.y>0){
+//            $("#hero").promise().done(function(){
+//                $("#hero:not(:animated)").animate({top: '-='+cellH},300);
+//                hero.y-=1;
+//            });
+//        }
+//        
+//        console.log(hero.y);
+//    });
+});
 /**
  * Create the table to display the map
  */
 function createTable(){
     var tableHtml = "";
+    cellH = ($(window).height()/height);
+    cellW = ($("#page-main").width()/width)*0.92;
+    
     for(var i=0;i<height;i++){
         tableHtml+="<tr>";
         for(var j=0;j<width;j++){
             //Creates an table data cell with an img inside
+            var image = "empty";
+            /** CHANGE IT LATER **/
+            
             //They are all in the game-tiles class and have the id x-y
-            tableHtml+="<td class='game-tiles-container'><img class='game-tiles' id='"+i+"-"+j+"' src='images/canada-map.png'";
+            tableHtml+="<td class='game-tiles-container'><img class='game-tiles' id='"+i+"-"+j+"' src='images/"+image+".png'";
             //Give it the right height/width
-            tableHtml+="height='"+($(window).height()/height)+"' width='"+($("#page-main").width()/width)*0.92+"'></td>";
+            tableHtml+="height='"+cellH+"' width='"+cellW+"'></td>";
         }
         tableHtml+="</tr>";
     }    
     $("#map").empty();
     $("#map").append(tableHtml);
-//    $("#0-1").attr("src","images/canada-map.png"); //Just for testing
 }
 
 $("img").error(function () { 
@@ -43,7 +76,6 @@ function createGridFromCode(code){
         grid[i] = new Array(width);
         for(var j=0;j<width;j++){
             var item = this.code.substr(j+(i*height),1);
-            console.log(item);
             if(item >= 0 && item < (items-1)){
                 grid[i][j] = item;
                 if(item == HERO){
@@ -59,13 +91,14 @@ function createGridFromCode(code){
 //RESIZE!
 window.addEventListener('resize', createTable, false);
 
+
 function moveHero(direction){
-    //Check if direction is legal first
+   //Check if direction is legal first
     var newx = hero.x, newy = hero.y;
     if(direction =="up"){
-        newy+= 1;
-    }else if(direction == "down"){
         newy-= 1;
+    }else if(direction == "down"){
+        newy+= 1;
     }else if(direction == "left"){
         newx-= 1;
     }else if(direction == "right"){
@@ -73,14 +106,27 @@ function moveHero(direction){
     }            
     if(newx >= height || newy >= width || newx < 0 || newy < 0){
         return; //Not a legal move, give up.
-    }          
-          
-    grid[hero.x][hero.y]=EMPTY;    
-    hero.x = newx;
-    hero.y = newy;
-    grid[hero.x][hero.y]=HERO;
-    //Update pictures here
+    }                   
+    
+    $("#hero").promise().done(function(){
+        grid[hero.y][hero.x]=EMPTY; 
+        hero.x = newx;
+        hero.y = newy;
+        
+        console.log(hero.x+","+hero.y);
+        grid[hero.y][hero.x]=HERO;
+        if(direction =="up"){       
+        $("#hero:not(:animated)").animate({top: '-='+cellH},300);
+        }else if(direction == "down"){        
+            $("#hero:not(:animated)").animate({top: '+='+cellH},300);
+        }else if(direction == "left"){        
+            $("#hero:not(:animated)").animate({left: '-='+cellW},300);
+        }else if(direction == "right"){            
+            $("#hero:not(:animated)").animate({left: '+='+cellW},300);
+        }  
+    });       
 }
+
 var firstNum = 0, secondNum = 0, answer=0, userAnswer = "";
 var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
 var operation = ADD;
