@@ -32,7 +32,7 @@ function createTable(){
         tableHtml+="<tr>";
         for(var j=0;j<width;j++){
             //Creates an table data cell with an img inside
-            var image = "canada-map";
+            var image = "empty";
             if(grid[i][j] == FLAG){
                 image = "flag";
             }
@@ -98,9 +98,7 @@ function moveHero(direction){
         hero.x = newx;
         hero.y = newy;
         gameCount++;
-        
-        console.log(cellH+","+cellW);
-        grid[hero.y][hero.x]=HERO;
+                
         if(direction =="up"){       
         $("#hero:not(:animated)").animate({top: '-='+cellH},300);
         }else if(direction == "down"){        
@@ -109,7 +107,14 @@ function moveHero(direction){
             $("#hero:not(:animated)").animate({left: '-='+cellW},300);
         }else if(direction == "right"){            
             $("#hero:not(:animated)").animate({left: '+='+cellW},300);
-        }  
+        } 
+        
+        if(grid[hero.x][hero.y]==FLAG){
+            alert("YOU WIN!");
+            window.open("map.html");
+        }else{
+            grid[hero.y][hero.x]=HERO;
+        }
     });  
     if(gameCount == 5){
         gameCount = 0;                
@@ -126,7 +131,7 @@ function moveHero(direction){
 var firstNum = 0, secondNum = 0, answer=0, userAnswer = "";
 var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
 var operation = ADD;
-sessionStorage.difficulty=2;
+sessionStorage.difficulty=1;
 //temp
 generateNewQuestion();
 displayMath();
