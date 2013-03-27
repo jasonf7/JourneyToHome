@@ -31,14 +31,50 @@ body{
 
 #YK_button{
     position:absolute;
-    top:18%;
+    top:45%;
     left:5%;
 }
 
 #NWT_button{
     position:absolute;
-    top:20%;
+    top:50%;
     left:18%;
 }
 
+#BC_button{
+    position:absolute;
+    top:75%;
+    left:7%;
 }
+
+#NVT_button{
+    position:absolute;
+    top:57%;
+    left:38%;
+}
+
+#ALB_button{
+    position:absolute;
+    top:77%;
+    left:18%;
+}
+
+#SAS_button{
+    position:absolute;
+    top:79%;
+    left:28%;
+}
+
+#MAN_button{
+    position:absolute;
+    top:81%;
+    left:37%;
+}
+
+#ON_button{
+    position:absolute;
+    top:93%;
+    left:53%;
+}
+
+

@@ -15,7 +15,6 @@ function setDifficulty(buttonNumber){
             sessionStorage.difficulty = 3;
         }
     }
-    console.log(sessionStorage.difficulty);
 }
 
 $(document).ready(function() {
