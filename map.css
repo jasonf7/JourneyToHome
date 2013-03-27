@@ -31,7 +31,7 @@ body{
 
 #YK_button{
     position:absolute;
-    top:45%;
+    top:40%;
     left:5%;
 }
 
@@ -73,8 +73,14 @@ body{
 
 #ON_button{
     position:absolute;
-    top:93%;
+    top:97%;
     left:53%;
 }
 
-
+#buttons{
+    position:absolute;
+    top:20%;
+    left:0;
+    width:100%;
+    height:100%;
+}
