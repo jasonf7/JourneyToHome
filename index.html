@@ -1,14 +1,32 @@
-<html lang = "en">
-    <head>
-        <title>Splash Screen</title>
-        <meta charset="utf-8"/>
-        <link rel="stylesheet" href="start.css" type="text/css">
-    </head>
-    <body>
-        <h1 id="title">Journey to Home!</h1>
-        <a href="map.html">
-            <img id="logo_pic" src="images/logo.png"></img>
-        </a>
-        <h2 id="subtitle">Click the logo to begin...</h2>
-    </body>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Journey To Home</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+	</head>
+	<body bgcolor="black">
+		<div id="info" style="width: 1024px;" class="no-select">
+			<div id="jsapp">
+				<font color="#FFFFFF", style="position: absolute; font-size: 10px; font-family: Courier New">
+					<span id="framecounter" class="no-select">(0/0 fps)</span>
+				</font>
+				<script type="text/javascript" src="lib/melonJS-0.9.6-min.js"></script>
+				<script type="text/javascript" src="entities.js"></script>
+				<script type="text/javascript" src="main.js"></script>                
+			</div>
+            <table id="keys" class="no-select">
+                    <tr>
+                        <td></td>
+                        <td><button id="up" class="arrow-key no-select">&#8226;</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button id="left" class="arrow-key no-select">&#8226;</button></td>
+                        <td></td>
+                        <td><button id="right" class="arrow-key no-select">&#8226;</button></td>
+                    </tr>
+            </table>
+		</div>
+	</body>
 </html>
