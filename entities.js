@@ -38,7 +38,15 @@ var PlayerEntity = me.ObjectEntity.extend({
         }
         // check & update player movement
         this.updateMovement();
+        var res = me.game.collide(this);
 
+        if (res) {
+            // if we collide with an enemy
+            if (res.obj.type == me.game.COLLECTABLE_OBJECT) {
+                console.log("Acorn Collected");
+            }
+        }
+        
         // update animation if necessary
         if (this.vel.x!==0 || this.vel.y!==0) {
             // update object animation
@@ -49,8 +57,22 @@ var PlayerEntity = me.ObjectEntity.extend({
         // else inform the engine we did not perform
         // any update (e.g. position, animation)
         return false;
-    }
+    }    
+});
+
+/**
+ * THE ACORN!!
+ */
+var AcornEntity = me.CollectableEntity.extend({
     
-    
-    
+    init: function(x, y, settings) {
+        console.log("acorn added");
+        this.parent(x, y, settings);
+    },
+ 
+    onCollision: function() {
+        //remove it
+        this.collidable = false;
+        me.game.remove(this);
+    } 
 });

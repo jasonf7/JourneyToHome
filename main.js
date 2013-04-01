@@ -1,17 +1,9 @@
-/*!
- * 
- *   melonJS
- *   http://www.melonjs.org
- *		
- *   Step by step game creation tutorial
- *
- **/
-
 // game resources
 var g_resources= [
     {name:"land-tiles",type:"image",src:"img/land-tiles.png"},
     {name:"level1",type:"tmx",src:"data/level1.tmx"},
-    {name:"chimpy",type:"image",src:"img/chimpy.png"}
+    {name:"chimpy",type:"image",src:"img/chimpy.png"},
+    {name:"acorn",type:"image",src:"img/acorn.png"}
 ];
 
 
@@ -42,9 +34,11 @@ var jsApp	=
 		// set the "Play/Ingame" Screen Object
 		me.state.set(me.state.PLAY, new PlayScreen());
         me.entityPool.add("mainPlayer",PlayerEntity);
+        me.entityPool.add("acornEntity", AcornEntity);
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,     "jump", true);
+        me.debug.renderHitBox = true; //TEMPORARY
         // start the game 
 		me.state.change(me.state.PLAY);
 	}
@@ -80,6 +74,15 @@ window.onReady(function(){
     $('#up').mouseup(function() {
         me.input.triggerKeyEvent(me.input.KEY.UP, false);
     });
+    
+    // $('#up').touchdown(function() {     
+    //     me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
+    //     me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
+    //     me.input.triggerKeyEvent(me.input.KEY.UP, true);
+    // });
+    // $('#up').touchup(function() {
+    //     me.input.triggerKeyEvent(me.input.KEY.UP, false);
+    // });
 
     $('#left').mousedown(function() {
         me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
