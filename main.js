@@ -13,7 +13,7 @@ var jsApp	=
 	onload: function(){
 		
 		// init the video
-		if (!me.video.init('jsapp', 1024, 600, false, 1.0))
+		if (!me.video.init('jsapp', 1024, 598, false, 1.0))
 		{
 			alert("Sorry but your browser does not support html 5 canvas.");
             return;
@@ -100,5 +100,10 @@ window.onReady(function(){
     });
     $('#right').mouseup(function() {
         me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
+    });
+    $(document).bind('touchmove', function(e) {
+        e.preventDefault();
+        window.scroll(0,0);
+        return false;
     });
 });

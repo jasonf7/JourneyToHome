@@ -52,10 +52,10 @@ function takeInput(num){
         userAnswer += num+"";
     }else if(num == -1){
         if(userAnswer.trim() == answer){
-            $("#input").html("");
+            
             userAnswer = "";                       
             $("#math-popup").animate({
-              height:'toggle'
+              opacity: 0.2
             });       
             
             // if(mathCount == 2){
@@ -65,9 +65,9 @@ function takeInput(num){
             //     $("#sidebar-move").css("display","block");
             //     return;
             // } 
-            
+//            $("#input").html("");
             $("#math-popup").animate({
-              height:'toggle'
+              opacity:1
             });            
             $("#math-popup").promise().done(function(){
                 generateNewQuestion();  
