@@ -1,14 +1,63 @@
-<html lang = "en">
-    <head>
-        <title>Splash Screen</title>
-        <meta charset="utf-8"/>
-        <link rel="stylesheet" href="start.css" type="text/css">
-    </head>
-    <body>
-        <h1 id="title">Journey to Home!</h1>
-        <a href="map.html">
-            <img id="logo_pic" src="images/logo.png"></img>
-        </a>
-        <h2 id="subtitle">Click the logo to begin...</h2>
-    </body>
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta name="viewport" id="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no" />
+		<title>Journey To Home</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+	</head>
+	<body bgcolor="black">
+		<div id="info" style="width: 1024px;" class="no-select">
+			<div id="jsapp">
+				<font color="#FFFFFF", style="position: absolute; font-size: 10px; font-family: Courier New">
+					<span id="framecounter" class="no-select">(0/0 fps)</span>
+				</font>
+				<script type="text/javascript" src="lib/melonJS-0.9.6-min.js"></script>
+				<script type="text/javascript" src="js/entities.js"></script>
+				<script type="text/javascript" src="js/main.js"></script>                
+			</div>
+            <table id="keys" class="no-select">
+            <tr>
+                        <td></td>
+                        <td><button id="up" class="arrow-key no-select">&#8226;</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button id="left" class="arrow-key no-select">&#8226;</button></td>
+                        <td></td>
+                        <td><button id="right" class="arrow-key no-select">&#8226;</button></td>
+                    </tr>
+            </table>
+		</div>
+        <div id="math-container">
+            <div id="math-popup">
+                <button id="question">
+                    <p id = "input"> 50 &#10005; 50 =<br>2500</p>
+                </button>
+                <table id="math-table" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td><button onclick="takeInput(1)" class="math-button">1</button></td>
+                        <td><button onclick="takeInput(2)" class="math-button">2</button></td>
+                        <td><button onclick="takeInput(3)" class="math-button">3</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="takeInput(4)" class="math-button">4</button></td>
+                        <td><button onclick="takeInput(5)" class="math-button">5</button></td>
+                        <td><button onclick="takeInput(6)" class="math-button">6</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="takeInput(7)" class="math-button">7</button></td>
+                        <td><button onclick="takeInput(8)" class="math-button">8</button></td>
+                        <td><button onclick="takeInput(9)" class="math-button">9</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="takeInput(0)" class="math-button">0</button></td>
+                        <td><button class="math-button" onclick="takeInput(-1)" id="enter-button">&#10003;</button></td>
+                        <td><button onclick="takeInput(-2)" class="math-button">&#10007;</button></td>
+                    </tr>
+                </table>
+            </div> 
+        </div>
+        <script src="js/game.js"></script>
+	</body>
 </html>
