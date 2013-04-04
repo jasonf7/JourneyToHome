@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets"
    xmlns:rim="http://www.blackberry.com/ns/widgets"
-   version="1.0.">
+   version="1.0.1">
  
    <name>Journey to Home</name>
    <description>Help Chimpy reach Ontario!</description>
