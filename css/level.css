@@ -1,23 +1,21 @@
-*{
-    margin: 0px;
-    padding: 0px;
-}
-
 #title{
     text-align:center;
-    float:top
+    float:top;    
+    z-index:100;
 }
 
 body{
-    background:white;
-    background-position:center;
-    height:100%;
-    width:100%;
+    margin:0;
+}
+
+#container{
+    border: 1px solid black;  
+    background-image:url('../img/canada-map.png');
 }
 
 #map_picture{
-    float:top;
-    width:100%;
+    height:100%;
+    z-index:0;
 }
 
 .map_buttons{

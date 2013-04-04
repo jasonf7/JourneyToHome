@@ -1,27 +1,27 @@
 <html lang = "en">
     <head>
         <title>Level Selection Screen</title>
-        <meta charset = "utf-8"/>
+        <meta name="viewport" id="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no" />
         <link rel="stylesheet" href="css/level.css" type="text/css">
         <script src="jquery-1.9.1.min.js"></script>
     </head>
     
     <body>
-        <h1 id="title">Progress Map</h1>
-        <img id="map_picture" src="img/canada-map.png">
-        </img>
-        <div id="buttons">
-            <a href="index.html">
-                <button id="YK_button" class = "map_buttons" onclick="setDifficulty(1)">YK</button>
-                <button id="NWT_button" class = "map_buttons" onclick="setDifficulty(1)">NWT</button>
-                <button id="BC_button" class = "map_buttons" onclick="setDifficulty(1)">BC</button>    
-                <button id="NVT_button" class = "map_buttons" onclick="setDifficulty(2)">NVT</button>
-                <button id="ALB_button" class = "map_buttons" onclick="setDifficulty(2)">ALB</button>
-                <button id="SAS_button" class = "map_buttons" onclick="setDifficulty(2)">SAS</button>
-                <button id="MAN_button" class = "map_buttons" onclick="setDifficulty(3)">MAN</button>
-                <button id="ON_button" class = "map_buttons" onclick="setDifficulty(3)">ON</button>
-            </a>
-        </div>
-        <script src = "level-selection.js"></script>
+        <div id="container" style="width: 1024px;height:600px;">
+			<h1 id="title">Progress Map</h1>
+            <div id="buttons">
+                <a href="index.html">
+                    <button id="YK_button" class = "map_buttons" onclick="setDifficulty(1)">YK</button>
+                    <button id="NWT_button" class = "map_buttons" onclick="setDifficulty(1)">NWT</button>
+                    <button id="BC_button" class = "map_buttons" onclick="setDifficulty(1)">BC</button>    
+                    <button id="NVT_button" class = "map_buttons" onclick="setDifficulty(2)">NVT</button>
+                    <button id="ALB_button" class = "map_buttons" onclick="setDifficulty(2)">ALB</button>
+                    <button id="SAS_button" class = "map_buttons" onclick="setDifficulty(2)">SAS</button>
+                    <button id="MAN_button" class = "map_buttons" onclick="setDifficulty(3)">MAN</button>
+                    <button id="ON_button" class = "map_buttons" onclick="setDifficulty(3)">ON</button>
+                </a>
+            </div>
+            <script src = "level-selection.js"></script>
+		</div>       
     </body> 
 </html>
