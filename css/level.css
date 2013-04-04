@@ -1,5 +1,5 @@
 #title{
-    text-align:center;
+    text-align:left;
     float:top;    
     z-index:100;
 }
@@ -13,72 +13,90 @@ body{
     background-image:url('../img/canada-map.png');
 }
 
-#map_picture{
-    height:100%;
-    z-index:0;
-}
-
 .map_buttons{
-    width:7%;
+    position:absolute;
+    width:50px;
+    height:50px;
+    border-radius:25px;
     opacity: 1;
-    border: 1px solid #000;
-    box-shadow: 0px 0px 20px #fff inset, 0px -0px 20px #000 inset;
-    -webkit-box-shadow: 0px 0px 20px #fff inset, 0px -0px 20px #000 inset;
-    -moz-box-shadow: 0px 0px 20px #fff inset, 0px -0px 20px #000 inset;
+    border: 3px solid #000;
+    box-shadow: 0px 5px 20px #FFFFFF inset, 0px -5px 20px #000000 inset;
 }
 
 #YK_button{
-    position:absolute;
-    top:40%;
-    left:5%;
+    background-color:#4ed7dc;
+    top:200px;
+    left:200px;
 }
 
 #NWT_button{
-    position:absolute;
-    top:50%;
-    left:18%;
+    background-color:#dee95c;
+    top:250px;
+    left:300px;
 }
 
 #BC_button{
-    position:absolute;
-    top:75%;
-    left:7%;
+    background-color:#dc4eca;
+    top:350px;
+    left:200px;
 }
 
 #NVT_button{
-    position:absolute;
-    top:57%;
-    left:38%;
+    background-color:#e8b446;
+    top:250px;
+    left:425px;
 }
 
 #ALB_button{
-    position:absolute;
-    top:77%;
-    left:18%;
+    background-color:#4ed7dc;
+    top:365px;
+    left:280px;
 }
 
 #SAS_button{
-    position:absolute;
-    top:79%;
-    left:28%;
+    background-color:#86c846;
+    top:400px;
+    left:350px;
 }
 
 #MAN_button{
-    position:absolute;
-    top:81%;
-    left:37%;
+    background-color:#ce6ced;
+    top:400px;
+    left:420px;
 }
 
 #ON_button{
-    position:absolute;
-    top:97%;
-    left:53%;
+    background-color:#dee95c;
+    top:450px;
+    left:525px;
 }
 
-#buttons{
-    position:absolute;
-    top:20%;
-    left:0;
-    width:100%;
-    height:100%;
+#QC_button{
+    background-color:#f587c5;
+    top:400px;
+    left:625px;
+}
+
+#NFL_button{
+    background-color:#4ed7dc;
+    top:340px;
+    left:700px;
+}
+
+#NB_button{
+    background-color:#dee95c;
+    top:500px;
+    left:705px;
+}
+
+#PEI_button{
+    background-color:#dee95c;
+    top:410px;
+    left:740px;
+}
+
+#NS_button{
+    background-color:#e8b446;
+    top:480px;
+    left:760px;
 }
