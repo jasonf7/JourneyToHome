@@ -1,8 +1,48 @@
 body{
-     background: -webkit-linear-gradient(left, green, blue);
-    
+     margin:0;  
 }
 h1,h2{
-    color:white;
+    color:white;    
+    text-shadow: 3px 3px 3px #363636;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+      -webkit-user-select: none;  
+      -moz-user-select: none;    
+      -ms-user-select: none;      
+      user-select: none;
 }
-    
+h2{
+     position: relative; 
+     bottom: 0; 
+}
+#logo{
+    height:450px;
+    z-index:10;
+    top:30%;
+    position:relative;
+    background-image: -webkit-linear-gradient(left, #45b279, #42aaa1);    
+    padding:5px;
+    border-radius:15px;    
+}
+#logo-shadow{    
+    box-shadow: 0 0 10px 5px #383838;
+    z-index:1;
+    position:fixed;   
+    padding:5px;
+    border-radius:15px;    
+}
+#container{
+    border: 1px solid black; 
+    text-align:center;
+    background:url('../img/grey_wash_wall.png');
+    z-index:-2;
+}
+#stripe{
+    position:absolute;
+    height:60%;
+    left:-10px;
+    width:1044px;
+    top:130px;
+    background:-webkit-linear-gradient(left, #46bd46, #419fd9);  
+    z-index:5;
+    box-shadow: 0 0 10px 5px #383838;
+}

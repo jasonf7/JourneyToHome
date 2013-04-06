@@ -3,12 +3,18 @@
         <title>Splash Screen</title>
         <meta name="viewport" id="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no" />
         <link rel="stylesheet" href="css/start.css" type="text/css">
+        <script src="lib/jquery-1.9.1.min.js"></script>
     </head>
     <body>
-        <h1 id="title">Journey to Home!</h1>
-        <a href="level.html">
-            <img id="logo_pic" src="img/logo.png"></img>
-        </a>
-        <h2 id="subtitle">Click the logo to begin...</h2>
+        <div id="container" style="width: 1024px;height:600px;">
+            <h1 id="title">Journey to Home</h1>
+            <div id="stripe"></div>
+            <div id="logo-shadow"></div>
+            <a href="level.html">
+                <img id="logo" src="img/logo.png"></img>
+            </a>
+            <h2 id="subtitle">Click the logo to begin...</h2>
+        </div>
+        <script src="js/start.js"></script>
     </body>
 </html>

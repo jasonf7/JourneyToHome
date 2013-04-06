@@ -38,7 +38,7 @@ var jsApp	=
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,     "jump", true);
-        me.debug.renderHitBox = true; //TEMPORARY
+    //    me.debug.renderHitBox = true; //TEMPORARY
         // start the game 
 		me.state.change(me.state.PLAY);
 	}

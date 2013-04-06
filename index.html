@@ -6,12 +6,13 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
 	</head>
-	<body bgcolor="black">
+	<body bgcolor="black" onload="generateNewQuestion()">
 		<div id="info" style="width: 1024px;" class="no-select">
 			<div id="jsapp">
 				<font color="#FFFFFF", style="position: absolute; font-size: 10px; font-family: Courier New">
 					<span id="framecounter" class="no-select">(0/0 fps)</span>
-				</font>
+				</font>                
+                <script src="js/game.js"></script>
 				<script type="text/javascript" src="lib/melonJS-0.9.6-min.js"></script>
 				<script type="text/javascript" src="js/entities.js"></script>
 				<script type="text/javascript" src="js/main.js"></script>                
@@ -29,10 +30,10 @@
                     </tr>
             </table>
 		</div>
-        <div id="math-container">
+        <div id="math-container" class="no-select">
             <div id="math-popup">
                 <button id="question">
-                    <p id = "input"> 50 &#10005; 50 =<br>2500</p>
+                    <p id ="input" ></p>
                 </button>
                 <table id="math-table" cellspacing="0" cellpadding="0">
                     <tr>
@@ -58,6 +59,6 @@
                 </table>
             </div> 
         </div>
-        <script src="js/game.js"></script>
+        <div id="math-info" class="no-select"></div>
 	</body>
 </html>

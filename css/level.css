@@ -1,11 +1,19 @@
 #title{
-    text-align:left;
-    float:top;    
+    position:absolute;
+    left:10%;
     z-index:100;
+    color:white;    
+    text-shadow: 3px 3px 3px #363636;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+      -webkit-user-select: none;  
+      -moz-user-select: none;    
+      -ms-user-select: none;      
+      user-select: none;
 }
 
 body{
-    margin:0;
+    margin:0;    
+    background-image:url('../img/grey_wash_wall.png');
 }
 
 #container{
@@ -85,8 +93,8 @@ body{
 
 #NB_button{
     background-color:#dee95c;
-    top:500px;
-    left:705px;
+    top:470px;
+    left:700px;
 }
 
 #PEI_button{

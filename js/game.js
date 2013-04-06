@@ -4,7 +4,6 @@ var operation = ADD;
 sessionStorage.difficulty=1;
 //temp
 generateNewQuestion();
-displayMath();
 /**
  * Generate random math questoin
  */
@@ -37,8 +36,9 @@ function generateNewQuestion(){
             answer = firstNum * secondNum;
         }
     }
+    displayMath();
 }
-var wrong = false;
+var wrong = false; var mathCount = 0;
 /**
  * Take button number input
  */
@@ -53,27 +53,37 @@ function takeInput(num){
     }else if(num == -1){
         if(userAnswer.trim() == answer){
             
-            userAnswer = "";                       
-            $("#math-popup").animate({
+            userAnswer = "";         
+            $("#input").html("");
+            $("#question").animate({
               opacity: 0.2
             });       
-            
-            // if(mathCount == 2){
-            //     mathCount = 0;                      
-            //     $("#sidebar-move").animate({ height:'toggle'});  
-            //     $("#sidebar-math").css("display","none");
-            //     $("#sidebar-move").css("display","block");
-            //     return;
-            // } 
-//            $("#input").html("");
-            $("#math-popup").animate({
-              opacity:1
-            });            
-            $("#math-popup").promise().done(function(){
+            $(".math-button").animate({
+              opacity:0.2
+            });           
+            $("#question").animate({
+              opacity:0.7
+            });  
+            $(".math-button").animate({
+              opacity:0.7
+            });  
+            $("#question").promise().done(function(){
                 generateNewQuestion();  
-                displayMath();
             });            
-            // mathCount++;            
+            mathCount++; 
+            if(mathCount == 3){
+                 $("#math-popup").animate({
+                  width:"toggle"
+                }); 
+                $("#math-info").animate({
+                  opacity:0
+                });
+                $("#math-info").promise().done(function(){
+                    $("#math-info").hide();
+                });
+                mathCount=0;
+            }
+                       
             return;
         }else{
             $("#question").css('background','-webkit-radial-gradient(circle, #FF9966, #CC3300)');
@@ -81,9 +91,24 @@ function takeInput(num){
         }
     }else if(num == -2){
         userAnswer = userAnswer.slice(0,userAnswer.length-1);
+        mathCount=0;
     }
     
     displayMath();
+}
+
+/**
+ * Display the math popup
+ */
+function popup(){
+    $("#math-info").show();
+    $("#math-info").animate({
+        opacity:0.7
+    });
+    $("#math-popup").animate({
+        width:"toggle"
+    });
+    generateNewQuestion();
 }
 
 /**
