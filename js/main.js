@@ -75,14 +75,16 @@ window.onReady(function(){
         me.input.triggerKeyEvent(me.input.KEY.UP, false);
     });
     
-    // $('#up').touchdown(function() {     
-    //     me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
-    //     me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
-    //     me.input.triggerKeyEvent(me.input.KEY.UP, true);
-    // });
-    // $('#up').touchup(function() {
-    //     me.input.triggerKeyEvent(me.input.KEY.UP, false);
-    // });
+   
+    $('#up').touchup(function() {
+         me.input.triggerKeyEvent(me.input.KEY.UP, false);
+    });
+    $('#left').touchup(function() {
+         me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
+    });
+    $('#right').touchup(function() {
+         me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
+    });
 
     $('#left').mousedown(function() {
         me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
