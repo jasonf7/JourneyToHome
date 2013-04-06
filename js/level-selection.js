@@ -28,4 +28,9 @@ function updateGame(finishedPlaces, availablePlaces){
 $(document).ready(function() {
     $('.map_buttons').css('height', $(".map_buttons").width());
     $(".map_buttons").css('border-radius', $(".map_buttons").width()/2);
+    $(document).bind('touchmove', function(e) {
+        e.preventDefault();
+        window.scroll(0,0);
+        return false;
+    });
 });
