@@ -43,11 +43,11 @@ body {
 
 #math-popup{ 
     position:absolute;
-    top:-10px;
+    top:0;
     background-image:url('../img/grey_wash_wall.png');
-    box-shadow: inset 0 0 10px 5px #383838;
+    box-shadow: inset 0 0px 10px 5px #383838;
     left:0;
-    height:620px;
+    height:599px;
     width:50%;
 }
 #math-table{
@@ -61,7 +61,7 @@ body {
     border-spacing: 4px;
 }
 #math-info{
-    height:600px;
+    height:599px;
     top:0;
     position:absolute;
     width:512px;

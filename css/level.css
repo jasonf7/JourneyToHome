@@ -17,7 +17,6 @@ body{
 }
 
 #container{
-    border: 1px solid black;  
     background-image:url('../img/canada-map.png');
 }
 
