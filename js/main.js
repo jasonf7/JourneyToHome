@@ -71,18 +71,24 @@ window.onReady(function(){
         me.input.triggerKeyEvent(me.input.KEY.UP, true);
     }).bind('touchend', function(){
         me.input.triggerKeyEvent(me.input.KEY.UP, false);
+    }).bind('touchmove', function(e) {
+        e.preventDefault();
     });
     
     $("#left").bind('touchstart', function(){
         me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
     }).bind('touchend', function(){
         me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
+    }).bind('touchmove', function(e) {
+        e.preventDefault();
     });
     
     $("#right").bind('touchstart', function(){
         me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
     }).bind('touchend', function(){
         me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
+    }).bind('touchmove', function(e) {
+        e.preventDefault();
     });
     
 //     $('#up').mousedown(function() {     
