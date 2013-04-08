@@ -93,7 +93,7 @@ window.onReady(function(){
             
     document.addEventListener('touchstart', function(e) {doTouch(e);}, false);
     document.addEventListener('touchmove', function(e) {doTouch(e);}, false);
-    ocument.addEventListener('touchend', function(e) {clear();}, false);
+    document.addEventListener('touchend', function(e) {clear();}, false);
 });
 
 function doTouch(e) {

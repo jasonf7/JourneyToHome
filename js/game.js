@@ -87,11 +87,14 @@ function takeInput(num){
             return;
         }else{
             $("#question").css('background','-webkit-radial-gradient(circle, #FF9966, #CC3300)');
-            wrong = true;
+            wrong = true;            
+            mathCount=0;
+            if(mathCount === 0){
+                mathCount = -1;
+            }
         }
     }else if(num == -2){
         userAnswer = userAnswer.slice(0,userAnswer.length-1);
-        mathCount=0;
     }
     
     displayMath();
