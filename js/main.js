@@ -98,22 +98,21 @@ window.onReady(function(){
 
 function doTouch(e) {
     e.preventDefault();
-    if($("#math-info").is(":visible")){
-        return;
-    }    
-    clear(); 
-    
-    for(var i = 0; i < e.touches.length; i++){
-        var touch = e.touches[i];
-    
-        var x = touch.clientX;
-        var y = touch.clientY;
-        if(y > 300){
-            me.input.triggerKeyEvent(me.input.KEY.UP, true);
-        }else if(x > 512){
-            me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
-        }else{
-            me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
+    if(!$("#math-info").is(":visible")){
+        clear(); 
+        
+        for(var i = 0; i < e.touches.length; i++){
+            var touch = e.touches[i];
+        
+            var x = touch.clientX;
+            var y = touch.clientY;
+            if(y > 300){
+                me.input.triggerKeyEvent(me.input.KEY.UP, true);
+            }else if(x > 512){
+                me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
+            }else{
+                me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
+            }
         }
     }
 }
