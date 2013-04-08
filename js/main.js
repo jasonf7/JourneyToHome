@@ -91,9 +91,9 @@ window.onReady(function(){
     //     me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
     // });
             
-    document.addEventListener('touchstart', function(e) {doTouch(e);}, false);
-    document.addEventListener('touchmove', function(e) {doTouch(e);}, false);
-    document.addEventListener('touchend', function(e) {clear();}, false);
+    document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
+    document.getElementById("jsapp").document.addEventListener('touchmove', function(e) {doTouch(e);}, false);
+    document.getElementById("jsapp").document.addEventListener('touchend', function(e) {clear();}, false);
 });
 
 function doTouch(e) {
@@ -114,6 +114,8 @@ function doTouch(e) {
                 me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
             }
         }
+    }else{
+        alert("shown");
     }
 }
 
