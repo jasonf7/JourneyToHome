@@ -67,70 +67,43 @@ var PlayScreen = me.ScreenObject.extend({
 window.onReady(function(){
 	jsApp.onload();
     
-    $("#up").bind('touchstart', function(){
-        me.input.triggerKeyEvent(me.input.KEY.UP, true);
-    }).bind('touchend', function(){
-        me.input.triggerKeyEvent(me.input.KEY.UP, false);
-    }).bind('touchmove', function(e) {
-        e.preventDefault();
-    });
-    
-    $("#left").bind('touchstart', function(){
-        me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
-    }).bind('touchend', function(){
-        me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
-    }).bind('touchmove', function(e) {
-        e.preventDefault();
-    });
-    
-    $("#right").bind('touchstart', function(){
-        me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
-    }).bind('touchend', function(){
-        me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
-    }).bind('touchmove', function(e) {
-        e.preventDefault();
-    });
-    
-//     $('#up').mousedown(function() {     
-//         me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
-//         me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
-//         me.input.triggerKeyEvent(me.input.KEY.UP, true);
-//     });
-//     $('#up').mouseup(function() {
-//         me.input.triggerKeyEvent(me.input.KEY.UP, false);
-//     });
-//     
-//    
-//     $('#up').touchup(function() {
-//          me.input.triggerKeyEvent(me.input.KEY.UP, false);
-//     });
-//     $('#left').touchup(function() {
-//          me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
-//     });
-//     $('#right').touchup(function() {
-//          me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
-//     });
-// 
-//     $('#left').mousedown(function() {
-//         me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
-//         me.input.triggerKeyEvent(me.input.KEY.UP, false);
-//         me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
-//     });
-//     $('#left').mouseup(function() {
-//         me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
-//     });
-//     
-//     $('#right').mousedown(function() {
-//         me.input.triggerKeyEvent(me.input.KEY.UP, false);
-//         me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
-//         me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
-//     });
-//     $('#right').mouseup(function() {
-//         me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
-//     });
-    $(document).bind('touchmove', function(e) {
-        e.preventDefault();
-        window.scroll(0,0);
-        return false;
-    });
+    // $("#up").bind('touchstart', function(){
+    //     me.input.triggerKeyEvent(me.input.KEY.UP, true);
+    // }).bind('touchend', function(){
+    //     me.input.triggerKeyEvent(me.input.KEY.UP, false);
+    // }).bind('touchmove', function(e) {
+    //     me.input.triggerKeyEvent(me.input.KEY.UP, false);
+    // });
+    // 
+    // $("#left").bind('touchstart', function(){
+    //     me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
+    // }).bind('touchend', function(){
+    //     me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
+    // }).bind('touchmove', function(e) {
+    //     eme.input.triggerKeyEvent(me.input.KEY.LEFT, false);
+    // });
+    // 
+    // $("#right").bind('touchstart', function(){
+    //     me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
+    // }).bind('touchend', function(){
+    //     me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
+    // }).bind('touchmove', function(e) {
+    //     me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
+    // });
+            
+    document.addEventListener('touchstart', function(e) {doTouch(e);}, false);
+    document.addEventListener('touchmove', function(e) {doTouch(e);}, false);
 });
+
+function doTouch(e) {
+    e.preventDefault();
+    String out = "";
+    for(var i = 0; i < e.touches.length; i++){
+        var touch = e.touches[i];
+    
+        var x = touch.clientX;
+        var y = touch.clientY;
+        out+=x+", "+y+"\n";
+    }
+    alert(out);    
+}
