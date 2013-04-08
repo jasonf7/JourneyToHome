@@ -97,7 +97,7 @@ window.onReady(function(){
 
 function doTouch(e) {
     e.preventDefault();
-    String out = "";
+    var out = "";
     for(var i = 0; i < e.touches.length; i++){
         var touch = e.touches[i];
     
