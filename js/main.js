@@ -93,17 +93,34 @@ window.onReady(function(){
             
     document.addEventListener('touchstart', function(e) {doTouch(e);}, false);
     document.addEventListener('touchmove', function(e) {doTouch(e);}, false);
+    ocument.addEventListener('touchend', function(e) {clear();}, false);
 });
 
 function doTouch(e) {
     e.preventDefault();
-    var out = "";
+    if($("#math-info").is(":visible")){
+        return;
+    }    
+    clear(); 
+    
     for(var i = 0; i < e.touches.length; i++){
         var touch = e.touches[i];
     
         var x = touch.clientX;
         var y = touch.clientY;
-        out+=x+", "+y+"\n";
+        if(y > 300){
+            me.input.triggerKeyEvent(me.input.KEY.UP, true);
+        }else if(x > 512){
+            me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
+        }else{
+            me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
+        }
     }
-    alert(out);    
+}
+
+function clear(){
+    //Reset triggers
+    me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
+    me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
+    me.input.triggerKeyEvent(me.input.KEY.UP, false);  
 }
