@@ -18,6 +18,8 @@ function setDifficulty(buttonNumber){
             sessionStorage.difficulty = 3;
         }
     }
+    
+    sessionStorage.currentLevel=buttonNumber;
 }
 
 function updateGame(finishedPlaces){
@@ -28,8 +30,9 @@ function updateGame(finishedPlaces){
     if(done.length !== 0){
         for(var j=0; j<finishedPlaces.length; j++){
             $("#button_"+finishedPlaces[j]).show();
-            $("#button_"+finishedPlaces[j]).css('box-shadow', '0px');
-            $("#button_"+finishedPlaces[j]).html('X');
+
+            $("#button_"+finishedPlaces[j]).html('&#10003;');
+            $("#button_"+finishedPlaces[j]).css('font-size','150%');
         }
         for(var k=0; k<finishedPlaces.length; k++){
             switch(finishedPlaces[k]){
@@ -135,13 +138,8 @@ function updateGame(finishedPlaces){
     else{
         $("#button_1").show();
     }
-      
+     
+     //Launch index.html
 }
 
-$(window).load(function(){
-    $(document).bind('touchmove', function(e) {
-        e.preventDefault();
-        window.scroll(0,0);
-        return false;
-    });
-});
+window.onload=(updateGame(done));
