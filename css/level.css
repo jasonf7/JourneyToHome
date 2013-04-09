@@ -18,85 +18,90 @@ body{
     width:50px;
     height:50px;
     border-radius:25px;
+    font-weight:bold;
     opacity: 1;
     border: 3px solid #000;
     box-shadow: 0px 5px 20px #FFFFFF inset, 0px -5px 20px #000000 inset;
 }
 
-#YK_button{
+.map_buttons:active{
+    box-shadow: 0px 15px 20px #FFFFFF inset, 0 0 20px #000000 inset;    
+}
+
+#button_1{
     background-color:#4ed7dc;
     top:200px;
     left:200px;
 }
 
-#NWT_button{
+#button_2{
     background-color:#dee95c;
     top:250px;
     left:300px;
 }
 
-#BC_button{
+#button_3{
     background-color:#dc4eca;
     top:350px;
     left:200px;
 }
 
-#NVT_button{
+#button_4{
     background-color:#e8b446;
     top:250px;
     left:425px;
 }
 
-#ALB_button{
+#button_5{
     background-color:#4ed7dc;
     top:365px;
     left:280px;
 }
 
-#SAS_button{
+#button_6{
     background-color:#86c846;
     top:400px;
     left:350px;
 }
 
-#MAN_button{
-    background-color:#ce6ced;
-    top:400px;
-    left:420px;
-}
-
-#ON_button{
-    background-color:#dee95c;
-    top:450px;
-    left:525px;
-}
-
-#QC_button{
-    background-color:#f587c5;
-    top:400px;
-    left:625px;
-}
-
-#NFL_button{
-    background-color:#4ed7dc;
-    top:340px;
-    left:700px;
-}
-
-#NB_button{
+#button_7{
     background-color:#dee95c;
     top:500px;
     left:705px;
 }
 
-#PEI_button{
+#button_8{
     background-color:#dee95c;
     top:410px;
     left:740px;
 }
 
-#NS_button{
+#button_9{
     background-color:#e8b446;
     top:480px;
     left:760px;
+}
+
+#button_10{
+    background-color:#f587c5;
+    top:400px;
+    left:625px;
+}
+
+#button_11{
+    background-color:#4ed7dc;
+    top:340px;
+    left:700px;
+}
+
+#button_12{
+    background-color:#ce6ced;
+    top:400px;
+    left:420px;
+}
+
+#button_13{
+    background-color:#dee95c;
+    top:450px;
+    left:525px;
 }
