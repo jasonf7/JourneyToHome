@@ -71,7 +71,7 @@ var AcornEntity = me.CollectableEntity.extend({
     },
  
     onCollision: function() {
-        popup();        
+        popup(true);        
         //remove it
         this.collidable = false;
         me.game.remove(this);
