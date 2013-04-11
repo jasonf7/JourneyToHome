@@ -106,7 +106,7 @@ function doTouch(e) {
         
             var x = touch.clientX;
             var y = touch.clientY;
-            if(y < 300){
+            if(y < 400){
                 me.input.triggerKeyEvent(me.input.KEY.UP, true);
             }else if(x > 512){
                 me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
