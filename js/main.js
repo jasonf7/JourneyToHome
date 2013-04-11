@@ -1,6 +1,7 @@
 // game resources
 var g_resources= [
     {name:"land-tiles",type:"image",src:"img/land-tiles.png"},
+    {name:"land-tiles-extended",type:"image",src:"img/land-tiles.png"},
     {name:"level1",type:"tmx",src:"data/level1.tmx"},
     {name:"chimpy",type:"image",src:"img/chimpy.png"},
     {name:"acorn",type:"image",src:"img/acorn.png"}
@@ -66,6 +67,7 @@ var PlayScreen = me.ScreenObject.extend({
 //bootstrap :)
 window.onReady(function(){
 	jsApp.onload();
+    popup(false);
     
     // $("#up").bind('touchstart', function(){
     //     me.input.triggerKeyEvent(me.input.KEY.UP, true);
