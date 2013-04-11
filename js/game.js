@@ -72,15 +72,7 @@ function takeInput(num){
             });            
             mathCount++; 
             if(mathCount == 3){
-                 $("#math-popup").animate({
-                  width:"toggle"
-                }); 
-                $("#math-info").animate({
-                  opacity:0
-                });
-                $("#math-info").promise().done(function(){
-                    $("#math-info").hide();
-                });
+                popup(false);
                 mathCount=0;
             }
                        
@@ -102,16 +94,29 @@ function takeInput(num){
 
 /**
  * Display the math popup
+ * @param show - false = hide,true = show
  */
-function popup(){
-    $("#math-info").show();
-    $("#math-info").animate({
-        opacity:0.7
-    });
-    $("#math-popup").animate({
-        width:"toggle"
-    });
-    generateNewQuestion();
+function popup(show){
+    if(show){
+        $("#math-info").show();
+        $("#math-info").animate({
+            opacity:0.7
+        });
+        $("#math-popup").animate({
+            width:"toggle"
+        });
+        generateNewQuestion();
+    }else{
+        $("#math-popup").animate({
+          width:"toggle"
+        }); 
+        $("#math-info").animate({
+          opacity:0
+        });
+        $("#math-info").promise().done(function(){
+            $("#math-info").hide();
+        }); 
+    }
 }
 
 /**
