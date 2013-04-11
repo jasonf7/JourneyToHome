@@ -108,7 +108,7 @@ function doTouch(e) {
         
             var x = touch.clientX;
             var y = touch.clientY;
-            if(y > 300){
+            if(y < 300){
                 me.input.triggerKeyEvent(me.input.KEY.UP, true);
             }else if(x > 512){
                 me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
@@ -125,5 +125,8 @@ function clear(){
     //Reset triggers
     me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
     me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
-    me.input.triggerKeyEvent(me.input.KEY.UP, false);  
+    me.input.triggerKeyEvent(me.input.KEY.UP, false);
+    if(window.PlayerEntity.vel.x!==0){
+        window.PlayerEntity.vel.x=0;
+    }
 }
