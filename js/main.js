@@ -1,7 +1,7 @@
 // game resources
 var g_resources= [
     {name:"land-tiles",type:"image",src:"img/land-tiles.png"},
-    {name:"land-tiles-extended",type:"image",src:"img/land-tiles-extended.png"},
+    {name:"land-tiles-simple",type:"image",src:"img/land-tiles-simple.png"},
     {name:"level1",type:"tmx",src:"data/level1.tmx"},
     {name:"chimpy",type:"image",src:"img/chimpy.png"},
     {name:"acorn",type:"image",src:"img/acorn.png"}
