@@ -69,7 +69,7 @@ window.onReady(function(){
 	jsApp.onload();
     popup(false);
     
-    document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
+    // document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
     document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);
     document.getElementById("jsapp").addEventListener('touchend', function(e) {clear();}, false);
 });
