@@ -69,7 +69,7 @@ window.onReady(function(){
 	jsApp.onload();
     popup(false);
     
-    document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
+    // document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
     document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);
     document.getElementById("jsapp").addEventListener('touchend', function(e) {clear();}, false);
 });
@@ -84,7 +84,7 @@ function doTouch(e) {
         
             var x = touch.clientX;
             var y = touch.clientY;
-            if(y > 300){
+            if(y < 400){
                 me.input.triggerKeyEvent(me.input.KEY.UP, true);
             }else if(x > 512){
                 me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);

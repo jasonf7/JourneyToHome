@@ -6,7 +6,7 @@
    <name>Journey to Home</name>
    <description>Help Chimpy reach Ontario!</description>
    <content src="start.html"/>
-   <rim:orientation mode="landsacpe"/>
+   <rim:orientation mode="landscape"/>
    <author>Chocolate Noodles</author>
  
 </widget>
