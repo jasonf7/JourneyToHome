@@ -6,7 +6,7 @@ var PlayerEntity = me.ObjectEntity.extend({
     init:function(x,y,settings){
         this.parent(x,y,settings);
         this.setVelocity(3,15);
-        this.gravity=0.98; //This is the default, change if needed..
+        this.gravity=0.8; //This is the default, change if needed..
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
     },
     
@@ -71,7 +71,7 @@ var AcornEntity = me.CollectableEntity.extend({
     },
  
     onCollision: function() {
-      //  popup(true);        
+        popup(true);        
         //remove it
         this.collidable = false;
         me.game.remove(this);
