@@ -11,6 +11,9 @@ var PlayerEntity = me.ObjectEntity.extend({
     },
     
     update:function(){ 
+        if($("#math-info").is(":visible")){
+           return false;
+        }
         
         if (me.input.isKeyPressed('left')) {
             // flip the sprite on horizontal axis

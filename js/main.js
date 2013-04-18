@@ -1,8 +1,8 @@
 // game resources
 var g_resources= [
     {name:"land-tiles",type:"image",src:"img/land-tiles.png"},
-    {name:"land-tiles-simple",type:"image",src:"img/land-tiles-simple.png"},
-    {name:"level1",type:"tmx",src:"data/level1.tmx"},
+    {name:"land-tiles-simple",type:"image",src:"data/land-tiles-simple.png"},
+    {name:"level1",type:"tmx",src:"img/level1.tmx"},
     {name:"chimpy",type:"image",src:"img/chimpy.png"},
     {name:"acorn",type:"image",src:"img/acorn.png"}
 ];
@@ -67,7 +67,6 @@ var PlayScreen = me.ScreenObject.extend({
 //bootstrap :)
 window.onReady(function(){
 	jsApp.onload();
-    popup(false);
     
     // document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
     document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);
