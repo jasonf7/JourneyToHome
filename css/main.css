@@ -74,3 +74,44 @@ body {
     position:absolute;
     border-radius: 4px;  
 }
+
+/** OFFSCREEN DIV **/
+#off_game_screen{
+    position:absolute;
+    top:0;
+    left:0;
+    width:1023px;
+    height:599px;
+    background-color:rgba(255,0,0,0.3);
+    text-align:center;
+    vertical-align:middle;
+}
+
+#screen_title{
+    color:white;
+    text-shadow: 3px 3px 3px #363636;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+
+.screen_buttons{
+    margin-top:25px;
+    margin-bottom:25px;
+    height:17%;
+    width:60%;
+    border: 2px solid #000000;
+    border-radius: 50px;
+    box-shadow: 0px 2px 20px #FFFFFF inset, 0px -2px 20px #000000 inset;
+    font-size:150%;
+}
+
+#screen_button1{
+
+}
+
+#screen_button2{
+
+}
+
+#screen_button3{
+
+}

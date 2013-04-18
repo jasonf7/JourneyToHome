@@ -67,6 +67,10 @@ var PlayScreen = me.ScreenObject.extend({
 //bootstrap :)
 window.onReady(function(){
 	jsApp.onload();
+<<<<<<< HEAD
+=======
+    // popup(false);
+>>>>>>> 3e58efb0cac6cbe2a0644b079fad6a3961c84a93
     
     // document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
     document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);

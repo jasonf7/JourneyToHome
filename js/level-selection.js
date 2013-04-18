@@ -1,7 +1,7 @@
 var EASY = 1; 
 var MEDIUM = 2; 
 var HARD = 3;
-var done = [1,2,4,11,10,8];
+var done = [1,2,2];
 
 function setDifficulty(buttonNumber){
     // EASY: 1-YK 2-NWT 3-BC 
