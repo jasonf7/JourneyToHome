@@ -67,15 +67,15 @@ var PlayScreen = me.ScreenObject.extend({
 //bootstrap :)
 window.onReady(function(){
 	jsApp.onload();    
-    // document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
-    document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);
+    document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
+   // document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);
     document.getElementById("jsapp").addEventListener('touchend', function(e) {clear();}, false);
 });
 
 function doTouch(e) {
     e.preventDefault();
     if(!$("#math-info").is(":visible")){
-        clear(); 
+    //    clear(); 
         
         for(var i = 0; i < e.touches.length; i++){
             var touch = e.touches[i];
@@ -91,7 +91,7 @@ function doTouch(e) {
             }
         }
     }else{
-        alert("shown");
+        // alert("shown");
     }
 }
 

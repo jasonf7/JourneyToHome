@@ -97,7 +97,7 @@ function takeInput(num){
  * @param show - false = hide,true = show
  */
 function popup(show){
-    console.log("SHOWING POPUp");
+    // console.log("SHOWING POPUp");
     if(show){
         $("#math-info").show();
         $("#math-info").animate({
