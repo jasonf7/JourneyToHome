@@ -74,12 +74,6 @@ window.onReady(function(){
 
 var touches = [];
 
-function onTouchEnd(e)
-{
-  cons.html(cons.html() + "<strong>TouchEnd:</strong><br/>");
- 
-}
-
 function doTouch(e) {
     e.preventDefault();
     if(!$("#math-info").is(":visible")){
