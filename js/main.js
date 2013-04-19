@@ -14,7 +14,7 @@ var jsApp	=
 	onload: function(){
 		
 		// init the video
-		if (!me.video.init('jsapp', 1024, 598, false, 1.0))
+		if (!me.video.init('jsapp', 1024, 595, false, 1.0))
 		{
 			alert("Sorry but your browser does not support html 5 canvas.");
             return;
@@ -39,7 +39,7 @@ var jsApp	=
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,     "jump", true);
-    me.debug.renderHitBox = true; //TEMPORARY
+ //   me.debug.renderHitBox = true; //TEMPORARY
         // start the game 
 		me.state.change(me.state.PLAY);
 	}
@@ -69,14 +69,14 @@ window.onReady(function(){
 	jsApp.onload();    
     document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
    // document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);
-    document.getElementById("jsapp").addEventListener('touchend', function(e) {clear();}, false);
+    document.getElementById("jsapp").addEventListener('touchend', function(e) {clear(e);}, false);
 });
 
 var touches = [];
 
 function doTouch(e) {
     e.preventDefault();
-    if(!$("#math-info").is(":visible")){
+    if($("#math-popup").css("display") !="none"){
         return;
     }
     var touchList = e.changedTouches;
@@ -95,7 +95,7 @@ function doTouch(e) {
     }
 }
 
-function clear(){
+function clear(e){
     var touchList = e.changedTouches;
     var touch;
     for(var i = 0; i < touchList.length; i++){
@@ -105,11 +105,11 @@ function clear(){
               if (touches[j].id == touch.id)
             {
                 if(touches[j].y < 400){
-                    me.input.triggerKeyEvent(me.input.KEY.UP, true);
+                    me.input.triggerKeyEvent(me.input.KEY.UP, false);
                 }else if(touches[j].x > 512){
-                    me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
+                    me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
                 }else{
-                    me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
+                    me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
                 }
                 touches.splice(j, 1);
              }

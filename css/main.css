@@ -1,6 +1,10 @@
-body {
-    margin:0;
-}/*HI*/
+body, html{
+    padding:0;
+    min-height: 100%;
+    height: 90px;
+    margin:0;;
+}
+
 .no-select{
   -webkit-user-select: none;  
   -moz-user-select: none;    
@@ -15,7 +19,7 @@ body {
     background-image:url('../img/grey_wash_wall.png');
     box-shadow: inset 0 0px 10px 5px #383838;
     left:0;
-    height:599px;
+    height:100%;
     display:none;
     width:50%;
 }
@@ -30,7 +34,7 @@ body {
     border-spacing: 4px;
 }
 #math-info{
-    height:599px;
+    height:100%;
     top:0;
     position:absolute;
     width:512px;
@@ -81,7 +85,7 @@ body {
     top:0;
     left:0;
     width:1023px;
-    height:599px;
+    height:100%;
     /** FOR DEMO ONLY **/
     display:none;
     
