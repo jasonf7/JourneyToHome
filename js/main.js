@@ -72,32 +72,57 @@ window.onReady(function(){
     document.getElementById("jsapp").addEventListener('touchend', function(e) {clear();}, false);
 });
 
+var touches = [];
+
+function onTouchEnd(e)
+{
+  cons.html(cons.html() + "<strong>TouchEnd:</strong><br/>");
+ 
+}
+
 function doTouch(e) {
     e.preventDefault();
     if(!$("#math-info").is(":visible")){
-    //    clear(); 
-        
-        for(var i = 0; i < e.touches.length; i++){
-            var touch = e.touches[i];
-        
-            var x = touch.clientX;
-            var y = touch.clientY;
-            if(y < 400){
-                me.input.triggerKeyEvent(me.input.KEY.UP, true);
-            }else if(x > 512){
-                me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
-            }else{
-                me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
-            }
+        return;
+    }
+    var touchList = e.changedTouches;
+    var touch;
+    for(var i = 0; i < touchList.length; i++){
+        var x = touchList[i].screenX, y = touchList[i].screenY;
+        if(y < 400){
+            me.input.triggerKeyEvent(me.input.KEY.UP, true);
+        }else if(x > 512){
+            me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
+        }else{
+            me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
         }
-    }else{
-        // alert("shown");
+        touch = {x: touchList[i].screenX, y: touchList[i].screenY, id: touchList[i].identifier};
+        touches.push(touch);
     }
 }
 
 function clear(){
-    //Reset triggers
-    me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
-    me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
-    me.input.triggerKeyEvent(me.input.KEY.UP, false);  
+    var touchList = e.changedTouches;
+    var touch;
+    for(var i = 0; i < touchList.length; i++){
+        touch = {x: touchList[i].screenX, y: touchList[i].screenY, id: touchList[i].identifier};
+        for (var j = touches.length - 1; j >= 0 ; j--)
+        {
+              if (touches[j].id == touch.id)
+            {
+                if(touches[j].y < 400){
+                    me.input.triggerKeyEvent(me.input.KEY.UP, true);
+                }else if(touches[j].x > 512){
+                    me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
+                }else{
+                    me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
+                }
+                touches.splice(j, 1);
+             }
+        }
+    }
+    // //Reset triggers
+    // me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
+    // me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
+    // me.input.triggerKeyEvent(me.input.KEY.UP, false);  
 }
