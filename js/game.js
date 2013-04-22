@@ -1,7 +1,6 @@
 var firstNum = 0, secondNum = 0, answer=0, userAnswer = "";
 var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
-var operation = ADD;
-sessionStorage.difficulty=3;
+var operation = ADD; 
 //temp
 generateNewQuestion();
 /**
@@ -97,7 +96,7 @@ function takeInput(num){
  * @param show - false = hide,true = show
  */
 function popup(show){
-    console.log("SHOWING POPUp");
+    // console.log("SHOWING POPUp");
     if(show){
         $("#math-info").show();
         $("#math-info").animate({
@@ -106,7 +105,7 @@ function popup(show){
         $("#math-popup").animate({
             width:"toggle"
         });
-        generateNewQuestion();
+        generateNewQuestion();        
     }else{
         $("#math-popup").animate({
           width:"toggle"

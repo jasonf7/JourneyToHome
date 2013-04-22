@@ -14,7 +14,7 @@ var jsApp	=
 	onload: function(){
 		
 		// init the video
-		if (!me.video.init('jsapp', 1024, 598, false, 1.0))
+		if (!me.video.init('jsapp', 1024, 595, false, 1.0))
 		{
 			alert("Sorry but your browser does not support html 5 canvas.");
             return;
@@ -39,7 +39,7 @@ var jsApp	=
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,     "jump", true);
-    me.debug.renderHitBox = true; //TEMPORARY
+ //   me.debug.renderHitBox = true; //TEMPORARY
         // start the game 
 		me.state.change(me.state.PLAY);
 	}
@@ -66,40 +66,57 @@ var PlayScreen = me.ScreenObject.extend({
 
 //bootstrap :)
 window.onReady(function(){
-	jsApp.onload();
-    // popup(false);
-    
-    // document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
-    document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);
-    document.getElementById("jsapp").addEventListener('touchend', function(e) {clear();}, false);
+	jsApp.onload();    
+    document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
+   // document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);
+    document.getElementById("jsapp").addEventListener('touchend', function(e) {clear(e);}, false);
 });
+
+var touches = [];
 
 function doTouch(e) {
     e.preventDefault();
-    if(!$("#math-info").is(":visible")){
-        clear(); 
-        
-        for(var i = 0; i < e.touches.length; i++){
-            var touch = e.touches[i];
-        
-            var x = touch.clientX;
-            var y = touch.clientY;
-            if(y < 400){
-                me.input.triggerKeyEvent(me.input.KEY.UP, true);
-            }else if(x > 512){
-                me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
-            }else{
-                me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
-            }
+    if($("#math-popup").css("display") !="none"){
+        return;
+    }
+    var touchList = e.changedTouches;
+    var touch;
+    for(var i = 0; i < touchList.length; i++){
+        var x = touchList[i].screenX, y = touchList[i].screenY;
+        if(y < 400){
+            me.input.triggerKeyEvent(me.input.KEY.UP, true);
+        }else if(x > 512){
+            me.input.triggerKeyEvent(me.input.KEY.RIGHT, true);
+        }else{
+            me.input.triggerKeyEvent(me.input.KEY.LEFT, true);
         }
-    }else{
-        alert("shown");
+        touch = {x: touchList[i].screenX, y: touchList[i].screenY, id: touchList[i].identifier};
+        touches.push(touch);
     }
 }
 
-function clear(){
-    //Reset triggers
-    me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
-    me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
-    me.input.triggerKeyEvent(me.input.KEY.UP, false);  
+function clear(e){
+    var touchList = e.changedTouches;
+    var touch;
+    for(var i = 0; i < touchList.length; i++){
+        touch = {x: touchList[i].screenX, y: touchList[i].screenY, id: touchList[i].identifier};
+        for (var j = touches.length - 1; j >= 0 ; j--)
+        {
+              if (touches[j].id == touch.id)
+            {
+                if(touches[j].y < 400){
+                    me.input.triggerKeyEvent(me.input.KEY.UP, false);
+                }else if(touches[j].x > 512){
+                    me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
+                }else{
+                    me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
+                }
+                touches.splice(j, 1);
+             }
+        }
+    }
+    // //Reset triggers
+    // me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
+    // me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
+    // me.input.triggerKeyEvent(me.input.KEY.UP, false);  
 }
