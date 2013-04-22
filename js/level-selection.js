@@ -1,7 +1,7 @@
 var EASY = 1; 
 var MEDIUM = 2; 
 var HARD = 3;
-var done = [1,2,2];
+var done = [];
 
 function setDifficulty(buttonNumber){
     // EASY: 1-YK 2-NWT 3-BC 
@@ -9,20 +9,57 @@ function setDifficulty(buttonNumber){
     // HARD:10-QC 11-NFL 12-MAN 13-ON
     if(buttonNumber<=3){
         sessionStorage.difficulty = 1;
-    }
-    else{
-        if(buttonNumber <= 9){
-            sessionStorage.difficulty = 2;
-        }
-        else{
-            sessionStorage.difficulty = 3;
-        }
+    }else if(buttonNumber <=9){
+        sessionStorage.difficulty = 2;
+    }else{
+        sessionStorage.difficulty = 3;
     }
     
-    sessionStorage.currentLevel=buttonNumber;
+    localStorage.currentLevel=buttonNumber;
+    if(done.indexOf(buttonNumber)<0){        
+        done.push(buttonNumber);        
+        saveProgress();
+    }
+}
+
+function loadProgress(){
+    var finding = true;
+    var loaded = localStorage.done;
+    if(typeof loaded === 'undefined' || loaded.length < 2){
+        console.log("empty");
+        //show 1....
+        $("#button_1").show();
+        return;
+    }
+    while(finding){
+        var add = loaded.substr(0,loaded.indexOf(' '));
+        console.log("adding: |"+add+"|");
+        done.push(parseInt(add));
+        loaded = loaded.substr(loaded.indexOf(' ')+1,loaded.length);
+        console.log(loaded);
+        if(loaded.length<2){
+            finding=false;
+        }
+    }    
+}
+
+function reset(){
+    console.log("REset");
+    localStorage.done = "";
+    done = [];
+    location.reload(true);
+}
+
+function saveProgress(){
+    var out = "";
+    for(var i=0;i< done.length;i++){
+        out+=done[i]+" ";
+    }
+    localStorage.done = out;
 }
 
 function updateGame(finishedPlaces){
+    console.log(finishedPlaces);
     for(var i=1; i<14; i++){
         $("#button_"+i).hide();
     }
@@ -130,7 +167,6 @@ function updateGame(finishedPlaces){
             break;
             
             default:
-                console.log("GG");
                 break;
             }
         }
@@ -138,8 +174,9 @@ function updateGame(finishedPlaces){
     else{
         $("#button_1").show();
     }
-     
-     //Launch index.html
 }
 
-window.onload=(updateGame(done));
+window.onload=function(){      
+    loadProgress();
+    updateGame(done);  
+};

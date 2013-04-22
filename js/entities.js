@@ -6,7 +6,7 @@ var PlayerEntity = me.ObjectEntity.extend({
     init:function(x,y,settings){
         this.parent(x,y,settings);
         this.setVelocity(3,15);
-        this.gravity=0.8; //This is the default, change if needed..
+        this.gravity=0.75; //This is the default, change if needed..
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
     },
     
