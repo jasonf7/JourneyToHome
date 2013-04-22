@@ -18,7 +18,7 @@ function setDifficulty(buttonNumber){
             sessionStorage.difficulty = 3;
         }
     }
-    
+    sessionStorage.state = "0";
     sessionStorage.currentLevel=buttonNumber;
 }
 

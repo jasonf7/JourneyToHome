@@ -50,9 +50,10 @@
         <div id="math-info" class="no-select"></div>
         <div id="off_game_screen">
             <h1 id="screen_title">Pause Screen</h1>
-            <button id="screen_button1" class="screen_buttons">Resume</button>
-            <button id="screen_button2" class="screen_buttons">Selection de niveau</button>
-            <button id="screen_button3" class="screen_buttons">Options</button>
+            <button id="screen_button1" class="screen_buttons" onclick="exitScreen(1)">Resume</button>
+            <button id="screen_button2" class="screen_buttons" onclick="exitScreen(2)">Selection de niveau</button>
+            <button id="screen_button3" class="screen_buttons" onclick="exitScreen(3)">Main Menu</button>
+            <script type="text/javascript" src="js/off-game.js"></script>
         </div>
 	</body>
 </html>
