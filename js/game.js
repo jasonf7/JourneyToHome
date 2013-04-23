@@ -1,8 +1,13 @@
 var firstNum = 0, secondNum = 0, answer=0, userAnswer = "";
 var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
 var operation = ADD; 
-//temp
-generateNewQuestion();
+
+window.onload=function(){        
+    if(isNaN(sessionStorage.difficulty)){
+        sessionStorage.difficulty=1;
+    }    
+};
+
 /**
  * Generate random math questoin
  */
@@ -35,6 +40,8 @@ function generateNewQuestion(){
             answer = firstNum * secondNum;
         }
     }
+    console.log(firstNum);
+    console.log(secondNum);
     displayMath();
 }
 var wrong = false; var mathCount = 0;
