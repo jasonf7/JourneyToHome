@@ -40,8 +40,6 @@ function generateNewQuestion(){
             answer = firstNum * secondNum;
         }
     }
-    console.log(firstNum);
-    console.log(secondNum);
     displayMath();
 }
 var wrong = false; var mathCount = 0;
@@ -109,13 +107,17 @@ function popup(show){
         $("#math-info").animate({
             opacity:0.7
         });
+        $("#math-popup").show();
         $("#math-popup").animate({
-            width:"toggle"
+             opacity:1
         });
         generateNewQuestion();        
     }else{
         $("#math-popup").animate({
-          width:"toggle"
+          opacity:0
+        });
+        $("#math-popup").promise().done(function(){
+            $("#math-popup").hide();
         }); 
         $("#math-info").animate({
           opacity:0

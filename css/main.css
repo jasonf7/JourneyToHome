@@ -1,6 +1,5 @@
 body, html{
     padding:0;
-    min-height: 100%;
     margin:0;
 }
 
@@ -40,6 +39,7 @@ body, html{
     height:599px;
     display:none;
     width:50%;
+    opacity:0;
 }
 #math-table{
     width:80%;

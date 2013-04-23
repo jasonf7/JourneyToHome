@@ -33,10 +33,8 @@ function loadProgress(){
     }
     while(finding){
         var add = loaded.substr(0,loaded.indexOf(' '));
-        console.log("adding: |"+add+"|");
         done.push(parseInt(add));
         loaded = loaded.substr(loaded.indexOf(' ')+1,loaded.length);
-        console.log(loaded);
         if(loaded.length<2){
             finding=false;
         }
@@ -44,7 +42,6 @@ function loadProgress(){
 }
 
 function reset(){
-    console.log("REset");
     localStorage.done = "";
     done = [];
     location.reload(true);
@@ -59,7 +56,6 @@ function saveProgress(){
 }
 
 function updateGame(finishedPlaces){
-    console.log(finishedPlaces);
     for(var i=1; i<14; i++){
         $("#button_"+i).hide();
     }
