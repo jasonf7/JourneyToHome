@@ -80,3 +80,23 @@ var AcornEntity = me.CollectableEntity.extend({
         me.game.remove(this);
     } 
 });
+
+/**
+ * THE WOLF/PREDATOR
+ */
+var WolfEntity = me.CollectableEntity.extend({
+    
+    init: function(x, y, settings) {
+        console.log("wolf placed");
+        this.parent(x, y, settings);
+        this.hit = false;
+    },
+ 
+    onCollision: function() {
+        console.log("HIT WOLF");
+        if(!this.hit){            
+            popup(true);
+        }
+        this.hit = true;
+    } 
+});

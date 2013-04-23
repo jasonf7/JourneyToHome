@@ -58,5 +58,11 @@
     <property name="spritewidth" value="40"/>
    </properties>
   </object>
+  <object name="WolfEntity" x="800" y="439" width="79" height="39">
+   <properties>
+    <property name="image" value="fail_wolf"/>
+    <property name="spritewidth" value="80"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
