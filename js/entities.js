@@ -74,7 +74,7 @@ var AcornEntity = me.CollectableEntity.extend({
     },
  
     onCollision: function() {
-        popup(true);        
+      //  popup(true);        
         //remove it
         this.collidable = false;
         me.game.remove(this);
@@ -84,19 +84,75 @@ var AcornEntity = me.CollectableEntity.extend({
 /**
  * THE WOLF/PREDATOR
  */
-var WolfEntity = me.CollectableEntity.extend({
-    
+var WolfEntity = me.ObjectEntity.extend({
     init: function(x, y, settings) {
-        console.log("wolf placed");
+        // define this here instead of tiled
+        settings.image = "fail_wolf";
+        settings.spritewidth = 64;
+ 
+        // call the parent constructor
         this.parent(x, y, settings);
-        this.hit = false;
+ 
+        this.startX = x;
+        this.endX = x + settings.width - settings.spritewidth;
+ 
+        // make him start from the right
+        this.pos.x = x;
+        this.walkLeft = false;
+        this.flipX(!this.walkLeft);
+        // walking & jumping speed 
+        this.setVelocity(2, 6);
+ 
+        // make it collidable
+        this.collidable = true;
+        // make it a enemy object
+        this.type = me.game.ENEMY_OBJECT;
+ 
     },
  
-    onCollision: function() {
-        console.log("HIT WOLF");
-        if(!this.hit){            
-            popup(true);
+    // call by the engine when colliding with another object
+    // obj parameter corresponds to the other object (typically the player) touching this one
+    onCollision: function(res, obj) {
+        //MATH QUESTIONS! YAY        
+    },
+ 
+    // manage the enemy movement
+    update: function() {
+        var player = me.game.getEntityByName("mainPlayer")[0];
+        // do nothing if not visible
+        if (!this.inViewport)
+            return false;
+ 
+        if (this.alive) {
+            if(this.pos.x >= player.pos.x){
+                this.walkLeft = true;
+            }else{
+                this.walkLeft = false;
+            }
+            // if (this.walkLeft && this.pos.x <= this.startX) {
+            //     this.walkLeft = false;
+            // } else if (!this.walkLeft && this.pos.x+1 >= this.endX){
+            //     this.walkLeft = true;
+            // }
+            //console.log(this.pos.x+" / "+this.endX+" / "+this.startX);
+            // make it walk
+            this.flipX(!this.walkLeft);
+            this.vel.x += (this.walkLeft) ? -this.accel.x * me.timer.tick : this.accel.x * me.timer.tick;
+                 
+        } else {
+            this.vel.x = 0;
         }
-        this.hit = true;
-    } 
+         
+        // check and update movement
+        this.updateMovement();
+         
+        // update animation if necessary
+        if (this.vel.x!=0 || this.vel.y!=0) {
+            // update object animation
+            this.parent();
+            return true;
+        }
+        return false;
+    }
 });
+    
