@@ -4,7 +4,8 @@ var g_resources= [
     {name:"land-tiles-simple",type:"image",src:"img/land-tiles-simple.png"},
     {name:"level1",type:"tmx",src:"data/level1.tmx"},
     {name:"chimpy",type:"image",src:"img/chimpy.png"},
-    {name:"acorn",type:"image",src:"img/acorn.png"}
+    {name:"acorn",type:"image",src:"img/acorn.png"},
+    {name:"fail_wolf",type:"image",src:"img/fail_wolf.png"}
 ];
 
 
@@ -36,6 +37,7 @@ var jsApp	=
 		me.state.set(me.state.PLAY, new PlayScreen());
         me.entityPool.add("mainPlayer",PlayerEntity);
         me.entityPool.add("AcornEntity", AcornEntity);
+        me.entityPool.add("WolfEntity", WolfEntity);
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,     "jump", true);
@@ -54,8 +56,7 @@ var PlayScreen = me.ScreenObject.extend({
         //Load a level
         me.levelDirector.loadLevel("level1");
 	},
-	
-	
+		
 	/* --- action to perform when game is finished (state change)---	*/
 	onDestroyEvent: function(){
 	
@@ -114,9 +115,5 @@ function clear(e){
                 touches.splice(j, 1);
              }
         }
-    }
-    // //Reset triggers
-    // me.input.triggerKeyEvent(me.input.KEY.LEFT, false);
-    // me.input.triggerKeyEvent(me.input.KEY.RIGHT, false);
-    // me.input.triggerKeyEvent(me.input.KEY.UP, false);  
+    } 
 }

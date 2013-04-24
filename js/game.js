@@ -1,8 +1,13 @@
 var firstNum = 0, secondNum = 0, answer=0, userAnswer = "";
 var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
 var operation = ADD; 
-//temp
-generateNewQuestion();
+
+window.onload=function(){        
+    if(isNaN(sessionStorage.difficulty)){
+        sessionStorage.difficulty=1;
+    }    
+};
+
 /**
  * Generate random math questoin
  */
@@ -102,13 +107,17 @@ function popup(show){
         $("#math-info").animate({
             opacity:0.7
         });
+        $("#math-popup").show();
         $("#math-popup").animate({
-            width:"toggle"
+             opacity:1
         });
         generateNewQuestion();        
     }else{
         $("#math-popup").animate({
-          width:"toggle"
+          opacity:0
+        });
+        $("#math-popup").promise().done(function(){
+            $("#math-popup").hide();
         }); 
         $("#math-info").animate({
           opacity:0

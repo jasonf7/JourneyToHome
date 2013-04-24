@@ -9,14 +9,17 @@
 	<body bgcolor="black" onload="generateNewQuestion()">
 		<div id="info" style="width: 1024px;" class="no-select">
 			<div id="jsapp">
-				<font color="#FFFFFF", style="position: absolute; font-size: 10px; font-family: Courier New">
+			<!--	<font color="#FFFFFF", style="position: absolute; font-size: 10px; font-family: Courier New">
 					<span id="framecounter" class="no-select">(0/0 fps)</span>
-				</font>                
+				</font>    -->            
                 <script src="js/game.js"></script>
 				<script type="text/javascript" src="lib/melonJS-0.9.6-min.js"></script>
 				<script type="text/javascript" src="js/entities.js"></script>
 				<script type="text/javascript" src="js/main.js"></script>                
 			</div>
+            <a href="level.html">
+                <buttons id="backbutton">Back</button>
+            </a>
 		</div>
         <div id="math-container" class="no-select">
             <div id="math-popup">
@@ -48,12 +51,13 @@
             </div> 
         </div>
         <div id="math-info" class="no-select"></div>
-        <div id="off_game_screen">
+    <!--    <div id="off_game_screen">
             <h1 id="screen_title">Pause Screen</h1>
             <button id="screen_button1" class="screen_buttons" onclick="exitScreen(1)">Resume</button>
             <button id="screen_button2" class="screen_buttons" onclick="exitScreen(2)">Selection de niveau</button>
             <button id="screen_button3" class="screen_buttons" onclick="exitScreen(3)">Main Menu</button>
-            <script type="text/javascript" src="js/off-game.js"></script>
-        </div>
+            TEMPORARY, THIS WAS CAUSING ERRORS! 
+          <script type="text/javascript" src="js/off-game.js"></script>
+        </div> -->
 	</body>
 </html>
