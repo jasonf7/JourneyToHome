@@ -116,7 +116,11 @@ var WolfEntity = me.ObjectEntity.extend({
         //MATH QUESTIONS! YAY        
     },
     // manage the enemy movement
-    update: function() {        
+    update: function() {  
+        if($("#off_game_screen").css("display") !="none"){
+            return;
+        }
+        
         var playerRadius = 50;
         var player = me.game.getEntityByName("mainPlayer")[0];
         // do nothing if not visible

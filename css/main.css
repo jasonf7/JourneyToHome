@@ -125,12 +125,12 @@ body, html{
     position:absolute;
     top:0;
     left:0;
-    width:1023px;
+    width:1024px;
     height:100%;
     /** FOR DEMO ONLY **/
     display:none;
     
-    background-color:rgba(255,0,0,0.3);
+    background-color:rgba(140,0,0,0.5);
     text-align:center;
     vertical-align:middle;
 }
