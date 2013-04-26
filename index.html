@@ -24,7 +24,7 @@
                 <img src="img/energy.png">
             </div>
             <a href="#">
-                <div id="pausebutton">||</div>
+                <div id="pausebutton" onclick=$(off_game_screen).show()>||</div>
             </a>
 		</div>
         <div id="math-container" class="no-select">
@@ -57,13 +57,12 @@
             </div> 
         </div>
         <div id="math-info" class="no-select"></div>
-    <!--    <div id="off_game_screen">
+        <div id="off_game_screen">
             <h1 id="screen_title">Pause Screen</h1>
-            <button id="screen_button1" class="screen_buttons" onclick="exitScreen(1)">Resume</button>
-            <button id="screen_button2" class="screen_buttons" onclick="exitScreen(2)">Selection de niveau</button>
-            <button id="screen_button3" class="screen_buttons" onclick="exitScreen(3)">Main Menu</button>
-            TEMPORARY, THIS WAS CAUSING ERRORS! 
-          <script type="text/javascript" src="js/off-game.js"></script>
-        </div> -->
+            <button id="screen_button1" class="screen_buttons" onclick="exitGame(1)">Resume</button>
+            <button id="screen_button2" class="screen_buttons" onclick="exitGame(2)">Selection de niveau</button>
+            <button id="screen_button3" class="screen_buttons" onclick="exitGame(3)">Main Menu</button>
+           <script type="text/javascript" src="js/off-game.js"></script>
+        </div>
 	</body>
 </html>
