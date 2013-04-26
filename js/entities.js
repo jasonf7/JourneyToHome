@@ -115,15 +115,15 @@ var WolfEntity = me.ObjectEntity.extend({
     onCollision: function(res, obj) {
         //MATH QUESTIONS! YAY        
     },
- 
     // manage the enemy movement
-    update: function() {
+    update: function() {        
+        var playerRadius = 50;
         var player = me.game.getEntityByName("mainPlayer")[0];
         // do nothing if not visible
         if (!this.inViewport)
             return false;
  
-        if (this.alive) {
+        if (this.alive && !((player.pos.x+playerRadius>this.pos.x) && (player.pos.x-playerRadius<this.pos.x))) {
             if(this.pos.x >= player.pos.x){
                 this.walkLeft = true;
             }else{

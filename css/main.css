@@ -9,23 +9,47 @@ body, html{
   -ms-user-select: none;      
   user-select: none;
 }
-#backbutton{
+#backbutton,#pausebutton{
     position:absolute;
     left:924px;
-    height:30px;
+    height:40px;
     width:80px;
     top:10px;
     background:rgba(255,255,255,0.5);
     border-radius:10px;
     text-align:center;
-    padding-top:10px;
+    padding-top:20px;
     color:black;
     font-family:"Trebuchet MS", Helvetica, sans-serif;  
     font-weight: bold;
+    cursor:default;
 }
 
-#backbutton:active{
+#energybar{
+    position:absolute;
+    left:120px;
+    height:40px;
+    width:764px;
+    text-align:center;
+    padding:10px;
+    top:10px;
+    background:rgba(255,255,255,0.5);
+    border-radius:10px;
+    cursor:default;
+}
+
+#backbutton:active,#pausebutton:active{
    background:rgba(255,255,255,1);
+}
+
+#pausebutton{
+    left:20px;
+    padding:10px;
+    height:40px;
+    width:60px;
+    font-size:180%;
+    font-family:"Verdana", Helvetica, sans-serif;  
+    font-weight:bolder;
 }
 
 /** MATH DIV **/
