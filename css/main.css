@@ -30,12 +30,17 @@ body, html{
     left:120px;
     height:40px;
     width:764px;
-    text-align:center;
+    text-align:left;
     padding:10px;
     top:10px;
     background:rgba(255,255,255,0.5);
     border-radius:10px;
     cursor:default;
+}
+#bar{
+    position:absolute;
+    left:20px;
+    clip:rect(0px,564px,564px,0px);
 }
 
 #backbutton:active,#pausebutton:active{
