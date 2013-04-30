@@ -5,7 +5,8 @@ var g_resources= [
     {name:"level1",type:"tmx",src:"data/level1.tmx"},
     {name:"chimpy",type:"image",src:"img/chimpy.png"},
     {name:"acorn",type:"image",src:"img/acorn.png"},
-    {name:"fail_wolf",type:"image",src:"img/fail_wolf.png"}
+    {name:"fail_wolf",type:"image",src:"img/fail_wolf.png"},    
+    {name:"croc",type:"image",src:"img/croc.png"}
 ];
 
 
@@ -38,10 +39,11 @@ var jsApp	=
         me.entityPool.add("mainPlayer",PlayerEntity);
         me.entityPool.add("AcornEntity", AcornEntity);
         me.entityPool.add("WolfEntity", WolfEntity);
+        me.entityPool.add("CrocEntity",CrocEntity);
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,     "jump", true);
- //   me.debug.renderHitBox = true; //TEMPORARY
+  //me.debug.renderHitBox = true; //TEMPORARY
         // start the game 
 		me.state.change(me.state.PLAY);
 	}

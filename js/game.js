@@ -2,11 +2,11 @@ var firstNum = 0, secondNum = 0, answer=0, userAnswer = "";
 var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
 var operation = ADD; 
 
-window.onload=function(){        
-    if(isNaN(sessionStorage.difficulty)){
+$(document).ready(function() {
+    if(isNaN(sessionStorage.difficulty) || typeof sessionStorage.difficulty === 'undefined'){
         sessionStorage.difficulty=1;
-    }    
-};
+    }  
+});
 
 /**
  * Generate random math questoin

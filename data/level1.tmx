@@ -66,6 +66,6 @@
     <property name="spritewidth" value="40"/>
    </properties>
   </object>
-  <object name="WolfEntity" x="1" y="438" width="957" height="39"/>
+  <object name="CrocEntity" x="1" y="438" width="957" height="39"/>
  </objectgroup>
 </map>
