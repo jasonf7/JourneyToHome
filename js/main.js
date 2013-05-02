@@ -6,7 +6,11 @@ var g_resources= [
     {name:"chimpy",type:"image",src:"img/chimpy.png"},
     {name:"acorn",type:"image",src:"img/acorn.png"},
     {name:"fail_wolf",type:"image",src:"img/fail_wolf.png"},    
-    {name:"croc",type:"image",src:"img/croc.png"}
+    {name:"croc",type:"image",src:"img/croc.png"},
+    {name:"food-apple",type:"image",src:"img/food-apple.png"},
+    {name:"food-banana",type:"image",src:"img/food-banana.png"},
+    {name:"food-drumstick",type:"image",src:"img/food-drumstick.png"},
+    {name:"food-fish",type:"image",src:"img/food-fish.png"}
 ];
 
 
@@ -39,6 +43,7 @@ var jsApp	=
         me.entityPool.add("mainPlayer",PlayerEntity);
         me.entityPool.add("AcornEntity", AcornEntity);
         me.entityPool.add("WolfEntity", WolfEntity);
+        me.entityPool.add("FoodEntity", WolfEntity);
         me.entityPool.add("CrocEntity",CrocEntity);
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");

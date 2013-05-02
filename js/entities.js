@@ -69,14 +69,32 @@ var PlayerEntity = me.ObjectEntity.extend({
 var AcornEntity = me.CollectableEntity.extend({
     
     init: function(x, y, settings) {
-        console.log("acorn added");
         this.parent(x, y, settings);
     },
  
     onCollision: function() {
-    //   popup(true);        
+        // ADD COINS... EVENTUALLY  
+                    
+   // $('#sound_element').html("<embed src='data/boulder_push.wav' hidden=true autostart=true loop=false>");
+        //remove it
+        this.collidable = false;
+        me.game.remove(this);
+    } 
+});
+
+/**
+ *  FOOOD!
+ */
+var FoodEntity = me.CollectableEntity.extend({
     
-    $('#sound_element').html("<embed src='data/boulder_push.wav' hidden=true autostart=true loop=false>");
+    init: function(x, y, settings) {
+        this.parent(x, y, settings);
+    },
+ 
+    onCollision: function() {
+        mathMax = 1;
+        popup(true);        
+    
         //remove it
         this.collidable = false;
         me.game.remove(this);
@@ -116,7 +134,13 @@ function Predator(image,width){
         // call by the engine when colliding with another object
         // obj parameter corresponds to the other object (typically the player) touching this one
         onCollision: function(res, obj) {
-            //MATH QUESTIONS! YAY        
+            //MATH QUESTIONS! YAY     
+            mathMax = 3;
+            popup(true);        
+        
+            //remove it
+            this.collidable = false;
+            me.game.remove(this);
         },
         // manage the enemy movement
         update: function() {  

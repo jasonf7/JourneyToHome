@@ -1,11 +1,12 @@
 var firstNum = 0, secondNum = 0, answer=0, userAnswer = "";
 var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
 var operation = ADD; 
-
+var energy = 100;
 $(document).ready(function() {
     if(isNaN(sessionStorage.difficulty) || typeof sessionStorage.difficulty === 'undefined'){
         sessionStorage.difficulty=1;
     }  
+   updateEnergy();
 });
 
 /**
@@ -42,11 +43,12 @@ function generateNewQuestion(){
     }
     displayMath();
 }
-var wrong = false; var mathCount = 0;
+var wrong = false; var mathCount = 0, mathMax=3;
 /**
  * Take button number input
  */
 function takeInput(num){
+    console.log(energy);
     if(wrong){
         $("#question").css('background','-webkit-radial-gradient(circle, #97cc4e, #65ad49)');
         wrong = false;
@@ -75,7 +77,13 @@ function takeInput(num){
                 generateNewQuestion();  
             });            
             mathCount++; 
-            if(mathCount == 3){
+            if(energy <= 75){                    
+                energy += 25;
+            }else if(energy <100){
+                energy = 100;
+            }
+            updateEnergy();
+            if(mathCount == mathMax){
                 popup(false);
                 mathCount=0;
             }
@@ -85,9 +93,13 @@ function takeInput(num){
             $("#question").css('background','-webkit-radial-gradient(circle, #FF9966, #CC3300)');
             wrong = true;            
             mathCount=0;
-            if(mathCount === 0){
-                mathCount = -1;
+            if(energy < 25){                    
+                energy = 1; 
+                //GAME OVER
+            }else{
+                energy -= 25;
             }
+            updateEnergy();
         }
     }else if(num == -2){
         userAnswer = userAnswer.slice(0,userAnswer.length-1);
@@ -148,4 +160,10 @@ function displayMath(){
         display+=secondNum+"<br>"+userAnswer;
     }
     $("#input").html(display);
+}
+
+/** Updates energy bar **/
+function updateEnergy(){
+    var amount = 750 * (energy/100);
+    $("#bar").css("clip","rect(0px,"+amount+"px,"+amount+"px,0px)")
 }
