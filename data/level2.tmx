@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="15" tilewidth="40" tileheight="40" backgroundcolor="#58e2e2">
+ <tileset firstgid="1" source="land-tiles-client.tsx"/>
+ <tileset firstgid="29" source="land-tiles-simple.tsx"/>
+ <layer name="Tile Layer 1" width="50" height="15">
+  <data encoding="base64" compression="zlib">
+   eJzt0k8LRGAQgPE3ZIXYkP3DbU9ubjjs9/9a+7g5bRlqhjz1S5nLTL3OXZ05Dz4C4dxKIW6IhHMrxUiQCudWypDjLpxbqUCJSji3Uo0HnsK5RhMGjBu/ms039Mo7bO1IN7zwRoN28d/qDWve8cfZvGFtnfYCO/XVXuBPPz6XCn0=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="50" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2BoAEkglkLD0khYhggzLIHYHIgtsNAG1HcyTQDIDyC3WgOxDRDbArEdEt964JxGNCDGDzYD5jriACE/IPMHKyDFD4M1PmB5F93N9kDsgEWcFvFBrN3UFKd2fAyEH2Diw8EP1IqPgfaDPgOkTlSG0uZIcsTQg8EPtgyI+NBEClti/WCDpN6WApoafsGWPwB+ZEPB
+  </data>
+ </layer>
+ <layer name="collision" width="50" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2BoADkglsWD5YgwA59+Weo7GSsg5E5C8oTcOhT8QUx4D3Z/EJtmBrM/SEn31PYHobxIKibFXmoBepYb2OymljkD5QeY/aSoxRbnA+0HmBuwiZGSfgfaDyCA7h5y8tZg8AcIILvHhkx9gwGA3GGNRAMAuWYLgA==
+  </data>
+ </layer>
+ <objectgroup name="entities" width="50" height="15">
+  <object name="FoodEntity" x="1" y="441" width="40" height="40">
+   <properties>
+    <property name="image" value="food-apple"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="FoodEntity" x="1161" y="203" width="40" height="40">
+   <properties>
+    <property name="image" value="food-banana"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="FoodEntity" x="1440" y="2" width="40" height="40">
+   <properties>
+    <property name="image" value="food-drumstick"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="408" y="335" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1041" y="183" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1913" y="19" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1840" y="439" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="CrocEntity" x="-3" y="441" width="240" height="40"/>
+  <object name="mainPlayer" x="81" y="400" width="40" height="80">
+   <properties>
+    <property name="image" value="chimpy"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="CrocEntity" x="883" y="278" width="280" height="40"/>
+  <object name="AcornEntity" x="958" y="183" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="FlagEntity" x="1960" y="398" width="40" height="80">
+   <properties>
+    <property name="image" value="flag1x2"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
