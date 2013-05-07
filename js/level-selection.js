@@ -82,105 +82,92 @@ function updateGame(finishedPlaces){
         }
         for(var k=0; k<finishedPlaces.length; k++){
             switch(finishedPlaces[k]){
-            case 1:
-                if(finishedPlaces.indexOf(2)===-1){
-                    $("#button_2").show();
-                }
-                if(finishedPlaces.indexOf(3)===-1){
-                    $("#button_3").show();
-                }
-            break;
-            
-            case 2:
-                if(finishedPlaces.indexOf(4)===-1){
-                    $("#button_4").show();
-                }
-                if(finishedPlaces.indexOf(5)===-1){
-                    $("#button_5").show();
-                }
-                if(finishedPlaces.indexOf(6)===-1){
-                    $("#button_6").show();
-                }
-            break;
-            
-            case 3:
-                if(finishedPlaces.indexOf(5)===-1){
-                    $("#button_5").show();
-                }
-            break;
-            
-            case 4:
-                if(finishedPlaces.indexOf(11)===-1){
-                    $("#button_11").show();
-                }
-                if(finishedPlaces.indexOf(12)===-1){
-                    $("#button_12").show();
-                }
-            break;
-            
-            case 5:
-                if(finishedPlaces.indexOf(6)===-1){
-                    $("#button_6").show();
-                }
-            break;
-            
-            case 6:
-                if(finishedPlaces.indexOf(12)===-1){
-                    $("#button_12").show();
-                }
-            break;
-            
-            // case 7: no need
-            //     if(finishedPlaces.indexOf(12)===-1){
-            //         $("#button_12").show();
-            //     }
-            // break;
-            
-            case 8:
-                if(finishedPlaces.indexOf(9)===-1){
-                    $("#button_9").show();
-                }
-            break;
-            
-            case 9:
-                if(finishedPlaces.indexOf(7)===-1){
-                    $("#button_7").show();
-                }
-            break;
-            
-            case 10:
-                if(finishedPlaces.indexOf(7)===-1){
-                    $("#button_7").show();
-                }
-                if(finishedPlaces.indexOf(13)===-1){
-                    $("#button_13").show();
-                }
-            break;
-            
-            case 11:
-                if(finishedPlaces.indexOf(8)===-1){
-                    $("#button_8").show();
-                }
-                if(finishedPlaces.indexOf(10)===-1){
-                    $("#button_10").show();
-                }
-            break;
-            
-            case 12:
-                if(finishedPlaces.indexOf(4)===-1){
-                    $("#button_4").show();
-                }
-                if(finishedPlaces.indexOf(13)===-1){
-                    $("#button_13").show();
-                }
-            break;
-            
-            default:
+                case 1:
+                    if(finishedPlaces.indexOf(2)===-1){
+                        $("#button_2").show();
+                    }
+                    if(finishedPlaces.indexOf(3)===-1){
+                        $("#button_3").show();
+                    }
                 break;
-            }
+                
+                case 2:
+                    if(finishedPlaces.indexOf(4)===-1){
+                        $("#button_4").show();
+                    }
+                    if(finishedPlaces.indexOf(5)===-1){
+                        $("#button_5").show();
+                    }
+                    if(finishedPlaces.indexOf(6)===-1){
+                        $("#button_6").show();
+                    }
+                break;
+                
+                case 3:
+                    if(finishedPlaces.indexOf(5)===-1){
+                        $("#button_5").show();
+                    }
+                break;
+                
+                case 4:
+                    if(finishedPlaces.indexOf(11)===-1){
+                        $("#button_11").show();
+                    }
+                    if(finishedPlaces.indexOf(12)===-1){
+                        $("#button_12").show();
+                    }
+                break;
+                
+                case 5:
+                    if(finishedPlaces.indexOf(6)===-1){
+                        $("#button_6").show();
+                    }
+                break;
+                
+                case 6:
+                    if(finishedPlaces.indexOf(12)===-1){
+                        $("#button_12").show();
+                    }
+                break;
+                            
+                case 8:
+                    if(finishedPlaces.indexOf(9)===-1){
+                        $("#button_9").show();
+                    }
+                break;
+                
+                case 9:
+                    if(finishedPlaces.indexOf(7)===-1){
+                        $("#button_7").show();
+                    }
+                break;
+                
+                case 10:
+                    if(finishedPlaces.indexOf(7)===-1){
+                        $("#button_7").show();
+                    }
+                break;
+                
+                case 11:
+                    if(finishedPlaces.indexOf(8)===-1){
+                        $("#button_8").show();
+                    }
+                    if(finishedPlaces.indexOf(10)===-1){
+                        $("#button_10").show();
+                    }
+                break;
+                
+                case 12:
+                    if(finishedPlaces.indexOf(4)===-1){
+                        $("#button_4").show();
+                    }
+                break;
+            }//end switch statement
         }
-    }
-    else{
+        if(done.length == 12){
+            $("#button_13").show();
+        }
+    }else{
         $("#button_1").show();
     }
 }

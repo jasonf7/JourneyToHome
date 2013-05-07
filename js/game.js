@@ -1,7 +1,8 @@
 var firstNum = 0, secondNum = 0, answer=0, userAnswer = "";
 var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
 var operation = ADD; 
-var energy = 100, started=false;
+var energy = 100, started=false, distance = 0, lastX = 0;
+
 $(document).ready(function() {
     if(isNaN(sessionStorage.difficulty) || typeof sessionStorage.difficulty === 'undefined'){
         sessionStorage.difficulty=1;
@@ -77,7 +78,9 @@ function takeInput(num){
                 generateNewQuestion();  
             });            
             mathCount++; 
-            if(energy <= 75){                    
+            if(energy < 10){
+                energy+=50;
+            }else if(energy <= 75){                    
                 energy += 25;
             }else if(energy <100){
                 energy = 100;

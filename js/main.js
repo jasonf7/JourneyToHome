@@ -66,7 +66,7 @@ var PlayScreen = me.ScreenObject.extend({
    onResetEvent: function()	{	
       // stuff to reset on state change
         //Load a level
-        me.levelDirector.loadLevel("level2");
+        me.levelDirector.loadLevel("level"+localStorage.currentLevel);
 	},
 		
 	/* --- action to perform when game is finished (state change)---	*/

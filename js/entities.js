@@ -8,6 +8,7 @@ var PlayerEntity = me.ObjectEntity.extend({
         this.setVelocity(3,15);
         this.gravity=0.75; //This is the default, change if needed..
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+        lastX = this.pos.x;
     },
     
     update:function(){ 
@@ -38,6 +39,27 @@ var PlayerEntity = me.ObjectEntity.extend({
                 this.jumping = true;
             }
  
+        }
+        if(this.pos.x != lastX){
+            distance++;
+            lastX = this.pos.x;
+            if(distance%4 === 0){
+                energy --;
+                if(energy%2===0){
+                    updateEnergy();
+                }
+                //If they're gonna die... QUESTION!
+                if(energy < 10){
+                    mathMax = 1;
+                    popup(true);
+                }
+            }
+        }
+        
+        if(this.pos.y > 650){
+            sessionStorage.state = 1;
+            changeState();
+            $("#off_game_screen").show();  
         }
         // check & update player movement
         this.updateMovement();
@@ -72,9 +94,7 @@ var AcornEntity = me.CollectableEntity.extend({
     },
  
     onCollision: function() {
-        // ADD COINS... EVENTUALLY  
-            me.levelDirector.loadLevel("level2");        
-   // $('#sound_element').html("<embed src='data/boulder_push.wav' hidden=true autostart=true loop=false>");
+        // ADD COINS... EVENTUALLY        
         //remove it
         this.collidable = false;
         me.game.remove(this);
