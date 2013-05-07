@@ -102,6 +102,20 @@ var FoodEntity = me.CollectableEntity.extend({
 });
 
 /**
+ *  THE END!
+ */
+var FlagEntity = me.CollectableEntity.extend({
+    
+    init: function(x, y, settings) {
+        this.parent(x, y, settings);
+    },
+ 
+    onCollision: function() {
+            alert("victory");
+    } 
+});
+
+/**
  * THE PREDATOR
  */
 function Predator(image,width){

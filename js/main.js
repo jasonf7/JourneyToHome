@@ -2,7 +2,10 @@
 var g_resources= [
     {name:"land-tiles-simple",type:"image",src:"img/land-tiles-simple.png"},
     {name:"land-tiles-client",type:"image",src:"img/land-tiles-client.png"},
+    {name:"land-tiles-simple",type:"tsx",src:"data/land-tiles-simple.tsx"},
+    {name:"land-tiles-client",type:"tsx",src:"data/land-tiles-client.tsx"},
     {name:"level1",type:"tmx",src:"data/level1.tmx"},
+    {name:"level2",type:"tmx",src:"data/level2.tmx"},
     {name:"chimpy",type:"image",src:"img/chimpy.png"},
     {name:"acorn",type:"image",src:"img/acorn.png"},
     {name:"fail_wolf",type:"image",src:"img/fail_wolf.png"},    
@@ -10,7 +13,8 @@ var g_resources= [
     {name:"food-apple",type:"image",src:"img/food-apple.png"},
     {name:"food-banana",type:"image",src:"img/food-banana.png"},
     {name:"food-drumstick",type:"image",src:"img/food-drumstick.png"},
-    {name:"food-fish",type:"image",src:"img/food-fish.png"}
+    {name:"food-fish",type:"image",src:"img/food-fish.png"},
+    {name:"flag1x2",type:"image",src:"img/flag1x2.png"}
 ];
 
 
@@ -43,8 +47,9 @@ var jsApp	=
         me.entityPool.add("mainPlayer",PlayerEntity);
         me.entityPool.add("AcornEntity", AcornEntity);
         me.entityPool.add("WolfEntity", WolfEntity);
-        me.entityPool.add("FoodEntity", WolfEntity);
+        me.entityPool.add("FoodEntity", FoodEntity);
         me.entityPool.add("CrocEntity",CrocEntity);
+        me.entityPool.add("FlagEntity",FlagEntity);
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,     "jump", true);
@@ -61,7 +66,7 @@ var PlayScreen = me.ScreenObject.extend({
    onResetEvent: function()	{	
       // stuff to reset on state change
         //Load a level
-        me.levelDirector.loadLevel("level1");
+        me.levelDirector.loadLevel("level2");
 	},
 		
 	/* --- action to perform when game is finished (state change)---	*/
