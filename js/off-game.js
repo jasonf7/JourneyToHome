@@ -13,20 +13,25 @@ function exitGame(buttonNum){
     }
 }
 
-window.onload=(function(){
-    console.log("GG"+sessionStorage.state);
-    sessionStorage.state=0;
+function changeState(){
     if(sessionStorage.state==='0'){
-        $("#screen_title").html("Pause Screen");
+        $("#screen_title").html("Pause");        
+        $("#off_game_screen").css("background-color","rgba(0,0,0,0.5)");
         $("#screen_button1").show();
     }
-    else if(sessionStorage.state===GAME_OVER){
+    else if(sessionStorage.state=='1'){
         $("#screen_title").html("Game Over!");
+        $("#off_game_screen").css("background-color","rgba(100,0,0,0.5)");
         $("#screen_button1").hide();
     }
     else{
-        console.log("why");
-        $("#screen_title").html("Victory!");
+        $("#screen_title").html("Victory!");        
+        $("#off_game_screen").css("background-color","rgba(0,100,0,0.5)");
         $("#screen_button1").hide();
     }
+}
+
+$(document).ready(function() {
+    sessionStorage.state=0;  
+    changeState();
 });

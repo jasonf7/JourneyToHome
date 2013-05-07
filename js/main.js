@@ -89,7 +89,11 @@ var touches = [];
 
 function doTouch(e) {
     e.preventDefault();
-    if($("#math-popup").css("display") !="none"){
+    if(!started){
+        started = true;
+    }
+    if($("#math-popup").css("display") !="none" ||
+        $("#off_game_screen").css("display")!="none"){
         return;
     }
     var touchList = e.changedTouches;

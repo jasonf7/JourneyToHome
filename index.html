@@ -11,11 +11,7 @@
 			<div id="jsapp">
 			<!--	<font color="#FFFFFF", style="position: absolute; font-size: 10px; font-family: Courier New">
 					<span id="framecounter" class="no-select">(0/0 fps)</span>
-				</font>    -->            
-                <script src="js/game.js"></script>
-				<script type="text/javascript" src="lib/melonJS-0.9.6-min.js"></script>
-				<script type="text/javascript" src="js/entities.js"></script>
-				<script type="text/javascript" src="js/main.js"></script>                
+				</font>    -->                                          
 			</div>
             <a href="level.html">
                 <div id="backbutton">Back</div>
@@ -58,12 +54,17 @@
         </div>
         <div id="math-info" class="no-select"></div>
         <div id="off_game_screen">
-            <h1 id="screen_title">Pause Screen</h1>
+            <h1 id="screen_title">Pause</h1>
             <button id="screen_button1" class="screen_buttons" onclick="exitGame(1)">Resume</button>
             <button id="screen_button2" class="screen_buttons" onclick="exitGame(2)">Selection de niveau</button>
             <button id="screen_button3" class="screen_buttons" onclick="exitGame(3)">Main Menu</button>
            <script type="text/javascript" src="js/off-game.js"></script>
         </div>
         <div id="sound_element"></div>
+        
+        <script src="js/game.js"></script>
+		<script type="text/javascript" src="lib/melonJS-0.9.6-min.js"></script>
+		<script type="text/javascript" src="js/entities.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>  
 	</body>
 </html>

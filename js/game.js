@@ -1,7 +1,7 @@
 var firstNum = 0, secondNum = 0, answer=0, userAnswer = "";
 var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
 var operation = ADD; 
-var energy = 100;
+var energy = 100, started=false;
 $(document).ready(function() {
     if(isNaN(sessionStorage.difficulty) || typeof sessionStorage.difficulty === 'undefined'){
         sessionStorage.difficulty=1;
@@ -95,7 +95,10 @@ function takeInput(num){
             mathCount=0;
             if(energy < 25){                    
                 energy = 1; 
-                //GAME OVER
+                popup(false);
+                sessionStorage.state = 1;
+                changeState();
+                $("#off_game_screen").show(); 
             }else{
                 energy -= 25;
             }

@@ -11,7 +11,7 @@ var PlayerEntity = me.ObjectEntity.extend({
     },
     
     update:function(){ 
-        if($("#math-info").is(":visible")){
+        if($("#math-info").is(":visible") || $("#off_game_screen").css("display")!="none"){
            return false;
         }
         
@@ -46,7 +46,6 @@ var PlayerEntity = me.ObjectEntity.extend({
         if (res) {
             // if we collide with an enemy
             if (res.obj.type == me.game.COLLECTABLE_OBJECT) {
-                console.log("Acorn Collected");
             }
         }
         
@@ -74,7 +73,7 @@ var AcornEntity = me.CollectableEntity.extend({
  
     onCollision: function() {
         // ADD COINS... EVENTUALLY  
-                    
+            me.levelDirector.loadLevel("level2");        
    // $('#sound_element').html("<embed src='data/boulder_push.wav' hidden=true autostart=true loop=false>");
         //remove it
         this.collidable = false;
@@ -111,7 +110,10 @@ var FlagEntity = me.CollectableEntity.extend({
     },
  
     onCollision: function() {
-            alert("victory");
+        sessionStorage.state = 2;
+        changeState();
+        $("#off_game_screen").show();        
+        this.collidable = false;
     } 
 });
 
@@ -142,7 +144,8 @@ function Predator(image,width){
             this.collidable = true;
             // make it a enemy object
             this.type = me.game.ENEMY_OBJECT;
-     
+            
+            this.startPlayerPos = 0;
         },
      
         // call by the engine when colliding with another object
@@ -159,7 +162,7 @@ function Predator(image,width){
         // manage the enemy movement
         update: function() {  
             if($("#off_game_screen").css("display") !="none"){
-                return;
+                return false;
             }
             
             var playerRadius = 50;
@@ -167,6 +170,11 @@ function Predator(image,width){
             // do nothing if not visible
             if (!this.inViewport)
                 return false;
+            if(this.startPlayerPos === 0)
+                this.startPlayerPos = player.pos.x;
+            if(this.startPlayerPos == player.pos.x){
+                return false;
+            }
      
             if (this.alive && !((player.pos.x+playerRadius>this.pos.x) && (player.pos.x-playerRadius<this.pos.x))) {
                 if((this.pos.x+(this.width/2)) < player.pos.x-player.width){

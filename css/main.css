@@ -61,11 +61,11 @@ body, html{
 
 #math-popup{ 
     position:absolute;
-    top:0;
+    top:80px;
     background-image:url('../img/grey_wash_wall.png');
     box-shadow: inset 0 0px 10px 5px #383838;
     left:0;
-    height:599px;
+    height:519px;
     display:none;
     width:50%;
     opacity:0;
@@ -81,8 +81,8 @@ body, html{
     border-spacing: 4px;
 }
 #math-info{
-    height:599px;
-    top:0;
+    height:519px;
+    top:80px;
     position:absolute;
     width:512px;
     left:50%;
@@ -135,7 +135,7 @@ body, html{
     /** FOR DEMO ONLY **/
     display:none;
     
-    background-color:rgba(140,0,0,0.5);
+    background-color:rgba(0,0,0,0.5);
     text-align:center;
     vertical-align:middle;
 }
