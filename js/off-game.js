@@ -15,12 +15,26 @@ function exitGame(buttonNum){
                 tempLevel++;
                 localStorage.currentLevel = tempLevel;                
                 me.levelDirector.loadLevel("level"+localStorage.currentLevel);
+                
+                if(done.indexOf(localStorage.currentLevel)<0){        
+                    done.push(localStorage.currentLevel);        
+                    saveProgress();
+                }
+                
             }else{
                 //Beat the game!                
                 document.location.href = "level.html";
             }            
         }
     }
+}
+
+function saveProgress(){
+    var out = "";
+    for(var i=0;i< done.length;i++){
+        out+=done[i]+" ";
+    }
+    localStorage.done = out;
 }
 
 $(document).ready(function() {
