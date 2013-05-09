@@ -1,11 +1,20 @@
 // game resources
 var g_resources= [
+    
+    //the tilesets
     {name:"land-tiles-simple",type:"image",src:"img/land-tiles-simple.png"},
     {name:"land-tiles-client",type:"image",src:"img/land-tiles-client.png"},
+    {name:"land-tiles-simple-water",type:"image",src:"img/land-tiles-simple-water.png"},
+    
+    //tsx image files
     {name:"land-tiles-simple",type:"tsx",src:"data/land-tiles-simple.tsx"},
     {name:"land-tiles-client",type:"tsx",src:"data/land-tiles-client.tsx"},
+    
+    //the levels!
     {name:"level1",type:"tmx",src:"data/level1.tmx"},
     {name:"level2",type:"tmx",src:"data/level2.tmx"},
+    
+    //sprites
     {name:"chimpy",type:"image",src:"img/chimpy.png"},
     {name:"acorn",type:"image",src:"img/acorn.png"},
     {name:"fail_wolf",type:"image",src:"img/fail_wolf.png"},    
