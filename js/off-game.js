@@ -11,16 +11,15 @@ function exitGame(buttonNum){
             me.levelDirector.loadLevel("level"+localStorage.currentLevel);
         }else if(sessionStorage.state=='2'){
             if(localStorage.currentLevel < 13){
-                var tempLevel =  localStorage.currentLevel;
-                tempLevel++;
-                localStorage.currentLevel = tempLevel;                
-                me.levelDirector.loadLevel("level"+localStorage.currentLevel);
-                
                 if(done.indexOf(localStorage.currentLevel)<0){        
                     done.push(localStorage.currentLevel);        
                     saveProgress();
                 }
                 
+                var tempLevel =  localStorage.currentLevel;
+                tempLevel++;
+                localStorage.currentLevel = tempLevel;                
+                me.levelDirector.loadLevel("level"+localStorage.currentLevel);
             }else{
                 //Beat the game!                
                 document.location.href = "level.html";
