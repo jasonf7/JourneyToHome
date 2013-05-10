@@ -4,6 +4,7 @@
    version="1.0.1">
  
    <name>Journey to Home</name>
+   <icon src="img/icon.png" />
    <description>Help Chimpy reach Ontario!</description>
    <content src="start.html"/>
    <rim:orientation mode="landscape"/>
