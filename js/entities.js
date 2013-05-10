@@ -185,7 +185,7 @@ function Predator(image,width){
                 return false;
             }
             
-            var playerRadius = 50;
+            var playerRadius = 30;
             var player = me.game.getEntityByName("mainPlayer")[0];
             // do nothing if not visible
             if (!this.inViewport)

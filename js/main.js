@@ -9,6 +9,7 @@ var g_resources= [
     //tsx image files
     {name:"land-tiles-simple",type:"tsx",src:"data/land-tiles-simple.tsx"},
     {name:"land-tiles-client",type:"tsx",src:"data/land-tiles-client.tsx"},
+    {name:"land-tiles-simple-water",type:"tsx",src:"data/land-tiles-simple-water.tsx"},
     
     //the levels!
     {name:"level1",type:"tmx",src:"data/level1.tmx"},
@@ -63,7 +64,7 @@ var jsApp	=
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,     "jump", true);
-  //me.debug.renderHitBox = true; //TEMPORARY
+  me.debug.renderHitBox = true; //TEMPORARY
         // start the game 
 		me.state.change(me.state.PLAY);
 	}
