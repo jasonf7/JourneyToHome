@@ -64,7 +64,7 @@ var jsApp	=
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,     "jump", true);
-  me.debug.renderHitBox = true; //TEMPORARY
+  //me.debug.renderHitBox = true; //TEMPORARY
         // start the game 
 		me.state.change(me.state.PLAY);
 	}
@@ -100,10 +100,7 @@ var touches = [];
 
 function doTouch(e) {
     e.preventDefault();
-    if(!started){
-        started = true;
-    }
-    if($("#math-popup").css("display") !="none" ||
+   if($("#math-popup").css("display") !="none" ||
         $("#off_game_screen").css("display")!="none"){
         return;
     }
