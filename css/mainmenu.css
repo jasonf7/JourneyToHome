@@ -1,0 +1,37 @@
+#titlepage{
+    position:absolute;
+    top:0;
+    left:85px;    
+    box-shadow: 0 0 10px 5px #383838;
+}
+
+body{
+    background:url('../img/grey_wash_wall.png');
+}
+
+.ninjabutton{
+    background:transparent;
+    border:transparent;
+    position:absolute;
+}
+
+#play{    
+    top:160px;
+    left:320px;
+    width:350px;
+    height:130px;
+}
+
+#inst{    
+    top:320px;
+    left:340px;
+    width:350px;
+    height:120px;
+}
+
+#options{
+    top:460px;
+    left:340px;
+    width:350px;
+    height:120px;
+}
