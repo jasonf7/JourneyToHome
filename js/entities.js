@@ -183,7 +183,6 @@ function Predator(image,width){
             if($("#off_game_screen").css("display") !="none"){
                 return false;
             }
-            this.gravity=10;
             var playerRadius = 30;
             var player = me.game.getEntityByName("mainPlayer")[0];
             // do nothing if not visible
