@@ -164,7 +164,6 @@ function Predator(image,width){
             this.collidable = true;
             // make it a enemy object
             this.type = me.game.ENEMY_OBJECT;
-            
             this.startPlayerPos = 0;
         },
      
@@ -184,7 +183,6 @@ function Predator(image,width){
             if($("#off_game_screen").css("display") !="none"){
                 return false;
             }
-            
             var playerRadius = 30;
             var player = me.game.getEntityByName("mainPlayer")[0];
             // do nothing if not visible
@@ -193,10 +191,12 @@ function Predator(image,width){
             if(this.startPlayerPos === 0)
                 this.startPlayerPos = player.pos.x;
             if(this.startPlayerPos == player.pos.x){
-                return false;
+                if(!this.falling){
+                    return false;
+                }
             }
      
-            if (this.alive && !((player.pos.x+playerRadius>this.pos.x) && (player.pos.x-playerRadius<this.pos.x))) {
+            if (this.alive && !this.falling && !((player.pos.x+playerRadius>this.pos.x) && (player.pos.x-playerRadius<this.pos.x))) {
                 if((this.pos.x+(this.width/2)) < player.pos.x-player.width){
                     this.walkLeft = false;
                 }else if((this.pos.x-(this.width/2)) > player.pos.x){
