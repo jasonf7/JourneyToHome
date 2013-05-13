@@ -2,10 +2,10 @@ var PAUSE=0, GAME_OVER=1, VICTORY=2;
 
 function exitGame(buttonNum){
     $("#off_game_screen").hide();
-    if(buttonNum==2){
+    if(buttonNum==2){ //LEvel selection
         document.location.href = "level.html";
-    }else if(buttonNum == 3){
-        document.location.href = "start.html";        
+    }else if(buttonNum == 3){ // Main menu screen
+        document.location.href = "mainmenu.html";        
     }else{ // Button 1
         if(sessionStorage.state=='1'){
             me.levelDirector.loadLevel("level"+localStorage.currentLevel);

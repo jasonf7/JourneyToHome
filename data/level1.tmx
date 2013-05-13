@@ -60,12 +60,18 @@
     <property name="spritewidth" value="40"/>
    </properties>
   </object>
-  <object name="AcornEntity" x="1400" y="304" width="38" height="38">
+  <object name="FoodEntity" x="1400" y="304" width="38" height="38">
    <properties>
-    <property name="image" value="acorn"/>
+    <property name="image" value="food-apple"/>
     <property name="spritewidth" value="40"/>
    </properties>
   </object>
   <object name="CrocEntity" x="1" y="438" width="957" height="39"/>
+  <object name="FlagEntity" x="1718" y="328" width="41" height="68">
+   <properties>
+    <property name="image" value="flag1x2"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
