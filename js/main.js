@@ -48,7 +48,7 @@ var jsApp	=
 		me.loader.preload(g_resources);
 
 		// load everything & display a loading screen
-//		me.state.change(me.state.LOADING);
+		// me.state.change(me.state.LOADING);
 	},
 	
 	
@@ -65,7 +65,7 @@ var jsApp	=
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,     "jump", true);
-  //me.debug.renderHitBox = true; //TEMPORARY
+  me.debug.renderHitBox = true; //TEMPORARY
         // start the game 
 		me.state.change(me.state.PLAY);
 	}
