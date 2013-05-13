@@ -7,9 +7,10 @@ function exitGame(buttonNum){
     }else if(buttonNum == 3){ // Main menu screen
         document.location.href = "mainmenu.html";        
     }else{ // Button 1
-        if(sessionStorage.state=='1'){
+        if(sessionStorage.state=='1'){ //They lost, reload level
             me.levelDirector.loadLevel("level"+localStorage.currentLevel);
-        }else if(sessionStorage.state=='2'){
+            
+        }else if(sessionStorage.state=='2'){ //They beat the level
             if(localStorage.currentLevel < 13){
                 if(done.indexOf(localStorage.currentLevel)<0){        
                     done.push(localStorage.currentLevel);        
@@ -20,7 +21,7 @@ function exitGame(buttonNum){
                 tempLevel++;
                 localStorage.currentLevel = tempLevel;                
                 me.levelDirector.loadLevel("level"+localStorage.currentLevel);
-            }else{
+            }else{ //Beat the game!!
                 //Beat the game!                
                 document.location.href = "level.html";
             }            

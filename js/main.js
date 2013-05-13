@@ -16,6 +16,7 @@ var g_resources= [
     {name:"level2",type:"tmx",src:"data/level2.tmx"},
     {name:"level3",type:"tmx",src:"data/level3.tmx"},
     {name:"level4",type:"tmx",src:"data/level4.tmx"},
+    {name:"level5",type:"tmx",src:"data/level5.tmx"},
     
     //sprites
     {name:"chimpy",type:"image",src:"img/chimpy.png"},
@@ -26,7 +27,11 @@ var g_resources= [
     {name:"food-banana",type:"image",src:"img/food-banana.png"},
     {name:"food-drumstick",type:"image",src:"img/food-drumstick.png"},
     {name:"food-fish",type:"image",src:"img/food-fish.png"},
-    {name:"flag1x2",type:"image",src:"img/flag1x2.png"}
+    {name:"flag1x2",type:"image",src:"img/flag1x2.png"},
+    
+    //the background
+    {name:"bgclouds",type:"image",src:"data/bgclouds.png"},
+    {name:"bgclouds-top",type:"image",src:"data/bgclouds-top.png"}
 ];
 
 
@@ -65,7 +70,7 @@ var jsApp	=
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,     "jump", true);
-  me.debug.renderHitBox = true; //TEMPORARY
+  // me.debug.renderHitBox = true; //TEMPORARY
         // start the game 
 		me.state.change(me.state.PLAY);
 	}

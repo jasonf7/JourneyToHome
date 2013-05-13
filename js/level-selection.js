@@ -29,10 +29,6 @@ function setDifficulty(buttonNumber){
     }
     
     localStorage.currentLevel=buttonNumber;
-    if(done.indexOf(buttonNumber)<0){        
-        done.push(buttonNumber);        
-        saveProgress();
-    }
 }
 
 function loadProgress(){
