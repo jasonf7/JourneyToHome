@@ -101,6 +101,7 @@ function takeInput(num){
                 sessionStorage.state = 1;
                 changeState();
                 $("#off_game_screen").show(); 
+                $("#question").css('background','-webkit-radial-gradient(circle, #97cc4e, #65ad49)');
             }else{
                 energy -= 25;
             }

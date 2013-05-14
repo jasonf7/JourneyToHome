@@ -13,6 +13,8 @@ function exitGame(buttonNum){
         }else if(sessionStorage.state=='2'){ //They beat the level
             if(localStorage.currentLevel < 13){
                 var tempLevel =  localStorage.currentLevel;
+                energy=100;
+                updateEnergy();
                 tempLevel++;
                 localStorage.currentLevel = tempLevel;                
                 me.levelDirector.loadLevel("level"+localStorage.currentLevel);
