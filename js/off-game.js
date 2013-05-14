@@ -12,11 +12,6 @@ function exitGame(buttonNum){
             
         }else if(sessionStorage.state=='2'){ //They beat the level
             if(localStorage.currentLevel < 13){
-                if(done.indexOf(localStorage.currentLevel)<0){        
-                    done.push(localStorage.currentLevel);        
-                    saveProgress();
-                }
-                
                 var tempLevel =  localStorage.currentLevel;
                 tempLevel++;
                 localStorage.currentLevel = tempLevel;                
@@ -58,5 +53,9 @@ function changeState(){
         $("#screen_title").html("Victory!");        
         $("#off_game_screen").css("background-color","rgba(0,100,0,0.5)");
         $("#screen_button1").html('Next Level');
+        if(done.indexOf(localStorage.currentLevel)<0){        
+            done.push(localStorage.currentLevel);        
+            saveProgress();
+        }
     }
 }

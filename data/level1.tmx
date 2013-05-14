@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="45" height="15" tilewidth="40" tileheight="40" backgroundcolor="#58e2e2">
+<map version="1.0" orientation="orthogonal" width="45" height="15" tilewidth="40" tileheight="40">
  <tileset firstgid="1" name="land-tiles-simple" tilewidth="40" tileheight="40">
   <image source="land-tiles-simple.png" width="240" height="240"/>
   <tile id="0">
@@ -29,13 +29,13 @@
  <imagelayer name="bg" width="45" height="15">
   <image source="bgclouds.png"/>
   <properties>
-   <property name="ratio" value="0.25"/>
+   <property name="ratio" value="0.5"/>
   </properties>
  </imagelayer>
  <imagelayer name="bg-top" width="45" height="15">
   <image source="bgclouds-top.png"/>
   <properties>
-   <property name="ratio" value="0.40"/>
+   <property name="ratio" value="0.25"/>
   </properties>
  </imagelayer>
  <layer name="Tile Layer 1" width="45" height="15">

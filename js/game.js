@@ -95,7 +95,8 @@ function takeInput(num){
             wrong = true;            
             mathCount=0;
             if(energy < 25){                    
-                energy = 1; 
+                energy = 100; 
+                userAnswer = "";
                 popup(false);
                 sessionStorage.state = 1;
                 changeState();
