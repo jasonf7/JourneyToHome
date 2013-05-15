@@ -95,7 +95,7 @@ var PlayScreen = me.ScreenObject.extend({
 
 
 //bootstrap :)
-window.onReady(function(){
+window.onReady(function(){    
 	jsApp.onload();    
     document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
    // document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);

@@ -5,8 +5,17 @@ var PlayerEntity = me.ObjectEntity.extend({
     */
     init:function(x,y,settings){
         this.parent(x,y,settings);
-        this.setVelocity(3,15);
-        this.gravity=0.75; //This is the default, change if needed..
+        var xspeed = 3;
+        if(!useroptions.speed){
+            xpeed = 7;
+        }
+        if(!useroptions.jump){
+            this.gravity=0.6;
+            this.setVelocity(xpeed,22);
+        }else{
+            this.gravity=0.75; //This is the default, change if needed.            
+            this.setVelocity(xpeed,15);
+        }
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
         lastX = this.pos.x;
     },
@@ -57,9 +66,14 @@ var PlayerEntity = me.ObjectEntity.extend({
         }
         
         if(this.pos.y > 650){
-            sessionStorage.state = 1;
-            changeState();
-            $("#off_game_screen").show();  
+            if(!useroptions.sub){
+                this.pos.y = 0;
+                this.falling = false;
+            }else{
+                sessionStorage.state = 1;
+                changeState();
+                $("#off_game_screen").show();  
+            }
         }
         // check & update player movement
         this.updateMovement();
