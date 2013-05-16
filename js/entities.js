@@ -17,14 +17,19 @@ var PlayerEntity = me.ObjectEntity.extend({
             this.setVelocity(xpeed,15);
         }
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-        lastX = this.pos.x;
+        var lastX = this.pos.x;
+        var savedX =0, savedY = 0;
     },
     
     update:function(){ 
         if($("#math-info").is(":visible") || $("#off_game_screen").css("display")!="none"){
            return false;
         }
-        
+        var block = me.game.currentLevel.getLayerByName("collision").layerData[Math.floor(this.pos.x/40)][Math.floor(this.pos.y/40)+1];
+        if(block != null && typeof block !== 'undefined'){
+            savedX = this.pos.x;
+            savedY = this.pos.y;
+        }
         if (me.input.isKeyPressed('left')) {
             // flip the sprite on horizontal axis
             this.flipX(true);
@@ -67,8 +72,8 @@ var PlayerEntity = me.ObjectEntity.extend({
         
         if(this.pos.y > 650){
             if(!useroptions.sub){
-                this.pos.y = 0;
-                this.falling = false;
+                this.pos.y = savedY;
+                this.pos.x = savedX;
             }else{
                 sessionStorage.state = 1;
                 changeState();
@@ -108,7 +113,10 @@ var AcornEntity = me.CollectableEntity.extend({
     },
  
     onCollision: function() {
-        // ADD COINS... EVENTUALLY        
+        acorns++;      
+        if(!useroptions.double){
+            acorns++;
+        }
         //remove it
         this.collidable = false;
         me.game.remove(this);
@@ -147,6 +155,7 @@ var FlagEntity = me.CollectableEntity.extend({
         sessionStorage.state = 2;
         changeState();
         $("#off_game_screen").show();        
+        localStorage.acorns = acorns;
         this.collidable = false;
     } 
 });
