@@ -1,5 +1,5 @@
 var useroptions = {"jump":false, "fly":false, "sub":false, "speed":false,
-                    "invis":false,"acorn":false,"pacorn":false,"fire":false,
+                    "invisible":false,"acorn":false,"powacorn":false,"fire":false,
                     "ice":false,"potion":false,"magnet":false,"double":false};
                     
 $(document).ready(function() {

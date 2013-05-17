@@ -51,7 +51,7 @@ var jsApp	=
 		
 		// set all resources to be loaded
 		me.loader.preload(g_resources);
-
+    
 		// load everything & display a loading screen
 		// me.state.change(me.state.LOADING);
 	},

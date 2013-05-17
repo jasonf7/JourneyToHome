@@ -5,16 +5,16 @@ var PlayerEntity = me.ObjectEntity.extend({
     */
     init:function(x,y,settings){
         this.parent(x,y,settings);
-        var xspeed = 3;
-        if(!useroptions.speed){
+        var xspeed = 4;
+        if(useroptions.speed){
             xpeed = 7;
         }
-        if(!useroptions.jump){
+        if(useroptions.jump){
             this.gravity=0.6;
             this.setVelocity(xpeed,22);
         }else{
             this.gravity=0.75; //This is the default, change if needed.            
-            this.setVelocity(xpeed,15);
+            this.setVelocity(xspeed,15);
         }
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
         var lastX = this.pos.x;
@@ -57,7 +57,14 @@ var PlayerEntity = me.ObjectEntity.extend({
         if(this.pos.x != lastX){
             distance++;
             lastX = this.pos.x;
-            if(distance%4 === 0){
+            if(useroptions.potion){
+                var percent = 100 - Math.round((distance/300)*100);   
+                $("#energybar").css('background','-webkit-linear-gradient(left, #FDD017, #FDD017 '+percent+'%, #A8DFEE '+percent+'%, #A8DFEE)');
+                if(distance>=300){
+                    useroptions.potion=false;
+                    $("#energybar").css('background','rgba(255,255,255,0.5)');
+                }
+            }else if(distance%4 === 0){
                 energy --;
                 if(energy%2===0){
                     updateEnergy();
@@ -114,7 +121,7 @@ var AcornEntity = me.CollectableEntity.extend({
  
     onCollision: function() {
         acorns++;      
-        if(!useroptions.double){
+        if(useroptions.double){
             acorns++;
         }
         //remove it

@@ -8,7 +8,6 @@ $(document).ready(function() {
         sessionStorage.difficulty=1;
     }  
     updateEnergy();
-    console.log(localStorage.acorns);
     if(typeof localStorage.acorns !== 'undefined'){
         acorns = localStorage.acorns;
     }
