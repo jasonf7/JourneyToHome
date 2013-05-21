@@ -52,7 +52,6 @@ var wrong = false; var mathCount = 0, mathMax=3;
  * Take button number input
  */
 function takeInput(num){
-    console.log(energy);
     if(wrong){
         $("#question").css('background','-webkit-radial-gradient(circle, #97cc4e, #65ad49)');
         wrong = false;

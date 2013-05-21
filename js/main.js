@@ -30,8 +30,8 @@ var g_resources= [
     {name:"flag1x2",type:"image",src:"img/flag1x2.png"},
     
     //the background
-    {name:"bgclouds",type:"image",src:"data/bgclouds.png"},
-    {name:"bgclouds-top",type:"image",src:"data/bgclouds-top.png"}
+    {name:"bgclouds",type:"image",src:"img/bgclouds.png"},
+    {name:"bgclouds-top",type:"image",src:"img/bgclouds-top.png"}
 ];
 
 
