@@ -80,8 +80,8 @@ function takeInput(num){
                 generateNewQuestion();  
             });            
             mathCount++; 
-            if(energy <= 75){
-                energy += 45;
+            if(energy <= 55){
+               energy += 45;
             }else if(energy <100){
                 energy = 100;
             }

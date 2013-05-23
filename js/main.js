@@ -1,5 +1,5 @@
 var chimpysprite = "";
-if(!useroptions.invisible){
+if(useroptions.invisible){
     chimpysprite = "-invisible";
 }
 // game resources
@@ -23,7 +23,7 @@ var g_resources= [
     {name:"level5",type:"tmx",src:"data/level5.tmx"},
     
     //sprites
-    {name:"chimpy",type:"image",src:"data/chimpy"+chimpysprite+".png"},
+    {name:"chimpy",type:"image",src:"img/chimpy"+chimpysprite+".png"},
     {name:"acorn",type:"image",src:"img/acorn.png"},
     {name:"fail_wolf",type:"image",src:"img/fail_wolf.png"},    
     {name:"croc",type:"image",src:"img/croc.png"},
