@@ -117,6 +117,8 @@ var AcornEntity = me.CollectableEntity.extend({
     
     init: function(x, y, settings) {
         this.parent(x, y, settings);
+        this.targetX = 0;
+        this.targetY = 0;
     },
  
     onCollision: function() {
@@ -127,7 +129,50 @@ var AcornEntity = me.CollectableEntity.extend({
         //remove it
         this.collidable = false;
         me.game.remove(this);
-    } 
+    },
+    
+    update:function(){
+        // if (this.inViewport && this.targetX === 0){
+        //     this.targetX =  me.game.getEntityByName("mainPlayer")[0].pos.x;
+        //     this.targetY =  me.game.getEntityByName("mainPlayer")[0].pos.y;
+        //     console.log("ATTACKING ("+this.targetX+", "+this.targetY+") from ("+this.pos.x+","+this.pos.y+")");
+        //     // this.incX = (this.targetX - this.pos.x)/8;
+        //     // this.incY = (this.targetY - this.pos.y)/8;
+        //     return false;
+        // }
+        
+        
+       // if(this.pos.x > this.targetX){
+            // this.pos.x-= 10;
+        // }else{
+        //     this.pos.x+= 10;
+        // }
+        
+        // if(this.pos.y > this.targetY){
+        //     this.pos.y-=this.incY;
+        // }else{
+        //     this.pos.y+=this.incY;
+        // }
+        
+        
+        // if(this.targetX!=0  && (this.pos.x < this.targetX + 5) && (this.pos.x > this.targetX-5)){
+        //     acorns++;      
+        //     if(useroptions.double){
+        //         acorns++;
+        //     }
+        //     this.targetX = 0;
+        //     return false;
+        // }
+        
+        // this.updateMovement();             
+        // update animation if necessary
+        // if (this.targetX!=0) {
+        //     // update object animation
+        //     this.parent();
+        //     return true;
+        // }
+        // return true;
+    }
 });
 
 /**
@@ -146,7 +191,21 @@ var FoodEntity = me.CollectableEntity.extend({
         //remove it
         this.collidable = false;
         me.game.remove(this);
-    } 
+    } ,
+    
+    // update:function(){
+    //     if (this.inViewport){
+    //         console.log(" I see you");
+    //     }
+    //     this.updateMovement();             
+    //     // update animation if necessary
+    //     if (this.vel.x!=0 || this.vel.y!=0) {
+    //         // update object animation
+    //         this.parent();
+    //         return true;
+    //     }
+    //     return false;
+    // }
 });
 
 /**
@@ -164,7 +223,7 @@ var FlagEntity = me.CollectableEntity.extend({
         $("#off_game_screen").show();        
         localStorage.acorns = acorns;
         this.collidable = false;
-    } 
+    }
 });
 
 /**
@@ -216,7 +275,7 @@ function Predator(image,width){
             var playerRadius = 30;
             var player = me.game.getEntityByName("mainPlayer")[0];
             // do nothing if not visible
-            if (!this.inViewport)
+            if (!this.inViewport || !useroptions.invisible)
                 return false;
             if(this.startPlayerPos === 0)
                 this.startPlayerPos = player.pos.x;
