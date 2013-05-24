@@ -7,11 +7,11 @@ var PlayerEntity = me.ObjectEntity.extend({
         this.parent(x,y,settings);
         var xspeed = 4;
         if(useroptions.speed){
-            xpeed = 7;
+            xspeed = 7;
         }
         if(useroptions.jump){
             this.gravity=0.6;
-            this.setVelocity(xpeed,22);
+            this.setVelocity(xspeed,22);
         }else{
             this.gravity=0.75; //This is the default, change if needed.            
             this.setVelocity(xspeed,15);
@@ -78,7 +78,7 @@ var PlayerEntity = me.ObjectEntity.extend({
         }
         
         if(this.pos.y > 650){
-            if(!useroptions.sub){
+            if(useroptions.sub){
                 this.pos.y = savedY;
                 this.pos.x = savedX;
             }else{
@@ -259,7 +259,11 @@ var FlagEntity = me.CollectableEntity.extend({
     onCollision: function() {
         sessionStorage.state = 2;
         changeState();
-        $("#off_game_screen").show();        
+        $("#off_game_screen").show();
+        for(var b in useroptions){
+            useroptions[b] = false;
+            saveOptions();
+        }
         localStorage.acorns = acorns;
         this.collidable = false;
     }
@@ -298,6 +302,13 @@ function Predator(image,width){
         // call by the engine when colliding with another object
         // obj parameter corresponds to the other object (typically the player) touching this one
         onCollision: function(res, obj) {
+            //INVISIBLE OR INVINCIBLE? NO MATH QUESTIONS HURRRRAY
+            if(useroptions.acorn || useroptions.powacorn){
+                me.game.remove(this);
+                return;
+            }else if(useroptions.invisible){
+                return;
+            }    
             //MATH QUESTIONS! YAY     
             mathMax = 3;
             popup(true);        
@@ -314,8 +325,11 @@ function Predator(image,width){
             var playerRadius = 30;
             var player = me.game.getEntityByName("mainPlayer")[0];
             // do nothing if not visible
-            if (!this.inViewport || useroptions.invisible)
+            if (!this.inViewport || useroptions.invisible){
                 return false;
+            }    
+            
+            
             if(this.startPlayerPos === 0)
                 this.startPlayerPos = player.pos.x;
             if(this.startPlayerPos == player.pos.x){

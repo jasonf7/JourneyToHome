@@ -1,13 +1,18 @@
 var useroptions = {"jump":false, "fly":false, "sub":false, "speed":false,
                     "invisible":false,"acorn":false,"powacorn":false,"fire":false,
                     "ice":false,"potion":false,"magnet":false,"double":false};
-                    
+//DONE: jump, sub, speed, invisible, potion, magnet, double, fly
+//LEFT: acorn, powacorn, fire, ice
+useroptions.jump = true;
+
 $(document).ready(function() {
     if(typeof localStorage.useroptions === 'undefined'){
         saveOptions();
     }else{
         var savedOptions = localStorage.useroptions;
         useroptions = JSON.parse(savedOptions);
+        useroptions.jump = true;
+        console.log("loaded");
     }
 });
 

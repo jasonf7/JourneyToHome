@@ -84,10 +84,16 @@ var jsApp	=
 /* the in game stuff*/
 var PlayScreen = me.ScreenObject.extend({
 
-   onResetEvent: function()	{	
+    onResetEvent: function()	{	
       // stuff to reset on state change
         //Load a level
         me.levelDirector.loadLevel("level"+localStorage.currentLevel);
+        //if they skipped.. show victory..
+        if(useroptions.fly){
+            sessionStorage.state = 2;
+            changeState();
+            $("#off_game_screen").show(); 
+        }
 	},
 		
 	/* --- action to perform when game is finished (state change)---	*/
@@ -103,7 +109,7 @@ window.onReady(function(){
 	jsApp.onload();    
     document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
    // document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);
-    document.getElementById("jsapp").addEventListener('touchend', function(e) {clear(e);}, false);
+    document.getElementById("jsapp").addEventListener('touchend', function(e) {clear(e);}, false);    
 });
 
 var touches = [];

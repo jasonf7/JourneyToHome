@@ -18,6 +18,12 @@ function exitGame(buttonNum){
                 tempLevel++;
                 localStorage.currentLevel = tempLevel;                
                 me.levelDirector.loadLevel("level"+localStorage.currentLevel);
+                //if they skipped.. show victory..
+                if(useroptions.fly){
+                    sessionStorage.state = 2;
+                    changeState();
+                    $("#off_game_screen").show(); 
+                }
             }else{ //Beat the game!!
                 //Beat the game!                
                 document.location.href = "level.html";
