@@ -29,55 +29,75 @@ window.onload=function(){
         $("#desc"+(i+4)).css('top', '180px');
         $("#desc"+(i+8)).css('top', '330px');
         
-        if(i != 1){
-            if(i == 2){
-                $("#upgrade"+i).css('left', '152px');
-                $("#upgrade"+(i+4)).css('left', '152px');
-                $("#upgrade"+(i+8)).css('left', '152px');
-                
-                $("#name"+i).css('left', '355px');
-                $("#name"+(i+4)).css('left', '355px');
-                $("#name"+(i+8)).css('left', '355px');
-                
-                $("#desc"+i).css('left', '353px');
-                $("#desc"+(i+4)).css('left', '353px');
-                $("#desc"+(i+8)).css('left', '353px');
-            }
-            else if(i == 3){
-                $("#upgrade"+i).css('left', '294px');
-                $("#upgrade"+(i+4)).css('left', '294px');
-                $("#upgrade"+(i+8)).css('left', '294px');
-                
-                $("#name"+i).css('left', '595px');
-                $("#name"+(i+4)).css('left', '595px');
-                $("#name"+(i+8)).css('left', '595px');
-                
-                $("#desc"+i).css('left', '595px');
-                $("#desc"+(i+4)).css('left', '595px');
-                $("#desc"+(i+8)).css('left', '595px');
-            }
-            else{
-                $("#upgrade"+i).css('left', '435px');
-                $("#upgrade"+(i+4)).css('left', '435px');
-                $("#upgrade"+(i+8)).css('left', '435px');
-                
-                $("#name"+i).css('left', '840px');
-                $("#name"+(i+4)).css('left', '840px');
-                $("#name"+(i+8)).css('left', '840px');
-                
-                $("#desc"+i).css('left', '840px');
-                $("#desc"+(i+4)).css('left', '840px');
-                $("#desc"+(i+8)).css('left', '840px');
-            }
-        }
-        else{
+        switch(i)
+        {
+        case 1:
+            $("#price"+i).css('left', '40px');
+            $("#price"+(i+4)).css('left', '40px');
+            $("#price"+(i+8)).css('left', '40px');
+            
             $("#name"+i).css('left', '120px');
             $("#name"+(i+4)).css('left', '120px');
             $("#name"+(i+8)).css('left', '120px');
             
-            $("#desc"+i).css('left', '115px');
-            $("#desc"+(i+4)).css('left', '115px');
-            $("#desc"+(i+8)).css('left', '115px');
+            $("#desc"+i).css('left', '118px');
+            $("#desc"+(i+4)).css('left', '118px');
+            $("#desc"+(i+8)).css('left', '118px');
+            break;
+        case 2:
+            $("#upgrade"+i).css('left', '152px');
+            $("#upgrade"+(i+4)).css('left', '152px');
+            $("#upgrade"+(i+8)).css('left', '152px');
+                    
+            $("#price"+i).css('left', '275px');
+            $("#price"+(i+4)).css('left', '275px');
+            $("#price"+(i+8)).css('left', '275px');
+                    
+            $("#name"+i).css('left', '358px');
+            $("#name"+(i+4)).css('left', '358px');
+            $("#name"+(i+8)).css('left', '358px');
+                    
+            $("#desc"+i).css('left', '357px');
+            $("#desc"+(i+4)).css('left', '357px');
+            $("#desc"+(i+8)).css('left', '357px');
+            break;
+        case 3:
+            $("#upgrade"+i).css('left', '294px');
+            $("#upgrade"+(i+4)).css('left', '294px');
+            $("#upgrade"+(i+8)).css('left', '294px');
+                
+            $("#price"+i).css('left', '525px');
+            $("#price"+(i+4)).css('left', '525px');
+            $("#price"+(i+8)).css('left', '525px');
+                
+            $("#name"+i).css('left', '600px');
+            $("#name"+(i+4)).css('left', '600px');
+            $("#name"+(i+8)).css('left', '600px');
+                
+            $("#desc"+i).css('left', '598px');
+            $("#desc"+(i+4)).css('left', '598px');
+            $("#desc"+(i+8)).css('left', '598px');
+            break;
+        case 4:
+            $("#upgrade"+i).css('left', '435px');
+            $("#upgrade"+(i+4)).css('left', '435px');
+            $("#upgrade"+(i+8)).css('left', '435px');
+                
+            $("#price"+i).css('left', '760px');
+            $("#price"+(i+4)).css('left', '760px');
+            $("#price"+(i+8)).css('left', '760px');
+                
+            $("#name"+i).css('left', '842px');
+            $("#name"+(i+4)).css('left', '842px');
+            $("#name"+(i+8)).css('left', '842px');
+                
+            $("#desc"+i).css('left', '840px');
+            $("#desc"+(i+4)).css('left', '840px');
+            $("#desc"+(i+8)).css('left', '840px');
+            break;
+        default:
+            console.log("How is this possible?");
+            break;
         }
         
     }
