@@ -3,7 +3,7 @@ var useroptions = {"jump":false, "fly":false, "sub":false, "speed":false,
                     "ice":false,"potion":false,"magnet":false,"double":false};
 //DONE: jump, sub, speed, invisible, potion, magnet, double, fly
 //LEFT: acorn, powacorn, fire, ice
-useroptions.jump = true;
+useroptions.powacorn = true;
 
 $(document).ready(function() {
     if(typeof localStorage.useroptions === 'undefined'){
@@ -11,7 +11,6 @@ $(document).ready(function() {
     }else{
         var savedOptions = localStorage.useroptions;
         useroptions = JSON.parse(savedOptions);
-        useroptions.jump = true;
         console.log("loaded");
     }
 });
