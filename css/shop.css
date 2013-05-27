@@ -1,7 +1,104 @@
 #shop-container{
-    
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:974px;
+    height:550px;
+    background:rgba(91,91,91,1);
+    border-style:solid;
+    border-color:gray;
+    border-width:25px;
+}
+
+#shop-title{
+    text-align:center;
+    font-size:50px;
+    color:white;
 }
 
 #shop-table{
-    
+    position:absolute;
+    top:100px;
+    width:100%;
+    height:450px;
+    table-layout:fixed;
 }
+
+#nextbutton{
+    position:absolute;
+    top:40px;
+    left:600px;
+    width:350px;
+    height:50px;
+}
+
+.shop-buttons{
+    background:rgba(197,197,197,1);
+}
+
+.price{
+    position:absolute;
+}
+
+.name{
+    position:absolute;
+}
+
+.desc{
+    position:absolute;
+    height:90px;
+    width:115px;
+}
+
+.upgrade{
+     position:absolute;
+}
+
+#upgrade1{
+    clip: rect(0, 100px, 100px, 0);
+}
+
+#upgrade2{
+    clip: rect(0, 200px, 100px, 100px);
+}
+
+#upgrade3{
+    clip: rect(0, 300px, 100px, 200px);
+}
+
+#upgrade4{
+    clip: rect(0, 400px, 100px, 300px);
+}
+
+#upgrade5{
+    clip: rect(100px, 100px, 200px, 0);
+}
+
+#upgrade6{
+    clip: rect(100px, 200px, 200px, 100px);
+}
+
+#upgrade7{
+    clip: rect(100px, 300px, 200px, 200px);
+}
+
+#upgrade8{
+    clip: rect(100px, 400px, 200px, 300px);
+}
+
+#upgrade9{
+    clip: rect(200px, 100px, 300px, 0);
+}
+
+#upgrade10{
+    clip: rect(200px, 200px, 300px, 100px);
+}
+
+#upgrade11{
+    clip: rect(200px, 300px, 300px, 200px);
+}
+
+#upgrade12{
+    clip: rect(200px, 400px, 300px, 300px);
+}
+
