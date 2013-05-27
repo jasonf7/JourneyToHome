@@ -4,6 +4,14 @@ function doneShopping(){
 }
     
 window.onload=function(){
+    /**
+     *      Not sure how to fix anything here but these should be done:
+     *      1. Align price under the picture (center of picture)
+     *      2. Push column 1,2,3 so that the distance from the picture is like
+     *          column 4
+     *      3. Left Align the title (with column 1)
+     */
+     
     for(var i=1; i<5; i++){
         $("#upgrade"+i).css('top', '10px');
         $("#upgrade"+(i+4)).css('top', '57px');

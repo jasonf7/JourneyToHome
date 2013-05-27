@@ -2,18 +2,20 @@
     position:absolute;
     top:0px;
     left:0px;
-    width:974px;
+    width:975px;
     height:550px;
     background:rgba(91,91,91,1);
-    border-style:solid;
-    border-color:gray;
+    background-image:url('../img/grey_wash_wall.png');
+    border-image:url('../img/grey_wash_wall.png');
     border-width:25px;
 }
 
 #shop-title{
     text-align:center;
     font-size:50px;
-    color:white;
+    color:#e0e0e0;
+    font-family:Tahoma;
+    text-shadow:3px 3px 4px #2b2b2b;
 }
 
 #shop-table{
@@ -27,21 +29,46 @@
 #nextbutton{
     position:absolute;
     top:40px;
-    left:600px;
-    width:350px;
+    left:735px;
+    width:230px;
     height:50px;
+    font-size:20px;
+    /** THIS NEEDS A LOT OF WORK */
+    color:white;
+    border:1px solid white;
+    background-color:transparent;
+    font-family:"Lucida Sans Unicode";
+    font-weight:bold;
+    border-radius:6px;
+}
+
+#nextbutton:active, #nextbutton:hover{
+    background-color:white;
+    color:#5c5c5c;
+}
+
+p{
+    font-family:Tahoma;
+    font-size:14px;
+    color:white;
 }
 
 .shop-buttons{
-    background:rgba(197,197,197,1);
+    background:rgba(54, 54, 54,1);
+    box-shadow: 0 0 3px 3px #2e2e2e;
+    border:solid #a1a1a1 1px;
 }
 
 .price{
     position:absolute;
+    font-weight:bold;
+    font-size:16px;
 }
 
 .name{
     position:absolute;
+    font-weight:bold;    
+    font-size:12px;
 }
 
 .desc{

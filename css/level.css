@@ -50,7 +50,6 @@ body{
 }
 
 #reset:active, #reset:hover{
-    border:1px solid white;
     background-color:white;
     color:#5c5c5c;
 }
