@@ -128,6 +128,8 @@ var AcornEntity = me.CollectableEntity.extend({
         if(useroptions.double){
             acorns++;
         }
+        // var coinSound = new Audio('data/coin.mp3'); 
+        // coinSound.play();
         //remove it
         this.collidable = false;
         me.game.remove(this);

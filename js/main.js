@@ -113,7 +113,14 @@ window.onReady(function(){
 	jsApp.onload();    
     document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
    // document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);
-    document.getElementById("jsapp").addEventListener('touchend', function(e) {clear(e);}, false);    
+    document.getElementById("jsapp").addEventListener('touchend', function(e) {clear(e);}, false);   
+    
+    var myAudio = new Audio('data/jungle-run.mp3'); 
+    myAudio.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+    }, false);
+    myAudio.play();
 });
 
 var touches = [];
