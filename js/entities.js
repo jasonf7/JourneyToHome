@@ -85,6 +85,7 @@ var PlayerEntity = me.ObjectEntity.extend({
                 sessionStorage.state = 1;
                 changeState();
                 $("#off_game_screen").show();  
+                energy = 100;
             }
         }
         // check & update player movement
@@ -128,9 +129,7 @@ var AcornEntity = me.CollectableEntity.extend({
         if(useroptions.double){
             acorns++;
         }
-        // var coinSound = new Audio('data/coin.mp3'); 
-        // coinSound.play();
-        //remove it
+       //remove it
         this.collidable = false;
         me.game.remove(this);
     },
@@ -259,6 +258,9 @@ var FlagEntity = me.CollectableEntity.extend({
     },
  
     onCollision: function() {
+        myAudio.pause();
+        var won = new Audio('data/finish.mp3'); 
+        won.play();
         sessionStorage.state = 2;
         changeState();
         $("#off_game_screen").show();

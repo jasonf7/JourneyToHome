@@ -9,7 +9,7 @@ function exitGame(buttonNum){
     }else{ // Button 1
         if(sessionStorage.state=='1'){ //They lost, reload level
             me.levelDirector.loadLevel("level"+localStorage.currentLevel);
-            
+            updateEnergy();
         }else if(sessionStorage.state=='2'){ //They beat the level
             if(localStorage.currentLevel < 13){
                 var tempLevel =  localStorage.currentLevel;
@@ -18,6 +18,7 @@ function exitGame(buttonNum){
                 tempLevel++;
                 localStorage.currentLevel = tempLevel;                
                 me.levelDirector.loadLevel("level"+localStorage.currentLevel);
+                myAudio.play();
                 //if they skipped.. show victory..
                 if(useroptions.fly){
                     sessionStorage.state = 2;

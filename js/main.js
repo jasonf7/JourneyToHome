@@ -80,16 +80,22 @@ var jsApp	=
         me.input.bindKey(me.input.KEY.UP,     "jump", true);
   // me.debug.renderHitBox = true; //TEMPORARY
         // start the game 
-		me.state.change(me.state.PLAY);
+		me.state.change(me.state.PLAY);        
 	}
 
 }; // jsApp
-
+var myAudio;
 /* the in game stuff*/
 var PlayScreen = me.ScreenObject.extend({
 
     onResetEvent: function()	{	
       // stuff to reset on state change
+        myAudio = new Audio('data/jungle-run.mp3'); 
+        myAudio.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+        myAudio.play();
         //Load a level
         me.levelDirector.loadLevel("level"+localStorage.currentLevel);
         //if they skipped.. show victory..
@@ -114,13 +120,7 @@ window.onReady(function(){
     document.getElementById("jsapp").addEventListener('touchstart', function(e) {doTouch(e);}, false);
    // document.getElementById("jsapp").addEventListener('touchmove', function(e) {doTouch(e);}, false);
     document.getElementById("jsapp").addEventListener('touchend', function(e) {clear(e);}, false);   
-    
-    var myAudio = new Audio('data/jungle-run.mp3'); 
-    myAudio.addEventListener('ended', function() {
-        this.currentTime = 0;
-        this.play();
-    }, false);
-    myAudio.play();
+       
 });
 
 var touches = [];
