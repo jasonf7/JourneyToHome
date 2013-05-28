@@ -10,6 +10,41 @@
     border-width:25px;
 }
 
+.indicator{
+    position:absolute;
+    top:20px;
+    font-size:30px;
+    color:white;
+    background-color:transparent;
+    font-family:"Lucida Sans Unicode";
+    font-weight:bold;
+}
+
+#acorn-indicator{
+    left:75px;
+}
+
+#acorn-div{
+    position:absolute;
+    top:70px;
+    left:35px;
+    height:50px;
+    width:50px;
+    background-color:#e0e0e0;
+    text-shadow:3px 3px 4px #2b2b2b;
+    border-radius:6px;
+    z-index:1;
+}
+
+#acorn-image.resize{
+    position:absolute;
+    clip:rect(0, 40px, 40px, 0);
+}
+
+#money-indicator{
+    left:250px;
+}
+
 #shop-title{
     text-align:center;
     font-size:50px;
