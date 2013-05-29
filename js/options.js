@@ -3,7 +3,7 @@ var useroptions = {"jump":false, "fly":false, "sub":false, "speed":false,
                     "ice":false,"potion":false,"magnet":false,"double":false};
 //DONE: jump, sub, speed, invisible, potion, magnet, double, fly
 //LEFT: acorn, powacorn, fire, ice
-useroptions.powacorn = true;
+
 
 $(document).ready(function() {
     if(typeof localStorage.useroptions === 'undefined'){
@@ -20,5 +20,25 @@ function saveOptions(){
 }
 
 function changeSound(){
-    
+    if(localStorage.sound === 'undefined' || localStorage.sound == "true"){
+        localStorage.sound = "false";
+        setSound();
+    }else{
+        localStorage.sound = "true";
+        setSound();
+    }
+}
+
+function setSound(){
+    if(localStorage.sound === 'undefined' || localStorage.sound == "true"){
+        $("#sound:hover").css("background-color","rgba(10, 133, 10,0.8)");
+        $("#sound:active").css("background-color","rgba(10, 133, 10,0.8)");
+        $("#sound").css("background-color","rgba(0,200,0,0.3)");
+        $("#sound").html("Sound On");
+    }else{
+        $("#sound:hover").css("background-color","rgba(150, 11, 11,0.8)");
+        $("#sound:active").css("background-color","rgba(150, 11, 11,0.8)");        
+        $("#sound").css("background-color","rgba(200,0,0,0.3)");
+        $("#sound").html("Sound Off");
+    }
 }

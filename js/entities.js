@@ -258,9 +258,11 @@ var FlagEntity = me.CollectableEntity.extend({
     },
  
     onCollision: function() {
-        myAudio.pause();
-        var won = new Audio('data/finish.mp3'); 
-        won.play();
+        if(localStorage.sound === 'undefined' || localStorage.sound == "true"){
+            myAudio.pause();
+            var won = new Audio('data/finish.mp3'); 
+            won.play();
+        }
         sessionStorage.state = 2;
         changeState();
         $("#off_game_screen").show();
