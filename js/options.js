@@ -18,3 +18,7 @@ $(document).ready(function() {
 function saveOptions(){
     localStorage.useroptions = JSON.stringify(useroptions); 
 }
+
+function changeSound(){
+    
+}

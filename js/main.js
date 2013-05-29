@@ -25,6 +25,8 @@ var g_resources= [
     {name:"level3",type:"tmx",src:"data/level3.tmx"},
     {name:"level4",type:"tmx",src:"data/level4.tmx"},
     {name:"level5",type:"tmx",src:"data/level5.tmx"},
+    {name:"level6",type:"tmx",src:"data/level6.tmx"},
+    {name:"level11",type:"tmx",src:"data/level11.tmx"},
     
     //sprites
     {name:"chimpy",type:"image",src:"img/chimpy"+chimpysprite+"2.png"},
