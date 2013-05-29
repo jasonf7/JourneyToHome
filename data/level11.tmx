@@ -37,12 +37,6 @@
     <property name="spritewidth" value="39"/>
    </properties>
   </object>
-  <object name="WolfEntity" x="679" y="519" width="80" height="40">
-   <properties>
-    <property name="image" value="fail_wolf"/>
-    <property name="spritewidth" value="40"/>
-   </properties>
-  </object>
   <object name="CrocEntity" x="1078" y="118" width="120" height="40">
    <properties>
     <property name="image" value="croc1x3"/>
@@ -68,12 +62,6 @@
    </properties>
   </object>
   <object name="WolfEntity" x="-1" y="358" width="80" height="40">
-   <properties>
-    <property name="image" value="fail_wolf"/>
-    <property name="spritewidth" value="40"/>
-   </properties>
-  </object>
-  <object name="WolfEntity" x="673" y="199" width="80" height="40">
    <properties>
     <property name="image" value="fail_wolf"/>
     <property name="spritewidth" value="40"/>
@@ -212,6 +200,18 @@
    </properties>
   </object>
   <object name="AcornEntity" x="1869" y="521" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="947" y="255" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1273" y="342" width="40" height="40">
    <properties>
     <property name="image" value="acorn"/>
     <property name="spritewidth" value="40"/>
