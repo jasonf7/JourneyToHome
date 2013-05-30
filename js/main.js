@@ -92,12 +92,14 @@ var PlayScreen = me.ScreenObject.extend({
 
     onResetEvent: function()	{	
       // stuff to reset on state change
-        myAudio = new Audio('data/jungle-run.mp3'); 
-        myAudio.addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        }, false);
-        myAudio.play();
+        if(localStorage.sound === 'undefined' || localStorage.sound == "true"){
+            myAudio = new Audio('data/jungle-run.mp3'); 
+            myAudio.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+            myAudio.play();
+        }
         //Load a level
         me.levelDirector.loadLevel("level"+localStorage.currentLevel);
         //if they skipped.. show victory..
