@@ -26,11 +26,13 @@ var PlayerEntity = me.ObjectEntity.extend({
         if($("#math-info").is(":visible") || $("#off_game_screen").css("display")!="none"){
            return false;
         }
-        // var block = me.game.currentLevel.getLayerByName("collision").layerData[Math.floor(this.pos.x/40)][Math.floor(this.pos.y/40)];
-        // if(block != null && typeof block !== 'undefined'){
-        //     savedX = this.pos.x;
-        //     savedY = this.pos.y;
-        // }
+        
+        var block = me.game.currentLevel.getLayerByName("collision").layerData[Math.floor(this.pos.x/40)+1][Math.floor(this.pos.y/40)];
+        if(block != null && typeof block !== 'undefined'){
+            savedX = this.pos.x;
+            savedY = this.pos.y;
+        }
+        
         if (me.input.isKeyPressed('left')) {
             // flip the sprite on horizontal axis
             this.flipX(true);
@@ -92,12 +94,6 @@ var PlayerEntity = me.ObjectEntity.extend({
         // check & update player movement
         this.updateMovement();
         var res = me.game.collide(this);
-
-        if (res) {
-            // if we collide with an enemy
-            if (res.obj.type == me.game.COLLECTABLE_OBJECT) {
-            }
-        }
         
         // update animation if necessary
         if (this.vel.x!==0 || this.vel.y!==0) {
