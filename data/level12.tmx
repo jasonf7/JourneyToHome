@@ -38,21 +38,9 @@
     <property name="spritewidth" value="40"/>
    </properties>
   </object>
-  <object name="AcornEntity" x="452" y="29" width="40" height="40">
-   <properties>
-    <property name="image" value="acorn"/>
-    <property name="spritewidth" value="40"/>
-   </properties>
-  </object>
   <object name="FlagEntity" x="1947" y="429" width="40" height="80">
    <properties>
     <property name="image" value="flag1x2"/>
-    <property name="spritewidth" value="40"/>
-   </properties>
-  </object>
-  <object name="FoodEntity" x="587" y="24" width="40" height="40">
-   <properties>
-    <property name="image" value="food-"/>
     <property name="spritewidth" value="40"/>
    </properties>
   </object>
