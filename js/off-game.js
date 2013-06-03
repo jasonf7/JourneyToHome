@@ -2,35 +2,36 @@ var PAUSE=0, GAME_OVER=1, VICTORY=2;
 
 function exitGame(buttonNum){
     $("#off_game_screen").hide();
-    if(buttonNum==2){ //LEvel selection
+    if(buttonNum==2){ //Level selection
         document.location.href = "level.html";
+        resetUpgrades();
     }else if(buttonNum == 3){ // Main menu screen
-        document.location.href = "mainmenu.html";        
+        document.location.href = "mainmenu.html";
+        resetUpgrades();
     }else{ // Button 1
         if(sessionStorage.state=='1'){ //They lost, reload level
             me.levelDirector.loadLevel("level"+localStorage.currentLevel);
             updateEnergy();
         }else if(sessionStorage.state=='2'){ //They beat the level
-            if(localStorage.currentLevel < 13){
-                var tempLevel =  localStorage.currentLevel;
-                energy=100;
-                updateEnergy();
+            resetUpgrades();
+            var tempLevel = localStorage.currentLevel;
+            if(tempLevel < 13){
                 tempLevel++;
                 localStorage.currentLevel = tempLevel;                
-                me.levelDirector.loadLevel("level"+localStorage.currentLevel);
-                myAudio.play();
-                //if they skipped.. show victory..
-                if(useroptions.fly){
-                    sessionStorage.state = 2;
-                    changeState();
-                    $("#off_game_screen").show(); 
-                }
+                document.location.href = "shop.html";
             }else{ //Beat the game!!
                 //Beat the game!                
                 document.location.href = "level.html";
             }            
         }
     }
+}
+
+function resetUpgrades(){
+    for(var b in useroptions){
+        useroptions[b] = false;
+    }
+    saveOptions();
 }
 
 function saveProgress(){

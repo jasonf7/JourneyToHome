@@ -1,4 +1,5 @@
 var chimpysprite = "";
+console.log(useroptions.invisible);
 if(useroptions.invisible){
     chimpysprite = "-invisible";
 }else if(useroptions.powacorn){
@@ -26,7 +27,12 @@ var g_resources= [
     {name:"level4",type:"tmx",src:"data/level4.tmx"},
     {name:"level5",type:"tmx",src:"data/level5.tmx"},
     {name:"level6",type:"tmx",src:"data/level6.tmx"},
+    {name:"level7",type:"tmx",src:"data/level7.tmx"},
+    {name:"level8",type:"tmx",src:"data/level8.tmx"},
+    {name:"level9",type:"tmx",src:"data/level9.tmx"},
+    {name:"level10",type:"tmx",src:"data/level10.tmx"},
     {name:"level11",type:"tmx",src:"data/level11.tmx"},
+    {name:"level12",type:"tmx",src:"data/level12.tmx"},
     
     //sprites
     {name:"chimpy",type:"image",src:"img/chimpy"+chimpysprite+"2.png"},

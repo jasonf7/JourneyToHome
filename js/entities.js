@@ -5,6 +5,7 @@ var PlayerEntity = me.ObjectEntity.extend({
     */
     init:function(x,y,settings){
         this.parent(x,y,settings);
+        this.updateColRect(5,30,5,30);
         var xspeed = 4;
         if(useroptions.speed){
             xspeed = 7;
@@ -25,11 +26,11 @@ var PlayerEntity = me.ObjectEntity.extend({
         if($("#math-info").is(":visible") || $("#off_game_screen").css("display")!="none"){
            return false;
         }
-        var block = me.game.currentLevel.getLayerByName("collision").layerData[Math.floor(this.pos.x/40)][Math.floor(this.pos.y/40)+1];
-        if(block != null && typeof block !== 'undefined'){
-            savedX = this.pos.x;
-            savedY = this.pos.y;
-        }
+        // var block = me.game.currentLevel.getLayerByName("collision").layerData[Math.floor(this.pos.x/40)][Math.floor(this.pos.y/40)];
+        // if(block != null && typeof block !== 'undefined'){
+        //     savedX = this.pos.x;
+        //     savedY = this.pos.y;
+        // }
         if (me.input.isKeyPressed('left')) {
             // flip the sprite on horizontal axis
             this.flipX(true);
@@ -265,11 +266,7 @@ var FlagEntity = me.CollectableEntity.extend({
         }
         sessionStorage.state = 2;
         changeState();
-        $("#off_game_screen").show();
-        for(var b in useroptions){
-            useroptions[b] = false;
-            saveOptions();
-        }
+        $("#off_game_screen").show();       
         localStorage.acorns = acorns;
         this.collidable = false;
     }

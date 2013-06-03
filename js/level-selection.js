@@ -54,6 +54,9 @@ function reset(){
     localStorage.done = "";
     done = [];
     location.reload(true);
+    localStorage.acorns =  0;
+    localStorage.money = 0;
+    localStorage.currentLevel = 1;
 }
 
 function saveProgress(){

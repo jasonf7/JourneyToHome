@@ -36,8 +36,10 @@
     z-index:1;
 }
 
-#acorn-image.resize{
+#acorn-image{
     position:absolute;
+    left:5px;
+    top:5px;
     clip:rect(0, 40px, 40px, 0);
 }
 
@@ -68,7 +70,6 @@
     width:230px;
     height:50px;
     font-size:20px;
-    /** THIS NEEDS A LOT OF WORK */
     color:white;
     border:1px solid white;
     background-color:transparent;
@@ -77,7 +78,22 @@
     border-radius:6px;
 }
 
-#nextbutton:active, #nextbutton:hover{
+#goodfeelings{
+    position:absolute;
+    top:70px;
+    left:190px;
+    width:50px;
+    height:50px;
+    font-size:20px;
+    color:white;
+    border:1px solid white;
+    background-color:transparent;
+    font-family:"Tahoma";
+    font-weight:bold;
+    border-radius:6px;
+}
+
+#nextbutton:active, #nextbutton:hover,#goodfeelings:active,#goodfeelings:hover{
     background-color:white;
     color:#5c5c5c;
 }
@@ -89,7 +105,7 @@ p{
 }
 
 .shop-buttons{
-    background:rgba(54, 54, 54,1);
+    background:rgba(0, 0, 0,0.45);
     box-shadow: 0 0 3px 3px #2e2e2e;
     border:solid #a1a1a1 1px;
 }
