@@ -5,29 +5,9 @@ var done = [];
 
 function setDifficulty(buttonNumber){
     // 1-YK 2-NWT 3-BC 4-NVT 5-ALB 6-SAS 7-NB 8-PEI 9-NS 10-QC 11-NFL 12-MAN 13-ON
-    // EASY: 1-YK 3-BC 5-ALB 9-NS 11-NFL
-    // MEDIUM: 2-NWT 4-NVT 6-SAS 7-NB 8-PEI 
-    // HARD: 10-QC 12-MAN 13-ON
-    console.log("setting");
-    if(buttonNumber%2!==0){
-        if(buttonNumber==7){
-            sessionStorage.difficulty = MEDIUM;
-        }
-        else if(buttonNumber==13){
-            sessionStorage.difficulty = HARD;
-        }
-        else{
-            sessionStorage.difficulty = EASY;
-        }
-    }else{
-        if(buttonNumber<10){
-             sessionStorage.difficulty = MEDIUM;
-        }
-        else{
-            sessionStorage.difficulty = HARD;
-        }
-    }
-    
+    // EASY: 1-7
+    // MEDIUM: 8-12
+    // HARD: 13-ON
     localStorage.currentLevel=buttonNumber;
 }
 

@@ -3,11 +3,10 @@ var ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
 var operation = ADD; 
 var energy = 100, distance = 0, lastX = 0, acorns=0;
 
+var difficulty = 1;
+
 $(document).ready(function() {
-    if(isNaN(sessionStorage.difficulty) || typeof sessionStorage.difficulty === 'undefined'){
-        sessionStorage.difficulty=1;
-    }  
-    updateEnergy();
+   updateEnergy();
     if(typeof localStorage.acorns !== 'undefined'){
         acorns = localStorage.acorns;
     }
@@ -16,19 +15,29 @@ $(document).ready(function() {
 /**
  * Generate random math questoin
  */
-function generateNewQuestion(){    
+function generateNewQuestion(){ 
+    var currLevel = localStorage.currentLevel;
+    if(currLevel < 9){
+        difficulty = 1;
+    }else if(currLevel < 13){
+        difficulty = 2;
+    }else{
+        difficulty = 3;
+    }
+    
+    
     var randomOperation = Math.floor(Math.random()*4);
     operation = randomOperation;
     if(randomOperation==DIVIDE){
-        answer = Math.ceil(Math.random()*Math.pow(3,sessionStorage.difficulty));
-        secondNum = Math.ceil(Math.random()*Math.pow(3,sessionStorage.difficulty));
+        answer = Math.ceil(Math.random()*Math.pow(3,difficulty));
+        secondNum = Math.ceil(Math.random()*Math.pow(3,difficulty));
         firstNum = answer * secondNum;
     }else{        
         //random number from 1 to 10^difficulty
-        firstNum = Math.ceil(Math.random()*(Math.pow(10,sessionStorage.difficulty)-1));
-        if(sessionStorage.difficulty ==  1){
+        firstNum = Math.ceil(Math.random()*(Math.pow(10,difficulty)-1));
+        if(difficulty ==  1){
             secondNum = Math.ceil(Math.random()*10);        
-        }else if(sessionStorage.difficulty == 2){            
+        }else if(difficulty == 2){            
             secondNum = Math.ceil(Math.random()*90)+9;       
         }else{            
             secondNum = Math.ceil(Math.random()*900)+99;         

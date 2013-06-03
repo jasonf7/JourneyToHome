@@ -20,21 +20,6 @@ var PlayerEntity = me.ObjectEntity.extend({
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
         var lastX = this.pos.x;
         var savedX =0, savedY = 0;
-        
-        var out = "";
-        for(var i=0;i<me.game.currentLevel.getLayerByName("collision").layerData[0].length;i++){
-            out+=i+"";
-            for(var j=0;j<me.game.currentLevel.getLayerByName("collision").layerData.length;j++){
-                var block = me.game.currentLevel.getLayerByName("collision").layerData[j][i];
-                if(block != null && typeof block !== 'undefined'){
-                    out+="o";
-                }else{
-                    out+="-";
-                }
-            }
-            out+="\n";
-        }
-        console.log(out);
     },
     
     update:function(){ 
