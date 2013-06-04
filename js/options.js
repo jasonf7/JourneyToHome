@@ -10,15 +10,9 @@ var useroptions = {"jump":false, "fly":false, "sub":false, "speed":false,
         useroptions = JSON.parse(savedOptions);
         console.log("loaded");
     }
-// $(document).ready(function() {
-//     if(typeof localStorage.useroptions === 'undefined'){
-//         saveOptions();
-//     }else{
-//         var savedOptions = localStorage.useroptions;
-//         useroptions = JSON.parse(savedOptions);
-//         console.log("loaded");
-//     }
-// });
+$(document).ready(function() {
+    localStorage.currentLevel=13;
+});
 
 function saveOptions(){
     localStorage.useroptions = JSON.stringify(useroptions); 

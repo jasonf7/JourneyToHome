@@ -33,6 +33,7 @@ var g_resources= [
     {name:"level10",type:"tmx",src:"data/level10.tmx"},
     {name:"level11",type:"tmx",src:"data/level11.tmx"},
     {name:"level12",type:"tmx",src:"data/level12.tmx"},
+    {name:"level13",type:"tmx",src:"data/level13.tmx"},
     
     //sprites
     {name:"chimpy",type:"image",src:"img/chimpy"+chimpysprite+"2.png"},
