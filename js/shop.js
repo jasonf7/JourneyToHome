@@ -200,7 +200,11 @@ window.onload=function(){
         $("#acorn-indicator").html("x0");
         localStorage.acorns = 0;
     }else{
+        acorns = 0;
         acorns = parseInt(localStorage.acorns);
+        if(acorns < 0){
+            acorns  =0;
+        }
          $("#acorn-indicator").html("x"+acorns);
     }   
     if(typeof localStorage.money == 'undefined'){
