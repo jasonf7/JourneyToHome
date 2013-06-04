@@ -11,7 +11,7 @@ var useroptions = {"jump":false, "fly":false, "sub":false, "speed":false,
         console.log("loaded");
     }
 $(document).ready(function() {
-    localStorage.currentLevel=13;
+    // localStorage.currentLevel=13;
 });
 
 function saveOptions(){
