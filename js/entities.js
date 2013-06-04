@@ -27,7 +27,9 @@ var PlayerEntity = me.ObjectEntity.extend({
            return false;
         }
         
-        var block = me.game.currentLevel.getLayerByName("collision").layerData[Math.floor(this.pos.x/40)+1][Math.floor(this.pos.y/40)];
+       var block = me.game.currentLevel.getLayerByName("collision").layerData[Math.round((this.pos.x+10)/40)][Math.ceil((this.pos.y+10)/40)+1];
+        // console.log("x: "+this.pos.x+", y: "+this.pos.y);
+        // console.log("("+Math.floor((this.pos.x+10)/40)+","+Math.floor((this.pos.y+10)/40)+")");
         if(block != null && typeof block !== 'undefined'){
             savedX = this.pos.x;
             savedY = this.pos.y;
