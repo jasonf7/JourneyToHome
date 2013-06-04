@@ -1,5 +1,5 @@
 var money=0;
-var acorns = localStorage.acorns;
+var acorns = -1;
 
 function doneShopping(){    
     //save acorns and money changes
@@ -196,8 +196,13 @@ window.onload=function(){
         }
         
     }
-    
-    $("#acorn-indicator").html("x"+acorns);
+    if(typeof localStorage.acorns == 'undefined'){
+        $("#acorn-indicator").html("x0");
+        localStorage.acorns = 0;
+    }else{
+        acorns = parseInt(localStorage.acorns);
+         $("#acorn-indicator").html("x"+acorns);
+    }   
     if(typeof localStorage.money == 'undefined'){
         console.log("no money");
         localStorage.money = money;

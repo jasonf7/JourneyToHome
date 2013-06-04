@@ -10,6 +10,12 @@ $(document).ready(function() {
     if(typeof localStorage.acorns !== 'undefined'){
         acorns = localStorage.acorns;
     }
+    var i=1;
+    for(var b in useroptions){
+        if(!useroptions[b]){
+            $("#upgrade"+i).css("opacity","0.2");
+        }i++;
+    }
 });
 
 /**

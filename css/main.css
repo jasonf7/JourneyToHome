@@ -149,24 +149,102 @@ body, html{
 }
 
 .screen_buttons{
-    margin-top:25px;
-    margin-bottom:25px;
-    height:17%;
-    width:60%;
+    position:absolute;
+    height:120px;
+    width:500px;
     border: 2px solid #000000;
-    border-radius: 50px;
+    border-radius: 22px;
     box-shadow: 0px 2px 20px #FFFFFF inset, 0px -2px 20px #000000 inset;
     font-size:150%;
 }
 
-#screen_button1{
+#powerups{
+    position:absolute;
+    left:92px;
+    top:480px;
+    width:1000px;
+    background:red;
+}
 
+.upgrades{
+    position:absolute;
+    left:0;
+    top:0;
+    width:280px;
+}
+.upgrades2{
+    position:absolute;
+    left:280px;
+    top:-70px;
+    width:280px;
+}
+.upgrades3{
+    position:absolute;
+    left:560px;
+    top:-140px;
+    width:280px;
+}
+
+#upgrade1{    
+    clip: rect(0, 70px, 70px, 0);
+    /*opacity:0.5; */
+}
+
+#upgrade2{
+    clip: rect(0, 140px, 70px, 70px);
+}
+
+#upgrade3{
+    clip: rect(0, 210px, 70px, 140px);
+}
+
+#upgrade4{
+    clip: rect(0, 280px, 70px, 210px);
+}
+
+#upgrade5{
+    clip: rect(70px, 70px, 140px, 0);
+}
+
+#upgrade6{
+    clip: rect(70px, 140px, 140px, 70px);
+}
+
+#upgrade7{
+    clip: rect(70px, 210px, 140px, 140px);
+}
+
+#upgrade8{
+    clip: rect(70px, 280px, 140px, 210px);
+}
+
+#upgrade9{
+    clip: rect(140px, 70px, 210px, 0);
+}
+
+#upgrade10{
+    clip: rect(140px, 140px, 210px, 70px);
+}
+
+#upgrade11{
+    clip: rect(140px, 210px, 210px, 140px);
+}
+
+#upgrade12{
+    clip: rect(140px, 280px, 210px, 210px);
+}
+
+#screen_button1{
+    left:231px;
+    top:30px;
 }
 
 #screen_button2{
-
+    left:231px;
+    top:160px;
 }
 
 #screen_button3{
-
+    left:231px;
+    top:290px;
 }
