@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="land-tiles-client.tsx"/>
  <tileset firstgid="29" source="land-tiles-simple.tsx"/>
  <tileset firstgid="65" name="land-tiles-simple-water" tilewidth="40" tileheight="40">
-  <image source="../Web Workspace/Jth Assets/land-tiles-simple-water.png" width="240" height="240"/>
+  <image source="land-tiles-simple-water.png" width="240" height="240"/>
  </tileset>
  <imagelayer name="bg" width="50" height="15">
   <image source="bgclouds.png"/>
@@ -45,7 +45,7 @@
     <property name="spritewidth" value="40"/>
    </properties>
   </object>
-  <object name="AcornEntity" x="408" y="335" width="40" height="40">
+  <object name="AcornEntity" x="371" y="357" width="40" height="40">
    <properties>
     <property name="image" value="acorn"/>
     <property name="spritewidth" value="40"/>
@@ -79,6 +79,96 @@
   <object name="FlagEntity" x="1960" y="398" width="40" height="80">
    <properties>
     <property name="image" value="flag1x2"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="319" y="389" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="425" y="391" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="588" y="263" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="838" y="186" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1202" y="78" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1255" y="102" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1302" y="158" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1334" y="226" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1615" y="154" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1838" y="134" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1899" y="114" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1899" y="114" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1940" y="167" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1954" y="229" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object name="AcornEntity" x="1956" y="307" width="40" height="40">
+   <properties>
+    <property name="image" value="acorn"/>
     <property name="spritewidth" value="40"/>
    </properties>
   </object>
