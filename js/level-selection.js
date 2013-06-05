@@ -22,12 +22,15 @@ function loadProgress(){
     }
     while(finding){
         var add = loaded.substr(0,loaded.indexOf(' '));
-        done.push(parseInt(add));
+        if(done.indexOf(parseInt(add))<0){
+            done.push(parseInt(add));
+        }
         loaded = loaded.substr(loaded.indexOf(' ')+1,loaded.length);
         if(loaded.length<2){
             finding=false;
         }
     }    
+    saveProgress();
 }
 
 function reset(){

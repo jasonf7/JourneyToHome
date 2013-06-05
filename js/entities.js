@@ -320,8 +320,8 @@ function Predator(image,width){
         },
         // manage the enemy movement
         update: function() {  
-            if($("#off_game_screen").css("display") !="none"){
-                return false;
+            if($("#off_game_screen").css("display") !="none"||$("#math-info").css("display") !="none"){
+                return true;
             }
             var playerRadius = 30;
             var player = me.game.getEntityByName("mainPlayer")[0];
