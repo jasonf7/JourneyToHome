@@ -1,11 +1,14 @@
 var chimpysprite = "";
-console.log(useroptions.invisible);
 if(useroptions.invisible){
     chimpysprite = "-invisible";
 }else if(useroptions.powacorn){
     chimpysprite = "-powacorn";
 }else if(useroptions.acorn){
     chimpysprite = "-acorn";
+}else if(useroptions.fire){
+    chimpysprite = "-fire";
+}else if(useroptions.ice){
+    chimpysprite = "-ice";
 }
 // game resources
 var g_resources= [
@@ -70,7 +73,6 @@ var LoadingScreen = me.ScreenObject.extend(
 	 */
 	draw: function(context)
 	{
-        console.log(this.bg.src);
 		// clear the screen
 		me.video.clearSurface(context, "#50BCDB");
 		// context.drawImage(this.bg, 10,10);

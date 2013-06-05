@@ -5,7 +5,7 @@ var PlayerEntity = me.ObjectEntity.extend({
     */
     init:function(x,y,settings){
         this.parent(x,y,settings);
-        this.updateColRect(5,30,5,30);
+        this.updateColRect(5,30,10,30);
         var xspeed = 4;
         if(useroptions.speed){
             xspeed = 7;
@@ -304,7 +304,7 @@ function Predator(image,width){
         // obj parameter corresponds to the other object (typically the player) touching this one
         onCollision: function(res, obj) {
             //INVISIBLE OR INVINCIBLE? NO MATH QUESTIONS HURRRRAY
-            if(useroptions.acorn || useroptions.powacorn){
+            if(useroptions.acorn || useroptions.powacorn||useroptions.fire||useroptions.ice){
                 me.game.remove(this);
                 return;
             }else if(useroptions.invisible){

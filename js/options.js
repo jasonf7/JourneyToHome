@@ -1,8 +1,8 @@
 var useroptions = {"jump":false, "fly":false, "sub":false, "speed":false,
                     "invisible":false,"acorn":false,"powacorn":false,"fire":false,
                     "ice":false,"potion":false,"magnet":false,"double":false};
-//DONE: jump, sub, speed, invisible, potion, magnet, double, fly
-//LEFT: acorn, powacorn, fire, ice
+//DONE: jump, sub, speed, invisible, potion, magnet, double, fly, acorn, powacorn
+//SORTA DONE:  fire, ice
  if(typeof localStorage.useroptions === 'undefined'){
         saveOptions();
     }else{
@@ -10,9 +10,9 @@ var useroptions = {"jump":false, "fly":false, "sub":false, "speed":false,
         useroptions = JSON.parse(savedOptions);
         console.log("loaded");
     }
-$(document).ready(function() {
-    // localStorage.currentLevel=13;
-});
+// $(document).ready(function() {
+//     // localStorage.currentLevel=13;
+// });
 
 function saveOptions(){
     localStorage.useroptions = JSON.stringify(useroptions); 
