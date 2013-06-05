@@ -33,11 +33,11 @@ function setSound(){
         $("#sound:hover").css("background-color","rgba(10, 133, 10,0.8)");
         $("#sound:active").css("background-color","rgba(10, 133, 10,0.8)");
         $("#sound").css("background-color","rgba(0,200,0,0.3)");
-        $("#sound").html("Sound On");
+        $("#sound").html("Sonore Oui");
     }else{
         $("#sound:hover").css("background-color","rgba(150, 11, 11,0.8)");
         $("#sound:active").css("background-color","rgba(150, 11, 11,0.8)");        
         $("#sound").css("background-color","rgba(200,0,0,0.3)");
-        $("#sound").html("Sound Off");
+        $("#sound").html("Sonore Non");
     }
 }

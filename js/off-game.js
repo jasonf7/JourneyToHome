@@ -51,18 +51,18 @@ function changeState(){
     if(sessionStorage.state==='0'){
         $("#screen_title").html("Pause");        
         $("#off_game_screen").css("background-color","rgba(0,0,0,0.5)");
-        $("#screen_button1").html('Resume');
+        $("#screen_button1").html('Reprendre');
     }
     else if(sessionStorage.state=='1'){
-        $("#screen_title").html("Game Over!");
+        $("#screen_title").html("Vous avez perdu!");
         $("#off_game_screen").css("background-color","rgba(100,0,0,0.5)");
-        $("#screen_button1").html('Restart Level');
+        $("#screen_button1").html('Recommencez la Niveau');
         console.log("Changed text...");
     }
     else{
-        $("#screen_title").html("Victory!");        
+        $("#screen_title").html("Victoire!");        
         $("#off_game_screen").css("background-color","rgba(0,100,0,0.5)");
-        $("#screen_button1").html('Next Level');
+        $("#screen_button1").html('Prochaine Niveau');
         if(done.indexOf(localStorage.currentLevel)<0){        
             done.push(localStorage.currentLevel);        
             saveProgress();
