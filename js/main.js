@@ -62,19 +62,18 @@ var LoadingScreen = me.ScreenObject.extend(
 	init: function()
 	{
 		this.parent(true);
-		// this.bg = new Image();
-		// this.bg.src = "img/bgclouds.png";
-		this.loading = new me.Font("Verdana", 20, "white");
+        // this.bg = me.loader.getImage("bgclouds");
+		this.loading = new me.Font("Tahoma", 32, "#17667a");
 	},
-
 	/*
 	 * drawing function
 	 */
 	draw: function(context)
 	{
+        console.log(this.bg.src);
 		// clear the screen
 		me.video.clearSurface(context, "#50BCDB");
-		// context.drawImage(this.bg, 0, 0);
+		// context.drawImage(this.bg, 10,10);
 
 		var loadingText = "Loading...";
 		var loadingSize = this.loading.measureText(context, loadingText);
