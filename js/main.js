@@ -51,6 +51,38 @@ var g_resources= [
     {name:"bgclouds-top",type:"image",src:"img/bgclouds-top.png"}
 ];
 
+/**
+ *  Make a loading screen while it loads the images and such..
+ */
+var LoadingScreen = me.ScreenObject.extend(
+{
+    /*
+	 * constructor
+	 */
+	init: function()
+	{
+		this.parent(true);
+		// this.bg = new Image();
+		// this.bg.src = "img/bgclouds.png";
+		this.loading = new me.Font("Verdana", 20, "white");
+	},
+
+	/*
+	 * drawing function
+	 */
+	draw: function(context)
+	{
+		// clear the screen
+		me.video.clearSurface(context, "#50BCDB");
+		// context.drawImage(this.bg, 0, 0);
+
+		var loadingText = "Loading...";
+		var loadingSize = this.loading.measureText(context, loadingText);
+		this.loading.draw(context, loadingText,
+			(me.video.getWidth() / 2) - (loadingSize.width / 2),
+			(me.video.getHeight() / 2) - (loadingSize.height / 2));
+	}
+});
 
 var jsApp	= 
 {	
@@ -70,7 +102,8 @@ var jsApp	=
 		me.loader.preload(g_resources);
     
 		// load everything & display a loading screen
-		// me.state.change(me.state.LOADING);
+        me.state.set(me.state.LOADING, new LoadingScreen());
+		me.state.change(me.state.LOADING);
 	},
 	
 	
