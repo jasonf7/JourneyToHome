@@ -1,5 +1,6 @@
 body{
      margin:0;  
+     background:url('../img/grey_wash_wall.png');
 }
 h1,h2{
     color:white;    
@@ -31,14 +32,14 @@ h2{
     border-radius:15px;    
 }
 #container{
-    border: 1px solid black; 
+    /*border: 1px solid black; */
     text-align:center;
-    background:url('../img/grey_wash_wall.png');
+    /*background:url('../img/grey_wash_wall.png');*/
     z-index:-2;
 }
 #stripe{
     position:absolute;
-    height:60%;
+    height:360px;
     left:-10px;
     width:1044px;
     top:130px;

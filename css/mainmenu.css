@@ -72,11 +72,16 @@ body{
     font-size:24px;
     border-radius:15px;
 }
+
+#quit-options{
+    top:470px;
+}
+
 #info{
     top:230px;
     left:150px;
     width:400px;
-    height:150px;
+    height:200px;
     font-size:20px;    
     text-shadow: 1px 1px 2px #424242;
 }

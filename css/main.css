@@ -1,6 +1,10 @@
 body, html{
     padding:0;
-    margin:0;
+    margin:0;    
+}
+
+body{
+     background:url('../img/grey_wash_wall-dark.png');
 }
 
 .no-select{
