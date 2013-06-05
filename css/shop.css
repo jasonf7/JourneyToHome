@@ -1,5 +1,6 @@
 body{
      background:url('../img/grey_wash_wall.png');
+     overflow-x: hidden;
 }
 
 #shop-container{
