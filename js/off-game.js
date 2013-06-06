@@ -10,9 +10,11 @@ function exitGame(buttonNum){
         resetUpgrades();
     }else{ // Button 1
         if(sessionStorage.state=='1'){ //They lost, reload level
+            acorns = 0;
             me.levelDirector.loadLevel("level"+localStorage.currentLevel);
             updateEnergy();
         }else if(sessionStorage.state=='2'){ //They beat the level
+            acorns = 0;
             resetUpgrades();
             document.location.href = "level.html";           
         }
