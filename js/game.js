@@ -70,6 +70,8 @@ function takeInput(num){
     if(wrong){
         $("#question").css('background','-webkit-radial-gradient(circle, #97cc4e, #65ad49)');
         wrong = false;
+        userAnswer =  "";
+        displayMath();
     }
     
     if(num>=0 && userAnswer.length < 6){
@@ -136,7 +138,6 @@ function takeInput(num){
  * @param show - false = hide,true = show
  */
 function popup(show){
-    // console.log("SHOWING POPUp");
     if(show){
         $("#math-info").show();
         $("#math-info").animate({

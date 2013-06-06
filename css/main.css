@@ -6,7 +6,7 @@ body, html{
 body{
     background-color:black;
     overflow-x: hidden;
-     background:url('../img/grey_wash_wall-dark.png');
+     background:url('../img/grey_wash_wall-dark.jpg');
 }
 
 .no-select{
@@ -68,7 +68,7 @@ body{
 #math-popup{ 
     position:absolute;
     top:80px;
-    background-image:url('../img/grey_wash_wall.png');
+    background-image:url('../img/grey_wash_wall.jpg');
     box-shadow: inset 0 0px 10px 5px #383838;
     left:0;
     height:519px;

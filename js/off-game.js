@@ -14,15 +14,7 @@ function exitGame(buttonNum){
             updateEnergy();
         }else if(sessionStorage.state=='2'){ //They beat the level
             resetUpgrades();
-            var tempLevel = localStorage.currentLevel;
-            if(tempLevel < 13){
-                tempLevel++;
-                localStorage.currentLevel = tempLevel;                
-                document.location.href = "shop.html";
-            }else{ //Beat the game!!
-                //Beat the game!                
-                document.location.href = "level.html";
-            }            
+            document.location.href = "level.html";           
         }
     }
 }
@@ -57,7 +49,6 @@ function changeState(){
         $("#screen_title").html("Vous avez perdu!");
         $("#off_game_screen").css("background-color","rgba(100,0,0,0.5)");
         $("#screen_button1").html('Recommencez la Niveau');
-        console.log("Changed text...");
     }
     else{
         $("#screen_title").html("Victoire!");        

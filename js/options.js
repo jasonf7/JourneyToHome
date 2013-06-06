@@ -3,16 +3,12 @@ var useroptions = {"jump":false, "fly":false, "sub":false, "speed":false,
                     "ice":false,"potion":false,"magnet":false,"double":false};
 //DONE: jump, sub, speed, invisible, potion, magnet, double, fly, acorn, powacorn
 //SORTA DONE:  fire, ice
- if(typeof localStorage.useroptions === 'undefined'){
-        saveOptions();
-    }else{
-        var savedOptions = localStorage.useroptions;
-        useroptions = JSON.parse(savedOptions);
-        console.log("loaded");
-    }
-// $(document).ready(function() {
-//     // localStorage.currentLevel=13;
-// });
+if(typeof localStorage.useroptions === 'undefined'){
+    saveOptions();
+}else{
+    var savedOptions = localStorage.useroptions;
+    useroptions = JSON.parse(savedOptions);
+}
 
 function saveOptions(){
     localStorage.useroptions = JSON.stringify(useroptions); 

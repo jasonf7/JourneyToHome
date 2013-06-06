@@ -1,6 +1,6 @@
 body{
      margin:0;  
-     background:url('../img/grey_wash_wall.png');
+     background:url('../img/grey_wash_wall.jpg');
 }
 h1,h2{
     color:white;    
@@ -32,9 +32,7 @@ h2{
     border-radius:15px;    
 }
 #container{
-    /*border: 1px solid black; */
     text-align:center;
-    /*background:url('../img/grey_wash_wall.png');*/
     z-index:-2;
 }
 #stripe{

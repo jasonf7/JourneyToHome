@@ -208,7 +208,6 @@ window.onload=function(){
          $("#acorn-indicator").html("x"+acorns);
     }   
     if(typeof localStorage.money == 'undefined'){
-        console.log("no money");
         localStorage.money = money;
     }else{
         money = parseInt(localStorage.money);
@@ -220,8 +219,9 @@ function trade(){
     if(acorns <= 0) {
         return;
     }
-    acorns--;
-    money+=50;
+    
+    money+=acorns*50;
+    acorns=0;
     $("#acorn-indicator").html("x"+acorns);
     $("#money-indicator").html("$"+money);
 }

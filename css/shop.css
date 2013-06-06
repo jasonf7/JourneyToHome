@@ -1,5 +1,5 @@
 body{
-     background:url('../img/grey_wash_wall.png');
+     background:url('../img/grey_wash_wall.jpg');
      overflow-x: hidden;
 }
 
@@ -10,8 +10,8 @@ body{
     width:975px;
     height:550px;
     background:rgba(91,91,91,1);
-    background-image:url('../img/grey_wash_wall.png');
-    border-image:url('../img/grey_wash_wall.png');
+    background-image:url('../img/grey_wash_wall.jpg');
+    border-image:url('../img/grey_wash_wall.jpg');
     border-width:25px;
 }
 

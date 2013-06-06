@@ -6,7 +6,7 @@
 }
 
 body{
-    background:url('../img/grey_wash_wall.png');
+    background:url('../img/grey_wash_wall.jpg');
 }
 
 .ninjabutton{
@@ -41,7 +41,7 @@ body{
     display:none;
     padding:50px;
     left:162px;
-    background-image:url('../img/grey_wash_wall.png');
+    background-image:url('../img/grey_wash_wall.jpg');
     box-shadow: inset 0 0px 10px 5px #383838;
     top:0;
     height:500px;

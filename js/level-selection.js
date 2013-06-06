@@ -15,7 +15,6 @@ function loadProgress(){
     var finding = true;
     var loaded = localStorage.done;
     if(typeof loaded === 'undefined' || loaded.length < 2){
-        console.log("empty");
         //show 1....
         $("#button_1").show();
         return;
