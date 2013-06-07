@@ -23,12 +23,12 @@ $(document).ready(function() {
  */
 function generateNewQuestion(){ 
     var currLevel = localStorage.currentLevel;
-    if(currLevel < 9){
+    if(currLevel < 10 || currLevel==11){
         difficulty = 1;
-    }else if(currLevel < 13){
-        difficulty = 2;
-    }else{
+    }else if(currLevel == 13){
         difficulty = 3;
+    }else{
+        difficulty = 2;
     }
     
     

@@ -260,11 +260,11 @@ var FlagEntity = me.CollectableEntity.extend({
             myAudio.pause();
             var won = new Audio('data/finish.mp3'); 
             won.play();
-        }
+        }             
+        localStorage.acorns = acorns;
         sessionStorage.state = 2;
         changeState();
-        $("#off_game_screen").show();       
-        localStorage.acorns = acorns;
+        $("#off_game_screen").show();  
         this.collidable = false;
     }
 });

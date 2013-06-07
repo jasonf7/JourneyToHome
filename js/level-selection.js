@@ -5,8 +5,8 @@ var done = [];
 
 function setDifficulty(buttonNumber){
     // 1-YK 2-NWT 3-BC 4-NVT 5-ALB 6-SAS 7-NB 8-PEI 9-NS 10-QC 11-NFL 12-MAN 13-ON
-    // EASY: 1-7
-    // MEDIUM: 8-12
+    // EASY: 1-9,11
+    // MEDIUM: 10,12
     // HARD: 13-ON
     localStorage.currentLevel=buttonNumber;
 }
